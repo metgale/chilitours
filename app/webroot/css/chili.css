@@ -1,0 +1,44 @@
+root { 
+    display: block;
+}
+
+.admin{
+}
+.navbar-vertical{
+	margin-top:20px;
+	border-top: 1px solid #EEE;
+	border-right: 1px solid #EEE;
+	border-left: 1px solid #EEE;
+}
+.navbar-vertical ul{
+	margin:0px;
+}
+.navbar-vertical h4{
+	margin-left:15px;
+}
+
+.nav-items{
+	display:none;
+	padding-left:25px;
+	border-top:1px  dashed black;
+}
+.nav{
+	border-bottom:1px solid #EEE;
+}
+#main{
+	padding-top:25px;
+}
+.nav-items img{
+	height: 50px;
+	width: 50px;
+}
+.admin-icon{
+	padding-right:20px;
+	height:25px;
+	width:25px;
+}
+.users-index ui{
+	font-size:19px;
+	padding-left:25px;
+	margin-top:20px;
+}
