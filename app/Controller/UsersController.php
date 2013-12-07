@@ -148,6 +148,7 @@ class UsersController extends AppController {
 	}
 	
 	public function admin_home(){
+		$this->layout = "admin";
 				
 	}
 

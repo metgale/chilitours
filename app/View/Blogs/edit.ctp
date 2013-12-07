@@ -13,12 +13,11 @@
 				echo $this->BootstrapForm->input('content', array(
 					'required' => 'required',
 					'label' => 'Sadržaj'
-
 					)
 				);
 				echo $this->BootstrapForm->hidden('id');
 				?>
-				<?php echo $this->BootstrapForm->submit(__('Submit'), array('class' => 'btn btn-primary'));?>
+				<?php echo $this->BootstrapForm->submit(__('Uredi'), array('class' => 'btn btn-primary'));?>
 			</fieldset>
 		<?php echo $this->BootstrapForm->end();?>
 	</div>

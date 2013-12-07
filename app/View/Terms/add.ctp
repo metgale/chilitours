@@ -1,42 +1,70 @@
 <div class="row-fluid">
+	<?php if(!empty($terms)):?>
 	<div class="span9">
-		<?php echo $this->BootstrapForm->create('Term', array('class' => 'form-horizontal'));?>
-			<fieldset>
-				<legend><?php echo __('Add %s', __('Term')); ?></legend>
-				<?php
-				echo $this->BootstrapForm->input('travel_id', array(
-					'required' => 'required',
-					'helpInline' => '<span class="label label-important">' . __('Required') . '</span>&nbsp;')
-				);
-				echo $this->BootstrapForm->input('startdate', array(
-					'required' => 'required',
-					'helpInline' => '<span class="label label-important">' . __('Required') . '</span>&nbsp;')
-				);
-				echo $this->BootstrapForm->input('enddate', array(
-					'required' => 'required',
-					'helpInline' => '<span class="label label-important">' . __('Required') . '</span>&nbsp;')
-				);
-				echo $this->BootstrapForm->input('price', array(
-					'required' => 'required',
-					'helpInline' => '<span class="label label-important">' . __('Required') . '</span>&nbsp;')
-				);
-				echo $this->BootstrapForm->input('town', array(
-					'required' => 'required',
-					'helpInline' => '<span class="label label-important">' . __('Required') . '</span>&nbsp;')
-				);
-				?>
-				<?php echo $this->BootstrapForm->submit(__('Submit'));?>
-			</fieldset>
-		<?php echo $this->BootstrapForm->end();?>
+		<h2>Termini</h2>
+		<table class="table table-hover">
+			<thead>
+                <tr>
+					<th>Datum polaska</th>
+					<th>Datum povratka</th>
+					<th>Cijena</th>
+					<th>Mjesto polaska</th>
+                </tr>
+			</thead>
+			<tbody>
+				<?php foreach ($terms as $term): ?>
+	                <tr>
+						<td><?= $term['Term']['startdate']; ?></td>
+						<td><?= $term['Term']['enddate']; ?></td>
+						<td><?= $term['Term']['price']; ?></td>
+						<td><?= $term['Term']['town']; ?></td>
+	                </tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
 	</div>
-	<div class="span3">
-		<div class="well" style="padding: 8px 0; margin-top:8px;">
-		<ul class="nav nav-list">
-			<li class="nav-header"><?php echo __('Actions'); ?></li>
-			<li><?php echo $this->Html->link(__('List %s', __('Terms')), array('action' => 'index'));?></li>
-			<li><?php echo $this->Html->link(__('List %s', __('Travels')), array('controller' => 'travels', 'action' => 'index')); ?></li>
-			<li><?php echo $this->Html->link(__('New %s', __('Travel')), array('controller' => 'travels', 'action' => 'add')); ?></li>
-		</ul>
-		</div>
+	<?php endif; ?>
+
+
+	<div class="span9">
+		<?php echo $this->BootstrapForm->create('Term', array('class' => 'form-horizontal')); ?>
+		<fieldset>
+			<legend><?php
+				foreach ($travels as $travel) {
+					echo __('Novi termin za ' . $travel);
+				}
+				?></legend>
+			<?php
+			echo $this->BootstrapForm->input('travel_id', array(
+				'required' => 'required',
+				'label' => 'Putovanje'
+					)
+			);
+			echo $this->BootstrapForm->input('startdate', array(
+				'required' => 'required',
+				'label' => 'Datum polaska',
+				'class' => 'input-small'
+					)
+			);
+			echo $this->BootstrapForm->input('enddate', array(
+				'required' => 'required',
+				'label' => 'Datum povratka',
+				'class' => 'input-small'
+					)
+			);
+			echo $this->BootstrapForm->input('price', array(
+				'required' => 'required',
+				'label' => 'Cijena'
+					)
+			);
+			echo $this->BootstrapForm->input('town', array(
+				'required' => 'required',
+				'label' => 'Mjesto polaska'
+					)
+			);
+			?>
+			<?php echo $this->BootstrapForm->submit(__('Dodaj'), array('class' => 'btn btn-primary')); ?>
+		</fieldset>
+		<?php echo $this->BootstrapForm->end(); ?>
 	</div>
 </div>

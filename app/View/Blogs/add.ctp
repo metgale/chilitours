@@ -15,7 +15,7 @@
 					)
 				);
 				?>
-				<?php echo $this->BootstrapForm->submit(__('Submit'), array('class'=>'btn btn-primary'));?>
+				<?php echo $this->BootstrapForm->submit(__('Dodaj'), array('class'=>'btn btn-primary'));?>
 			</fieldset>
 		<?php echo $this->BootstrapForm->end();?>
 	</div>

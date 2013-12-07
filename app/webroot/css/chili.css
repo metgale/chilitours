@@ -21,6 +21,7 @@ root {
 	display:none;
 	padding-left:25px;
 	border-top:1px  dashed black;
+	border-bottom:1px  dashed black;
 }
 .nav{
 	border-bottom:1px solid #EEE;

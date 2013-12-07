@@ -2,7 +2,8 @@
 	<div class="span9">
 		<?php echo $this->BootstrapForm->create('Travel', array('class' => 'form-horizontal')); ?>
 		<fieldset>
-			<legend><?php echo __('Novo putovanje'); ?></legend>
+			<legend><?php echo __('Novo putovanje'); ?>	</legend>
+
 			<?php
 			echo $this->BootstrapForm->input('category_id', array(
 				'label' => 'Kategorija',
@@ -40,7 +41,7 @@
 					)
 			);
 			echo $this->BootstrapForm->input('accomodation', array(
-				'options' => array('','1', '2', '3', '4', '5'),
+				'options' => array('', '1', '2', '3', '4', '5'),
 				'required' => 'required',
 				'label' => 'Kategorija smještaja'
 					)
@@ -65,7 +66,7 @@
 			?>
 			<?php echo $this->BootstrapForm->submit(__('Dodaj'), array('class' => 'btn btn-primary')); ?>
 		</fieldset>
-			<?php echo $this->BootstrapForm->end(); ?>
+		<?php echo $this->BootstrapForm->end(); ?>
 	</div>
 
 </div>

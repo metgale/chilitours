@@ -106,6 +106,7 @@ class TravelsController extends AppController {
 		}
 		$categories = $this->Travel->Category->find('list');
 		$this->set(compact('categories'));
+		$this->set('id', $id);
 	}
 
 	/**
