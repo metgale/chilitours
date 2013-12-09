@@ -58,8 +58,8 @@ class TravelsController extends AppController {
 		$this->set(compact('categories'));
 
 		if ($this->request->is('post')) {
-			$this->Travel->createWithAttachments($this->request->data);
-			if ($this->Travel->save($this->request->data)) {
+			//$this->Travel->createWithAttachments($this->request->data);
+			if ($this->Travel->createWithAttachments($this->request->data)) {
 				$this->Session->setFlash(
 						('Novo putovanje dodano'), 'alert', array(
 					'plugin' => 'TwitterBootstrap',

@@ -198,8 +198,15 @@ class Travel extends AppModel {
 					if (isset($image['foreign_key'])) {
 						unset($image['foreign_key']);
 					}
+					// Remove empty images
+					if (empty($image['attachment']['name'])) {
+						unset($data['Image'][$i]);
+						continue;
+					}
 
 					$images[] = $image;
+				} else {
+					unset($data['Image'][$i]);
 				}
 			}
 		}
