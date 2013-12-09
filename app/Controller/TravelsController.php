@@ -54,8 +54,8 @@ class TravelsController extends AppController {
 	public function add() {
 		$this->layout = 'admin';
 
-		$categories = $this->Travel->Category->find('all');
-		$this->set(compact('userbooks'));
+		$categories = $this->Travel->Category->find('list');
+		$this->set(compact('categories'));
 
 		if ($this->request->is('post')) {
 			$this->Travel->createWithAttachments($this->request->data);
@@ -68,11 +68,11 @@ class TravelsController extends AppController {
 				);
 				return $this->redirect(array('action' => 'index'));
 			} else {
+				debug($this->Travel->validationErrors);
 				$this->Session->setFlash(__('The travel could not be saved. Please, try again.'));
 			}
 		}
-		$categories = $this->Travel->Category->find('list');
-		$this->set(compact('categories'));
+
 	}
 
 	/**
