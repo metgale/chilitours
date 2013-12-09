@@ -1,6 +1,6 @@
 <div class="row-fluid">
 	<div class="span9">
-		<?php echo $this->BootstrapForm->create('Travel', array('class' => 'form-horizontal')); ?>
+		<?php echo $this->BootstrapForm->create('Travel', array('class' => 'form-horizontal', 'type' => 'file')); ?>
 		<fieldset>
 			<legend><?php echo __('Novo putovanje'); ?>	</legend>
 
@@ -47,22 +47,24 @@
 					)
 			);
 			echo $this->BootstrapForm->input('program_hr', array(
-				'allowEmpty' => true,
 				'required' => 'required',
 				'label' => 'Program putovanja (hr)'
 					)
 			);
 			echo $this->BootstrapForm->input('program_eng', array(
-				'allowEmpty' => true,
 				'required' => 'required',
 				'label' => 'Program putovanja (eng)'
 					)
 			);
+
 			echo $this->BootstrapForm->input('featured', array(
 				'required' => 'required',
 				'label' => 'Istaknuto putovanje'
 					)
 			);
+
+			echo $this->Form->input('Image.0.attachment', array('type' => 'file', 'label' => 'Image'));
+			echo $this->Form->input('Image.0.model', array('type' => 'hidden', 'value' => 'Travel'));
 			?>
 			<?php echo $this->BootstrapForm->submit(__('Dodaj'), array('class' => 'btn btn-primary')); ?>
 		</fieldset>

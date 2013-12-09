@@ -89,6 +89,7 @@ Cache::config('default', array('engine' => 'File'));
 
 CakePlugin::load('TwitterBootstrap');
 CakePlugin::load('DebugKit');
+CakePlugin::load('Upload');
 
 Configure::write('Dispatcher.filters', array(
 	'AssetDispatcher',

@@ -58,7 +58,7 @@ class TravelsController extends AppController {
 		$this->set(compact('userbooks'));
 
 		if ($this->request->is('post')) {
-			$this->Travel->create();
+			$this->Travel->createWithAttachments($this->request->data);
 			if ($this->Travel->save($this->request->data)) {
 				$this->Session->setFlash(
 						('Novo putovanje dodano'), 'alert', array(

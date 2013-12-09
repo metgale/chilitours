@@ -66,6 +66,9 @@
 				'label' => 'Objavi'
 					)
 			);
+			echo $this->Form->input('Image.0.attachment', array('type' => 'file', 'label' => 'Image'));
+			echo $this->Form->input('Image.0.model', array('type' => 'hidden', 'value' => 'Travel'));
+			
 			echo $this->BootstrapForm->hidden('id');
 			?>
 			<?php echo $this->BootstrapForm->submit(__('Uredi'), array('class' => 'btn btn-primary')); ?>
