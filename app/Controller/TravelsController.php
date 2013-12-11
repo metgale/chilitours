@@ -24,8 +24,12 @@ class TravelsController extends AppController {
 	 */
 	public function index() {
 		$this->layout = 'admin';
-		$this->Travel->recursive = 0;
-		$this->set('travels', $this->Paginator->paginate());
+		
+		$this->paginate = array(
+			'limit' => 10,
+			'order' => 'Travel.created DESC',
+		);
+		$this->set('travels', $this->paginate());
 	}
 
 	/**
@@ -60,19 +64,12 @@ class TravelsController extends AppController {
 		if ($this->request->is('post')) {
 			//$this->Travel->createWithAttachments($this->request->data);
 			if ($this->Travel->createWithAttachments($this->request->data)) {
-				$this->Session->setFlash(
-						('Novo putovanje dodano'), 'alert', array(
-					'plugin' => 'TwitterBootstrap',
-					'class' => 'alert-success'
-						)
-				);
+				$this->Session->setFlash('Putovanje kreirano', 'success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				debug($this->Travel->validationErrors);
-				$this->Session->setFlash(__('The travel could not be saved. Please, try again.'));
+				$this->Session->setFlash('Neuspješan unos putovanja', 'alert');
 			}
 		}
-
 	}
 
 	/**
@@ -89,16 +86,11 @@ class TravelsController extends AppController {
 			throw new NotFoundException(__('Invalid travel'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Travel->save($this->request->data)) {
-				$this->Session->setFlash(
-						('Putovanje uspješno izmijenjeno'), 'alert', array(
-					'plugin' => 'TwitterBootstrap',
-					'class' => 'alert-success'
-						)
-				);
+			if ($this->Travel->createWithAttachments($this->request->data)) {
+				$this->Session->setFlash('Putovanje izmijenjeno', 'success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The travel could not be saved. Please, try again.'));
+				$this->Session->setFlash('Neuspješno uređivanje putovanja', 'alert');
 			}
 		} else {
 			$options = array('conditions' => array('Travel.' . $this->Travel->primaryKey => $id));
@@ -107,6 +99,13 @@ class TravelsController extends AppController {
 		$categories = $this->Travel->Category->find('list');
 		$this->set(compact('categories'));
 		$this->set('id', $id);
+
+		$options = array(
+			'conditions' => array(
+				'foreign_key' => $id));
+
+		$images = $this->Travel->Image->find('all', $options);
+		$this->set('images', $images);
 	}
 
 	/**
@@ -121,13 +120,25 @@ class TravelsController extends AppController {
 		if (!$this->Travel->exists()) {
 			throw new NotFoundException(__('Invalid travel'));
 		}
-		$this->request->onlyAllow('post', 'delete');
 		if ($this->Travel->delete()) {
-			$this->Session->setFlash(__('The travel has been deleted.'));
+			$this->Session->setFlash('Putovanje uklonjeno', 'info');
 		} else {
-			$this->Session->setFlash(__('The travel could not be deleted. Please, try again.'));
+			$this->Session->setFlash('Neuspješno brisanje putovanja', 'alert');
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+
+	public function imageDelete($id) {
+		$this->autoRender = false;
+		$this->Travel->Image->id = $id;
+		if (!$this->Travel->Image->exists()) {
+			throw new NotFoundException(__('Invalid image'));
+		}
+		if ($this->Travel->Image->delete()) {
+			$this->Session->setFlash('Slika uklonjena', 'info');
+		} else {
+			$this->Session->setFlash('Neuspješno brisanje slike', 'alert');
+		}
 	}
 
 }

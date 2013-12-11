@@ -24,8 +24,10 @@ class CategoriesController extends AppController {
 	 */
 	public function index() {
 		$this->layout = 'admin';
-		$this->Category->recursive = 0;
-		$this->set('categories', $this->Paginator->paginate());
+		$this->paginate = array(
+			'limit' => 10
+		);
+		$this->set('categories', $this->paginate());
 	}
 
 	/**
@@ -53,15 +55,10 @@ class CategoriesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Category->create();
 			if ($this->Category->save($this->request->data)) {
-				$this->Session->setFlash(
-						('Kategorija uspješno dodana'), 'alert', array(
-					'plugin' => 'TwitterBootstrap',
-					'class' => 'alert-success'
-						)
-				);
+				$this->Session->setFlash('Kategorija kreirana', 'success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The category could not be saved. Please, try again.'));
+				$this->Session->setFlash('Neuspješan unos kategorije', 'alert');
 			}
 		}
 	}
@@ -80,20 +77,16 @@ class CategoriesController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Category->save($this->request->data)) {
-				$this->Session->setFlash(
-						('Kategorija uspješno izmijenjena'), 'alert', array(
-					'plugin' => 'TwitterBootstrap',
-					'class' => 'alert-success'
-						)
-				);
+				$this->Session->setFlash('Kategorija izmijenjena', 'success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The category could not be saved. Please, try again.'));
+				$this->Session->setFlash('Neuspješno uređivanje kategorije', 'alert');
 			}
 		} else {
 			$options = array('conditions' => array('Category.' . $this->Category->primaryKey => $id));
 			$this->request->data = $this->Category->find('first', $options);
 		}
+		$this->set('id', $id);
 	}
 
 	/**
@@ -108,11 +101,10 @@ class CategoriesController extends AppController {
 		if (!$this->Category->exists()) {
 			throw new NotFoundException(__('Invalid category'));
 		}
-		$this->request->onlyAllow('post', 'delete');
 		if ($this->Category->delete()) {
-			$this->Session->setFlash(__('The category has been deleted.'));
+				$this->Session->setFlash('Kategorija uklonjena', 'info');
 		} else {
-			$this->Session->setFlash(__('The category could not be deleted. Please, try again.'));
+				$this->Session->setFlash('Neuspješno brisanje kategorije', 'alert');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

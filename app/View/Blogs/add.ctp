@@ -5,12 +5,10 @@
 				<legend><?php echo __('Novi blog post'); ?></legend>
 				<?php
 				echo $this->BootstrapForm->input('title', array(
-					'required' => 'required',
 					'label' => 'Naslov'
 					)
 				);
 				echo $this->BootstrapForm->input('content', array(
-					'required' => 'required',
 					'label' => 'Sadržaj'
 					)
 				);

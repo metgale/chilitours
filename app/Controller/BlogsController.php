@@ -24,8 +24,11 @@ class BlogsController extends AppController {
 	 */
 	public function index() {
 		$this->layout = "admin";
-		$this->Blog->recursive = 0;
-		$this->set('blogs', $this->Paginator->paginate());
+		$this->paginate = array(
+			'limit' => 10,
+			'order' => 'Blog.created DESC',
+		);
+		$this->set('blogs', $this->paginate());
 	}
 
 	/**
@@ -53,15 +56,10 @@ class BlogsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Blog->create();
 			if ($this->Blog->save($this->request->data)) {
-				$this->Session->setFlash(
-						('Novi blog post uspješno dodan'), 'alert', array(
-					'plugin' => 'TwitterBootstrap',
-					'class' => 'alert-success'
-						)
-				);
+				$this->Session->setFlash('Blog post dodan', 'success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The blog could not be saved. Please, try again.'));
+				$this->Session->setFlash('Neuspješno dodavanje blog posta', 'alert');
 			}
 		}
 		$users = $this->Blog->User->find('list');
@@ -83,15 +81,10 @@ class BlogsController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Blog->save($this->request->data)) {
-				$this->Session->setFlash(
-						('Uspješna izmjena blog posta'), 'alert', array(
-					'plugin' => 'TwitterBootstrap',
-					'class' => 'alert-success'
-						)
-				);
+				$this->Session->setFlash('Blog post izmijenjen', 'success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The blog could not be saved. Please, try again.'));
+				$this->Session->setFlash('Neuspješna izmjena blog posta', 'alert');
 			}
 		} else {
 			$options = array('conditions' => array('Blog.' . $this->Blog->primaryKey => $id));
@@ -99,6 +92,7 @@ class BlogsController extends AppController {
 		}
 		$users = $this->Blog->User->find('list');
 		$this->set(compact('users'));
+		$this->set('id', $id);
 	}
 
 	/**
@@ -113,11 +107,10 @@ class BlogsController extends AppController {
 		if (!$this->Blog->exists()) {
 			throw new NotFoundException(__('Invalid blog'));
 		}
-		$this->request->onlyAllow('post', 'delete');
 		if ($this->Blog->delete()) {
-			$this->Session->setFlash(__('The blog has been deleted.'));
+			$this->Session->setFlash('Blog post uklonjen', 'info');
 		} else {
-			$this->Session->setFlash(__('The blog could not be deleted. Please, try again.'));
+			$this->Session->setFlash('Neuspješno brisanje blog posta', 'alert');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

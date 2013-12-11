@@ -43,3 +43,14 @@ root {
 	padding-left:25px;
 	margin-top:20px;
 }
+.images-edit img{
+	padding:6px;	
+}
+images-edit{
+	padding-bottom:20px
+}
+
+.entry-delete{
+	margin-bottom:200px;
+}
+

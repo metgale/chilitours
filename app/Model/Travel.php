@@ -112,7 +112,7 @@ class Travel extends AppModel {
 			'boolean' => array(
 				'rule' => array('boolean'),
 			//'message' => 'Your custom message here',
-			//'allowEmpty' => false,
+			'allowEmpty' => true,
 			//'required' => false,
 			//'last' => false, // Stop validation after this rule
 			//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -122,7 +122,7 @@ class Travel extends AppModel {
 			'boolean' => array(
 				'rule' => array('boolean'),
 			//'message' => 'Your custom message here',
-			//'allowEmpty' => false,
+			'allowEmpty' => true,
 			//'required' => false,
 			//'last' => false, // Stop validation after this rule
 			//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -177,6 +177,7 @@ class Travel extends AppModel {
 			'counterQuery' => ''
 		),
 		'Image' => array(
+			'dependent' => true,
 			'className' => 'Attachment',
 			'foreignKey' => 'foreign_key',
 			'conditions' => array(

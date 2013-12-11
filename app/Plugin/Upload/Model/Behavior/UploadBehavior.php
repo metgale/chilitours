@@ -24,7 +24,7 @@ class UploadBehavior extends ModelBehavior {
 
 	public $defaults = array(
 		'rootDir' => null,
-		'pathMethod' => 'primaryKey',
+		'pathMethod' => 'flat',
 		'path' => '{ROOT}webroot{DS}img{DS}travelphotos',
 		'fields' => array('dir' => 'dir', 'type' => 'type', 'size' => 'size'),
 		'mimetypes' => array(),

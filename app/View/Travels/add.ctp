@@ -64,6 +64,10 @@
 			echo $this->Form->input('Image.1.model', array('type' => 'hidden', 'value' => 'Travel'));
 			echo $this->Form->input('Image.2.attachment', array('type' => 'file', 'label' => 'Image'));
 			echo $this->Form->input('Image.2.model', array('type' => 'hidden', 'value' => 'Travel'));
+			echo $this->Form->input('Image.3.attachment', array('type' => 'file', 'label' => 'Image'));
+			echo $this->Form->input('Image.3.model', array('type' => 'hidden', 'value' => 'Travel'));
+			echo $this->Form->input('Image.4.attachment', array('type' => 'file', 'label' => 'Image'));
+			echo $this->Form->input('Image.4.model', array('type' => 'hidden', 'value' => 'Travel'));
 			?>
 			<?php echo $this->BootstrapForm->submit(__('Dodaj'), array('class' => 'btn btn-primary')); ?>
 		</fieldset>

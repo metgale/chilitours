@@ -52,15 +52,10 @@ class TermsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Term->create();
 			if ($this->Term->save($this->request->data)) {
-					$this->Session->setFlash(
-						('Novi termin dodan'), 'alert', array(
-					'plugin' => 'TwitterBootstrap',
-					'class' => 'alert-success'
-						)
-				);
+				$this->Session->setFlash('Termin dodan', 'success');
 				return $this->redirect(array('action' => 'add', $id));
 			} else {
-				$this->Session->setFlash(__('The term could not be saved. Please, try again.'));
+				$this->Session->setFlash('Neuspješno dodavanje termina', 'alert');
 			}
 		}
 		$options = array('conditions' => array('id' => $id));
@@ -90,10 +85,10 @@ class TermsController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Term->save($this->request->data)) {
-				$this->Session->setFlash(__('The term has been saved.'));
+				$this->Session->setFlash('Termin izmijenjen', 'success');
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The term could not be saved. Please, try again.'));
+				$this->Session->setFlash('Neuspješna izmjena termina', 'alert');
 			}
 		} else {
 			$options = array('conditions' => array('Term.' . $this->Term->primaryKey => $id));
@@ -117,9 +112,9 @@ class TermsController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Term->delete()) {
-			$this->Session->setFlash(__('The term has been deleted.'));
+			$this->Session->setFlash('Termin uklonjen', 'info');
 		} else {
-			$this->Session->setFlash(__('The term could not be deleted. Please, try again.'));
+			$this->Session->setFlash('Neuspješno brisanje korisnika', 'alert');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

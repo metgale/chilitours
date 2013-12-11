@@ -21,18 +21,13 @@ class UsersController extends AppController {
 	public function login() {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
-				$this->Session->setFlash(
-						('Prijava uspješna'), 'alert', array(
-					'plugin' => 'TwitterBootstrap',
-					'class' => 'alert-success'
-						)
-				);
+				$this->Session->setFlash('Uspješna prijava u sustav', 'success');
 				return $this->redirect(array(
 							'controller' => 'users',
 							'action' => 'index'
 				));
 			} else {
-				$this->Session->setFlash('Username or password is incorrect', 'default', array(), 'auth');
+				$this->Session->setFlash('Neuspješna prijava u sustav', 'alert');
 			}
 		}
 	}
@@ -83,15 +78,11 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(
-						('Novi korisnik dodan'), 'alert', array(
-					'plugin' => 'TwitterBootstrap',
-					'class' => 'alert-success'
-						)
-				);
+				$this->Session->setFlash('Korisnik kreiran', 'success');
+
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash('Neuspješno kreiranje korisnika', 'alert');
 			}
 		}
 	}
@@ -110,20 +101,17 @@ class UsersController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(
-						('Izmjena uspješna'), 'alert', array(
-					'plugin' => 'TwitterBootstrap',
-					'class' => 'alert-success'
-						)
-				);
+				$this->Session->setFlash('Korisnik izmijenjen', 'success');
+
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+				$this->Session->setFlash('Neuspješna izmjena korisnika', 'alert');
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 			$this->request->data = $this->User->find('first', $options);
 		}
+		$this->set('id', $id);
 	}
 
 	/**
@@ -138,18 +126,16 @@ class UsersController extends AppController {
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
-		$this->request->onlyAllow('post', 'delete');
 		if ($this->User->delete()) {
-			$this->Session->setFlash(__('The user has been deleted.'));
+				$this->Session->setFlash('Korisnik uklonjen', 'info');
 		} else {
-			$this->Session->setFlash(__('The user could not be deleted. Please, try again.'));
+				$this->Session->setFlash('Neuspješno brisanje korisnika', 'alert');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
-	
-	public function admin_home(){
+
+	public function admin_home() {
 		$this->layout = "admin";
-				
 	}
 
 }
