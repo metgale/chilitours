@@ -80,13 +80,14 @@ class TermsController extends AppController {
 	 * @return void
 	 */
 	public function edit($id = null) {
+		$this->layout = "admin";
 		if (!$this->Term->exists($id)) {
 			throw new NotFoundException(__('Invalid term'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Term->save($this->request->data)) {
 				$this->Session->setFlash('Termin izmijenjen', 'success');
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller' => 'travels', 'action' => 'index'));
 			} else {
 				$this->Session->setFlash('Neuspješna izmjena termina', 'alert');
 			}

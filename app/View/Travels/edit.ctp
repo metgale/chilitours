@@ -20,6 +20,16 @@
 				'label' => 'Naziv (eng)'
 					)
 			);
+			echo $this->BootstrapForm->input('short_hr', array(
+				'required' => 'required',
+				'label' => 'Kratki opis (hr)',
+				'class' => 'input-xxlarge'
+			));
+			echo $this->BootstrapForm->input('short_eng', array(
+				'required' => 'required',
+				'label' => 'Kratki opis (eng)',
+				'class' => 'input-xxlarge'
+			));
 			echo $this->BootstrapForm->input('service_hr', array(
 				'required' => 'required',
 				'label' => 'Vrsta usluge (hr)'
@@ -66,15 +76,19 @@
 			);
 			echo $this->Form->input('Image.0.attachment', array('type' => 'file', 'label' => 'Image'));
 			echo $this->Form->input('Image.0.model', array('type' => 'hidden', 'value' => 'Travel'));
+			echo $this->Form->input('Image.0.headphoto', array('label' => 'Naslovna', 'type' => 'checkbox'));
 			echo $this->Form->input('Image.1.attachment', array('type' => 'file', 'label' => 'Image'));
 			echo $this->Form->input('Image.1.model', array('type' => 'hidden', 'value' => 'Travel'));
+			echo $this->Form->input('Image.1.headphoto', array('label' => 'Naslovna', 'type' => 'checkbox'));
 			echo $this->Form->input('Image.2.attachment', array('type' => 'file', 'label' => 'Image'));
 			echo $this->Form->input('Image.2.model', array('type' => 'hidden', 'value' => 'Travel'));
+			echo $this->Form->input('Image.2.headphoto', array('label' => 'Naslovna', 'type' => 'checkbox'));
 			echo $this->Form->input('Image.3.attachment', array('type' => 'file', 'label' => 'Image'));
 			echo $this->Form->input('Image.3.model', array('type' => 'hidden', 'value' => 'Travel'));
+			echo $this->Form->input('Image.3.headphoto', array('label' => 'Naslovna', 'type' => 'checkbox'));
 			echo $this->Form->input('Image.4.attachment', array('type' => 'file', 'label' => 'Image'));
 			echo $this->Form->input('Image.4.model', array('type' => 'hidden', 'value' => 'Travel'));
-
+			echo $this->Form->input('Image.4.headphoto', array('label' => 'Naslovna', 'type' => 'checkbox'));
 			echo $this->BootstrapForm->hidden('id');
 			?>
 			<?php echo $this->BootstrapForm->submit(__('Uredi'), array('class' => 'btn btn-primary')); ?>
@@ -87,7 +101,10 @@
 			<?php foreach ($images as $image): ?>
 				<div class="span2">
 					<?php echo $this->Html->image('/img/travelphotos/thumb_' . $image['Image']['attachment']); ?>
-					<?php echo $this->Html->link('Izbriši sliku', array('controller' => 'travels', 'action' => 'imageDelete', $image['Image']['id']), array('class' => 'imageDelete')); ?>
+					<?php echo $this->Html->link('Izbriši sliku', array('controller' => 'travels', 'action' => 'imageDelete', $image['Image']['id']), array('class' => 'imageDelete')); ?> 
+					<?php if ($image['Image']['headphoto']): ?>
+						<small>(Naslovna slika)</small>
+					<?php endif; ?>
 				</div>
 			<?php endforeach; ?>
 		<?php else: ?>

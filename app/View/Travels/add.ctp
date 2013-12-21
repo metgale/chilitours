@@ -19,6 +19,16 @@
 				'required' => 'required',
 				'label' => 'Naziv (eng)'
 			));
+			echo $this->BootstrapForm->input('short_hr', array(
+				'required' => 'required',
+				'label' => 'Kratki opis (hr)',
+				'class' => 'input-xxlarge'
+			));
+			echo $this->BootstrapForm->input('short_eng', array(
+				'required' => 'required',
+				'label' => 'Kratki opis (eng)',
+				'class' => 'input-xxlarge'
+			));
 
 			echo $this->BootstrapForm->input('service_hr', array(
 				'required' => 'required',
@@ -60,14 +70,19 @@
 
 			echo $this->Form->input('Image.0.attachment', array('type' => 'file', 'label' => 'Image'));
 			echo $this->Form->input('Image.0.model', array('type' => 'hidden', 'value' => 'Travel'));
+			echo $this->Form->input('Image.0.headphoto', array('label' => 'Naslovna', 'type' => 'checkbox'));
 			echo $this->Form->input('Image.1.attachment', array('type' => 'file', 'label' => 'Image'));
 			echo $this->Form->input('Image.1.model', array('type' => 'hidden', 'value' => 'Travel'));
+			echo $this->Form->input('Image.1.headphoto', array('label' => 'Naslovna', 'type' => 'checkbox'));
 			echo $this->Form->input('Image.2.attachment', array('type' => 'file', 'label' => 'Image'));
 			echo $this->Form->input('Image.2.model', array('type' => 'hidden', 'value' => 'Travel'));
+			echo $this->Form->input('Image.2.headphoto', array('label' => 'Naslovna', 'type' => 'checkbox'));
 			echo $this->Form->input('Image.3.attachment', array('type' => 'file', 'label' => 'Image'));
 			echo $this->Form->input('Image.3.model', array('type' => 'hidden', 'value' => 'Travel'));
+			echo $this->Form->input('Image.3.headphoto', array('label' => 'Naslovna', 'type' => 'checkbox'));
 			echo $this->Form->input('Image.4.attachment', array('type' => 'file', 'label' => 'Image'));
 			echo $this->Form->input('Image.4.model', array('type' => 'hidden', 'value' => 'Travel'));
+			echo $this->Form->input('Image.4.headphoto', array('label' => 'Naslovna', 'type' => 'checkbox'));
 			?>
 			<?php echo $this->BootstrapForm->submit(__('Dodaj'), array('class' => 'btn btn-primary')); ?>
 		</fieldset>

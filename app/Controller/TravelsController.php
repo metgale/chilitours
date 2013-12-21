@@ -24,12 +24,32 @@ class TravelsController extends AppController {
 	 */
 	public function index() {
 		$this->layout = 'admin';
-		
+
 		$this->paginate = array(
 			'limit' => 10,
 			'order' => 'Travel.created DESC',
 		);
 		$this->set('travels', $this->paginate());
+	}
+
+	public function home($id = null) {
+		if (!empty($id)) {
+			$this->paginate = array(
+				'contain' => array('Image', 'Term'),
+				'limit' => 9,
+				'order' => 'Travel.created DESC',
+				'conditions' => array('Travel.category_id' => $id)
+			);
+		} else {
+			$this->paginate = array(
+			'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
+			'limit' => 9,
+			'order' => 'Travel.created DESC');
+		}
+		$this->set('travels', $this->paginate());
+		$categories = $this->Travel->Category->find('all');
+		$this->set('categories', $categories);	
+	
 	}
 
 	/**
@@ -40,14 +60,25 @@ class TravelsController extends AppController {
 	 * @return void
 	 */
 	public function view($id = null) {
-		$this->layout = 'admin';
 		if (!$this->Travel->exists($id)) {
 			throw new NotFoundException(__('Invalid travel'));
 		}
 		$options = array(
-			'contain' => array('Category'),
+			'contain' => array('Category', 'Term', 'Image' => array('order' => 'Image.headphoto DESC')),
 			'conditions' => array('Travel.' . $this->Travel->primaryKey => $id));
 		$this->set('travel', $this->Travel->find('first', $options));
+		$travel = $this->Travel->find('first', $options);
+		
+		$category = $travel['Travel']['category_id'];
+		$options = array(
+			'conditions' => array('Travel.category_id' => $category));
+		$related = $this->Travel->find('all', $options);
+		$this->set('related', $related);
+		
+		$this->loadModel('Blog');
+		$this->set('blogs', $this->Blog->find('list'));
+	
+		
 	}
 
 	/**
@@ -140,5 +171,4 @@ class TravelsController extends AppController {
 			$this->Session->setFlash('Neuspješno brisanje slike', 'alert');
 		}
 	}
-
 }

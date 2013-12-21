@@ -73,4 +73,13 @@ class PagesController extends AppController {
 			throw new NotFoundException();
 		}
 	}
+	
+	public function aboutus(){
+	}
+	public function b2b(){
+	}
+	public function chiloaza(){
+	}
+	public function contact(){	
+	}
 }

@@ -38,7 +38,7 @@
 		?>
 	</head>
 	<body>
-		<div id="container">
+		<div id="container container-admin">
 			<div id="header">
 			</div>
 			<div id="content">
@@ -48,30 +48,30 @@
 						<div class="span2">
 							<div class="navbar-vertical">
 								<ul>
-									<div class="nav">
+									<div class="nav1">
 										<h4><?php echo $this->Html->image('icons/travels-icon.png', array('class' => 'admin-icon')); ?><a href="#">Putovanja</a></h4>
-										<div class="nav-items">
+										<div class="nav-items1">
 											<li><?php echo $this->Html->image('icons/add-icon.png'); ?><?php echo $this->Html->link(__('Dodaj putovanje'), array('controller' => 'travels', 'action' => 'add')); ?></li>
 											<li><?php echo $this->Html->image('icons/list-icon.png'); ?><?php echo $this->Html->link(__('Pregled putovanja'), array('controller' => 'travels', 'action' => 'index')); ?></li>
 										</div>
 									</div>
-									<div class="nav">
+									<div class="nav1">
 										<h4><?php echo $this->Html->image('icons/categories-icon.png', array('class' => 'admin-icon')); ?><a href="#">Kategorije</a></h4>
-										<div class="nav-items">
+										<div class="nav-items1">
 											<li><?php echo $this->Html->image('icons/add-icon.png', array('alt' => 'CakePHP')); ?><?php echo $this->Html->link(__('Dodaj kategoriju'), array('controller' => 'categories', 'action' => 'add')); ?></li>
 											<li><?php echo $this->Html->image('icons/list-icon.png', array('alt' => 'CakePHP')); ?><?php echo $this->Html->link(__('Sve kategorije'), array('controller' => 'categories', 'action' => 'index')); ?></li>
 										</div>
 									</div>
-									<div class="nav">
+									<div class="nav1">
 										<h4><?php echo $this->Html->image('icons/blogs-icon.png', array('class' => 'admin-icon')); ?><a href="#">Blog</a></h4>
-										<div class="nav-items">
+										<div class="nav-items1">
 											<li><?php echo $this->Html->image('icons/add-icon.png'); ?><?php echo $this->Html->link(__('Novi blog post'), array('controller' => 'blogs', 'action' => 'add')); ?></li>
 											<li><?php echo $this->Html->image('icons/list-icon.png'); ?><?php echo $this->Html->link(__('Pregled postova'), array('controller' => 'blogs', 'action' => 'index')); ?></li>
 										</div>
 									</div>
-									<div class="nav">
+									<div class="nav1">
 										<h4><?php echo $this->Html->image('icons/users-icon.png', array('alt' => 'CakePHP', 'class' => 'admin-icon')); ?><a href="#">Korisnici</a></h4>
-										<div class="nav-items">
+										<div class="nav-items1">
 											<li><?php echo $this->Html->image('icons/add-icon.png'); ?><?php echo $this->Html->link(__('Novi korisnik'), array('controller' => 'users', 'action' => 'add')); ?> </li>
 											<li><?php echo $this->Html->image('icons/list-icon.png'); ?><?php echo $this->Html->link(__('Pregled korisnika'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 										</div>

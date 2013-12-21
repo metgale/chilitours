@@ -9,6 +9,7 @@
 					<th>Datum povratka</th>
 					<th>Cijena</th>
 					<th>Mjesto polaska</th>
+					
                 </tr>
 			</thead>
 			<tbody>
@@ -18,6 +19,7 @@
 						<td><?= $term['Term']['enddate']; ?></td>
 						<td><?= $term['Term']['price']; ?></td>
 						<td><?= $term['Term']['town']; ?></td>
+						<td><?= $this->Html->link('Uređivanje', array('controller' => 'terms', 'action' => 'edit', $term['Term']['id'])); ?></td>
 	                </tr>
 				<?php endforeach; ?>
 			</tbody>
