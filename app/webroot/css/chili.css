@@ -4,8 +4,6 @@ root {
 body{
 	padding-top:55px;
 }
-
-
 .navbar-vertical{
 	margin-top:20px;
 	border-top: 1px solid #EEE;
@@ -78,17 +76,21 @@ images-edit{
 	margin-bottom:20px;
 }
 
+/* Homepage Thumbs */
+
 .thumbnail{
 	background-color:white;
+
 }
 .thumbnail img{
 	width:250px;
 	height:150px;
+	display: block;
+	max-width: 100%;
+	margin-right: auto;
+	margin-left: auto;
 }
-.headphoto{
-	width:1200px;
-	height:400px;
-}
+
 .thumbnail{
 	height:300px;
 }
@@ -106,6 +108,14 @@ images-edit{
 	-moz-border-radius-bottomright: 4px;
 	border-bottom-right-radius: 4px;
 }
+.thumbnail:hover{
+	background-color:#EEE;
+}
+.thumbnail ul li a:hover{
+	color:red;
+}
+
+/* Side navs */
 .span3 .nav li{
 	font-size: 18px;
 	padding-bottom:2px;
@@ -132,14 +142,80 @@ images-edit{
 	outline: 0;
 }
 
-.icon-small {font-size:12px;}
-.icon-medium {font-size:22px;}
-.icon-large {font-size:42px;}
-.icon-helper {float:left; }
-.icon-ast {float:left; padding: 3px 0px;
-		   color: black;}
+
+.category-list li a:hover{
+	color:black;	
+}
+
+/* Carousel */
+.box_skitter_large{
+	margin-bottom:20px;
+	border:2px solid #EEE;
+
+}
+.box_skitter img{
+	height:295px;
+	width:865px;
+}
 
 
+
+.travelview .photo img{
+	height:400px;
+	width:700px;
+	padding-bottom:10px;
+}
+.gallery img{
+	margin-left:5px;
+	margin-top:5px;
+}
+
+.travelview h1, h2{
+	color:#E32020;
+}
+.info span{
+	font-size:22px;
+	padding-top:8px;
+}
+.navbar .brand{
+	font-family: Tahoma, sans-serif;
+}
+
+.gallery, .coverphoto, .details, .page-content{
+	background-color:white;
+	border-radius:5px;
+	margin:5px;
+	padding:15px;
+}
+.coverphoto img{
+	width:860px;
+	height:460px;
+}
+.edit td{
+	width:250px;
+}
+.pages .cont{
+	padding:5px;
+	background-color:white;
+	border-radius:5px;
+}
+.navbar .nav{
+	padding-left:40px;
+}
+
+.travelview .row .span3{
+	margin-left:0px !important;
+}
+.travelview .row .span9 h1{
+	margin-right:20px;
+}
+.logo img{
+	width:200px;
+	height:130px;
+	padding-bottom:20px;
+}
+
+/* Footer */
 
 .footer{
 	margin-bottom:0px;
@@ -198,80 +274,11 @@ images-edit{
 .footer .contact a:hover{
 	color:#E32020;
 }
-.category-list li a:hover{
-	color:black;	
-}
-.carousel-caption h3 a{
-	color:white;
-}
-.box_skitter_large{
-	margin-bottom:20px;
-	border:2px solid #EEE;
 
-}
-.box_skitter img{
-	height:295px;
-	width:865px;
-}
+.icon-small {font-size:12px;}
+.icon-medium {font-size:22px;}
+.icon-large {font-size:42px;}
+.icon-helper {float:left; }
+.icon-ast {float:left; padding: 3px 0px;
+		   color: black;}
 
-
-.thumbnail:hover{
-	opacity:0.7;
-}
-.thumbnail ul li a:hover{
-	color:red;
-}
-.travelview .photo img{
-	height:400px;
-	width:700px;
-	padding-bottom:10px;
-}
-.gallery img{
-	margin-left:5px;
-	margin-top:5px;
-}
-
-.travelview h1, h2{
-	color:#E32020;
-}
-.info span{
-	font-size:22px;
-	padding-top:8px;
-}
-.navbar .brand{
-	font-family: Tahoma, sans-serif;
-}
-
-.gallery, .coverphoto, .details, .page-content{
-	background-color:white;
-	border-radius:5px;
-	margin:5px;
-	padding:15px;
-}
-.coverphoto img{
-	width:860px;
-	height:460px;
-}
-.edit td{
-	width:250px;
-}
-.pages .cont{
-	padding:5px;
-	background-color:white;
-	border-radius:5px;
-}
-.navbar .nav{
-	padding-left:40px;
-}
-
-.travelview .row .span3{
-	margin-left:0px !important;
-}
-.travelview .row .span9 h1{
-	margin-right:20px;
-}
-.logo img{
-	width:200px;
-	height:130px;
-	padding-bottom:20px;
-}

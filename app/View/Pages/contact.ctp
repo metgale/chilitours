@@ -1,21 +1,8 @@
-<div class="row pages">
-	<div class="span3">
-		<a class="btn btn-large btn-primary" href="#">Kreiraj putovanje</a>  
-		<hr>
-		<a class="btn btn-large btn-danger" href="#">Posjeti naš Facebook</a>	
-		<hr>
-	</div>
-
-	<div class="span9 pull-right">
-		<h1>Kontakt</h1>
-		<hr>
-		<div class="cont">
-			<p>
-			</p>
-
+<div class = "pageview">
+	<div class="row">
+		<?php echo $this->Element('cta'); ?>
+		<div class="span9 pull-right">
+			<h1>Kontakt</h1>			
 		</div>
-	</div>  
+	</div>
 </div>
-
-
-

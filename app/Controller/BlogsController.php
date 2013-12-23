@@ -22,6 +22,11 @@ class BlogsController extends AppController {
 	 *
 	 * @return void
 	 */
+	
+	public function home(){
+		
+	}
+	
 	public function index() {
 		$this->layout = "admin";
 		$this->paginate = array(

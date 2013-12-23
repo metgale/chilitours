@@ -35,21 +35,27 @@ class TravelsController extends AppController {
 	public function home($id = null) {
 		if (!empty($id)) {
 			$this->paginate = array(
-				'contain' => array('Image', 'Term'),
+				'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
 				'limit' => 9,
+				'conditions' => array('Travel.published' => 1, 'Travel.category_id' => $id),
 				'order' => 'Travel.created DESC',
-				'conditions' => array('Travel.category_id' => $id)
 			);
 		} else {
 			$this->paginate = array(
-			'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
-			'limit' => 9,
-			'order' => 'Travel.created DESC');
+				'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
+				'limit' => 9,
+				'conditions' => array('Travel.published' => 1),
+				'order' => 'Travel.created DESC');
 		}
 		$this->set('travels', $this->paginate());
 		$categories = $this->Travel->Category->find('all');
-		$this->set('categories', $categories);	
-	
+		$this->set('categories', $categories);
+
+		$featured = $this->Travel->find('all', array(
+			'conditions' => array('Travel.featured' => 1, 'Travel.published' => 1),
+			'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1))),
+			'order' => 'Travel.created DESC'));
+		$this->set('featuredtravels', $featured);		
 	}
 
 	/**
@@ -68,17 +74,15 @@ class TravelsController extends AppController {
 			'conditions' => array('Travel.' . $this->Travel->primaryKey => $id));
 		$this->set('travel', $this->Travel->find('first', $options));
 		$travel = $this->Travel->find('first', $options);
-		
+
 		$category = $travel['Travel']['category_id'];
 		$options = array(
 			'conditions' => array('Travel.category_id' => $category));
 		$related = $this->Travel->find('all', $options);
 		$this->set('related', $related);
-		
+
 		$this->loadModel('Blog');
 		$this->set('blogs', $this->Blog->find('list'));
-	
-		
 	}
 
 	/**
@@ -171,4 +175,5 @@ class TravelsController extends AppController {
 			$this->Session->setFlash('Neuspješno brisanje slike', 'alert');
 		}
 	}
+
 }

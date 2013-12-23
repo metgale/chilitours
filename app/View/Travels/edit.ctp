@@ -70,7 +70,7 @@
 				'label' => 'Istaknuto putovanje'
 					)
 			);
-			echo $this->BootstrapForm->input('featured', array(
+			echo $this->BootstrapForm->input('published', array(
 				'label' => 'Objavi'
 					)
 			);

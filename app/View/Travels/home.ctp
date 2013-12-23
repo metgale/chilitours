@@ -1,20 +1,15 @@
 <div class='wrapper'>
 	<div class='row'>
+		<?php echo $this->Element('cta'); ?>
 		<div class="box_skitter box_skitter_large pull-right span9">
 			<ul>
-				<?php foreach ($travels as $travel): ?>
+				<?php foreach ($featuredtravels as $travel): ?>
 					<li>
 						<a href="#cut"><?php echo $this->Html->image('/img/travelphotos/' . $travel['Image'][0]['attachment']); ?></a>
 					</li>
 				<?php endforeach; ?>
 			</ul>
 		</div>
-		<div class='span3 logo' style='margin-left:0px;'>
-			<?php echo $this->Html->image('/img/original.png', array('alt' => 'altText'), array('style' => 'margin-bottom:30px')); ?>
-			<a href='#' class='btn btn-large btn-primary' style='margin-bottom:5px; width:170px; height:20px;'>Kreiraj putovanje</a>
-			<a href='#' class='btn btn-large btn-primary' style='margin-bottom:5px; width:170px; height:20px;'>Posjeti naš Facebook</a>
-		</div>
-
 	</div>
 	<div class="row home">
 		<div class="span3 category-list">
@@ -25,43 +20,32 @@
 					<?php foreach ($categories as $category): ?>
 						<li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory')); ?></li>
 					<?php endforeach; ?>
-					<?php foreach ($categories as $category): ?>
-						<li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory')); ?></li>
-					<?php endforeach; ?>
-					<?php foreach ($categories as $category): ?>
-						<li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory')); ?></li>
-					<?php endforeach; ?>
-					<?php foreach ($categories as $category): ?>
-						<li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory')); ?></li>
-					<?php endforeach; ?>
 				</ul>
 			</div>
 		</div>
-		<div class="span9">
+		<div class="span9 pull-right">
 			<h1>Aktualne ponude</h1>
 			<hr>
 			<ul class="thumbnails">
 				<?php foreach ($travels as $travel):; ?>
+
 					<li class="span3">
+						<a href="/travels/view/<?php echo $travel['Travel']['id']; ?>">
+							<div class="thumbnail">
+								<span>Od <?php
+									foreach ($travel['Term'] as $term) {
+										echo $term['price'];
+									}
+									?></span>
 
-						<div class="thumbnail">
-							<span>Od <?php
-								foreach ($travel['Term'] as $term) {
-									echo $term['price'];
-								}
-								?></span>
-							<?php foreach ($travel['Image'] as $image): ?>
-								<?php if ($image['headphoto'] == TRUE): ?>
+								<?php foreach ($travel['Image'] as $image): ?>
 									<?php echo $this->Html->image('/img/travelphotos/' . $image['attachment'], array('class' => 'homephotos')); ?>
-								<?php endif; ?>
-							<?php endforeach; ?>
-							<div class='caption'>
-								<h3><?php echo $this->Html->link($travel['Travel']['name_hr'], array('action' => 'view', $travel['Travel']['id'])); ?></h3>
-								<p><?php echo $this->Text->excerpt($travel['Travel']['short_hr'], 'method', 95, '...'); ?></p>
+								<?php endforeach; ?>
+								<div class='caption'>
+									<h3><?php echo $this->Html->link($travel['Travel']['name_hr'], array('action' => 'view', $travel['Travel']['id'])); ?></h3>
+									<p><?php echo $this->Text->excerpt($travel['Travel']['short_hr'], 'method', 95, '...'); ?></p>
+								</div>
 							</div>
-
-						</div>
-
 					</li>
 
 				<?php endforeach; ?>

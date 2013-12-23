@@ -1,10 +1,6 @@
 <div class='travelview'>
 	<div class="row">
-		<div class='span3 logo'>
-			<?php echo $this->Html->image('/img/original.png', array('alt' => 'altText'), array('style' => 'margin-bottom:30px')); ?>
-			<a href='#' class='btn btn-large btn-primary' style='margin-bottom:5px; width:170px; height:20px;'>Kreiraj putovanje</a>
-			<a href='#' class='btn btn-large btn-primary' style='margin-bottom:5px; width:170px; height:20px;'>Posjeti naš Facebook</a>
-		</div>
+		<?php echo $this->Element('cta'); ?>
 		<div class="span9 pull-right">
 			<h1> <?php echo $travel['Travel']['name_hr']; ?></h1>
 		</div>
@@ -17,7 +13,6 @@
 	</div>
 
 	<div class="row">
-
 		<div class="details span9 pull-right">
 			<table class="table table-hover">
 				<thead>
@@ -52,7 +47,7 @@
 			<div class="well" style="padding: 8px 0;">
 				<ul class="nav nav-list">
 					<li class="nav-header">Posljednji blog postovi</li>
-					<?php foreach ($blogs as $id=>$name): ?>
+					<?php foreach ($blogs as $id => $name): ?>
 						<li><?php echo $this->Html->link($name, array('controller' => 'blogs', 'action' => 'view', $id)); ?></li>
 					<?php endforeach; ?>
 				</ul>

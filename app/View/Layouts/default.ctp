@@ -13,6 +13,7 @@
 		<script type="text/javascript" src="/js/jquery.animate-colors-min.js"></script>
 		<script type="text/javascript" src="/js/jquery.skitter.min.js"></script>
 		<script type="text/javascript" src="/js/lightbox-2.6.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.collapse.js"></script>
 
 
 		<?php
@@ -49,15 +50,18 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
-					<a class="brand" href="../">Chili Tours</a>
+					<a class="brand" href="/travels/home">Chili Tours</a>
 
 					<div class="nav-collapse collapse" id="main-menu">
 						<ul class="nav" id="main-menu">
-							<li><a href="#">O nama</a></li>
-							<li><a href="#">B2B</a></li>
-							<li><a href="#">Chili Oaza</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Kontakt</a></li>
+							<li><a href="/pages/aboutus">O nama</a></li>
+							<li><a href="/pages/b2b">B2B</a></li>
+							<li><a href="/pages/chilioaza">Chili Oaza</a></li>
+							<li><a href="/blogs/home">Blog</a></li>
+							<li><a href="/pages/contact">Kontakt</a></li>
+						</ul>
+						<ul class="nav pull-right">
+							<li><a href="/pages/contact">Tel: +385 01 333 555</a></li>
 						</ul>
 					</div>
 				</div>
