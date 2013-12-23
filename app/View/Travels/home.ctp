@@ -5,7 +5,8 @@
 			<ul>
 				<?php foreach ($featuredtravels as $travel): ?>
 					<li>
-						<a href="#cut"><?php echo $this->Html->image('/img/travelphotos/' . $travel['Image'][0]['attachment']); ?></a>
+						<a href="/travels/view/<?php echo $travel['Travel']['id'];?>"><?php echo $this->Html->image('/img/travelphotos/' . $travel['Image'][0]['attachment']); ?></a>
+						<div class="label_text pull-right"><p><?php echo $this->Html->link($travel['Travel']['name_hr'], array('action' => 'view', $travel['Travel']['id']));?></p></div>
 					</li>
 				<?php endforeach; ?>
 			</ul>

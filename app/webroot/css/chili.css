@@ -150,15 +150,16 @@ images-edit{
 /* Carousel */
 .box_skitter_large{
 	margin-bottom:20px;
-	border:2px solid #EEE;
-
 }
 .box_skitter img{
-	height:295px;
+	height:315px;
 	width:865px;
 }
+.box_skitter .label_skitter a{
+	color:white;
+}
 
-
+/* Travel View */
 
 .travelview .photo img{
 	height:400px;

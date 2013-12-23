@@ -11,7 +11,7 @@
 
 		<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
 		<script type="text/javascript" src="/js/jquery.animate-colors-min.js"></script>
-		<script type="text/javascript" src="/js/jquery.skitter.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.skitter.js"></script>
 		<script type="text/javascript" src="/js/lightbox-2.6.min.js"></script>
 		<script type="text/javascript" src="/js/jquery.collapse.js"></script>
 

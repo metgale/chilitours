@@ -30,10 +30,10 @@
 		velocity: 				1,
 
 		// Interval between transitions
-		interval: 				2500, 
+		interval: 				4000, 
 
 		// Default animation
-		animation: 				'',
+		animation: 				'cut',
 
 		// Numbers display
 		numbers: 				true,
