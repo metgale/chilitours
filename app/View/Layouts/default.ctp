@@ -61,7 +61,7 @@
 							<li><a href="/pages/contact">Kontakt</a></li>
 						</ul>
 						<ul class="nav pull-right">
-							<li><a href="/pages/contact">Tel: +385 01 333 555</a></li>
+							<li><a href="/pages/contact" style="font-size:20px;">Tel: 01 333 555</a></li>
 						</ul>
 					</div>
 				</div>
@@ -77,7 +77,7 @@
 		<div class="footer">
 			<div class="container">
 				<div class="row">
-					<div class="span4">
+					<div class="span3">
 						<div class="fwidget">
 							<div class="contact">
 								<h4>Kontaktirajte nas</h4>
@@ -91,9 +91,16 @@
 							</div>
 						</div>
 					</div>
-
-
-					<div class="span4">
+					<div class="span3">
+						<div class="contact">
+							<h4>Radno vrijeme</h4>
+							<hr>
+							<h5>Pon-Pet 8.00 - 19.00</h5>
+							<hr>
+							<h5>Subota 9.00 - 13.00</h5>
+						</div>
+					</div>					
+					<div class="span3">
 						<div class="categories">
 							<h4>Site map</h4>
 							<hr>
@@ -105,7 +112,7 @@
 							<a href="#">Kontakt</a><br>
 						</div>
 					</div>
-					<div class="span4">
+					<div class="span3">
 						<div class="categories">
 							<h4>Info</h4>
 							<hr>
@@ -113,7 +120,7 @@
 							<a href="#">Načini plaćanja</a><br>
 						</div>
 					</div>
-
+					
 				</div>
 			</div>
 		</div>

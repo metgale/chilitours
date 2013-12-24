@@ -6,12 +6,10 @@
 		</div>
 		<div class="gallery span9 pull-right">
 			<?php foreach ($travel['Image'] as $image): ?>
-				<a href="/img/travelphotos/<?php echo $image['attachment'] ?>" data-lightbox="roadtrip"><?php echo $this->Html->image('/img/travelphotos/thumb_' . $image['attachment']); ?></a>
+				<a href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="roadtrip"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment']); ?></a>
 			<?php endforeach; ?>
 		</div>
-
 	</div>
-
 	<div class="row">
 		<div class="details span9 pull-right">
 			<table class="table table-hover">
@@ -79,6 +77,5 @@
 			<hr>
 			<?php echo $travel['Travel']['program_hr']; ?>
 		</div>
-
 	</div>
 </div>

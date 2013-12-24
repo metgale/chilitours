@@ -100,8 +100,8 @@
 		<?php if (!empty($images)): ?> 
 			<?php foreach ($images as $image): ?>
 				<div class="span2">
-					<?php echo $this->Html->image('/img/travelphotos/thumb_' . $image['Image']['attachment']); ?>
-					<?php echo $this->Html->link('Izbriši sliku', array('controller' => 'travels', 'action' => 'imageDelete', $image['Image']['id']), array('class' => 'imageDelete')); ?> 
+					<?php echo $this->Html->image('/img/travelphotos/' . $image['Image']['id'] . '/thumb_' . $image['Image']['attachment']); ?>
+					<?php echo $this->Html->link('Izbriši sliku', array('controller' => 'travels', 'action' => 'imageDelete', $image['Image']['id']), array('class' => 'imageDelete')); ?>
 					<?php if ($image['Image']['headphoto']): ?>
 						<small>(Naslovna slika)</small>
 					<?php endif; ?>
@@ -112,7 +112,7 @@
 		<?php endif; ?>
 	</div>
 	<div class="entry-delete">
-		<legend>Brisanje putovanja <small>(PAŽNJA. Klikom na tipku putovanje će se skupa sa pripadajućim slikama nepovratno izbrisati iz sustava)</small></legend>
-		<?php echo $this->Html->link('Izbriši putovanje', array('controller' => 'travels', 'action' => 'delete', $id), array('class' => 'btn btn-danger')); ?>
+		<legend>Brisanje putovanja <small>(PAŽNJA. Klikom na link izbriši putovanje će se skupa sa pripadajućim slikama nepovratno izbrisati iz sustava)</small></legend>
+		<?php echo $this->Form->postLink(__('Izbriši putovanje'), array('action' => 'delete', $this->Form->value('Travel.id')), null, __('Da li ste sigurni da želite izbrisati putovanje', $this->Form->value('Travel.id'))); ?>
 	</div>
 </div>

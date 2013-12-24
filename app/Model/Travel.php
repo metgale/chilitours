@@ -166,7 +166,7 @@ class Travel extends AppModel {
 		'Term' => array(
 			'className' => 'Term',
 			'foreignKey' => 'travel_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',

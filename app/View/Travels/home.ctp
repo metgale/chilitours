@@ -5,7 +5,7 @@
 			<ul>
 				<?php foreach ($featuredtravels as $travel): ?>
 					<li>
-						<a href="/travels/view/<?php echo $travel['Travel']['id'];?>"><?php echo $this->Html->image('/img/travelphotos/' . $travel['Image'][0]['attachment']); ?></a>
+						<a href="/travels/view/<?php echo $travel['Travel']['id'];?>"><?php echo $this->Html->image('/img/travelphotos/' . $travel['Image'][0]['id'] .'/'. $travel['Image'][0]['attachment']); ?></a>
 						<div class="label_text pull-right"><p><?php echo $this->Html->link($travel['Travel']['name_hr'], array('action' => 'view', $travel['Travel']['id']));?></p></div>
 					</li>
 				<?php endforeach; ?>
@@ -40,7 +40,7 @@
 									?></span>
 
 								<?php foreach ($travel['Image'] as $image): ?>
-									<?php echo $this->Html->image('/img/travelphotos/' . $image['attachment'], array('class' => 'homephotos')); ?>
+									<?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/' . $image['attachment'], array('class' => 'homephotos')); ?>
 								<?php endforeach; ?>
 								<div class='caption'>
 									<h3><?php echo $this->Html->link($travel['Travel']['name_hr'], array('action' => 'view', $travel['Travel']['id'])); ?></h3>

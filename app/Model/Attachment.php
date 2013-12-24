@@ -14,7 +14,7 @@ class Attachment extends AppModel {
 	public $belongsTo = array(
 		'Travel' => array(
 			'className' => 'Travel',
-			'foreignKey' => 'foreign_key'
+			'foreignKey' => 'foreign_key',
 		)
 	);
 

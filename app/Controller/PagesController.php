@@ -90,8 +90,11 @@ class PagesController extends AppController {
 	public function contact() {
 		
 	}
-	
-	public function usertravel(){
+
+	public function usertravel() {
+		
+	}
+	public function createtravel(){
 		
 	}
 }
