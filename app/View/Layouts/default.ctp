@@ -58,7 +58,7 @@
 							<li><a href="/pages/b2b">B2B</a></li>
 							<li><a href="/pages/chilioaza">Chili Oaza</a></li>
 							<li><a href="/blogs/home">Blog</a></li>
-							<li><a href="/pages/contact">Kontakt</a></li>
+							<li><a href="/contacts/contact">Kontakt</a></li>
 						</ul>
 						<ul class="nav pull-right">
 							<li><a href="/pages/contact" style="font-size:20px;">Tel: 01 333 555</a></li>
