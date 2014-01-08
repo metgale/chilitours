@@ -1,6 +1,6 @@
 <div class = "pageview">
     <div class="row">
-        <?php echo $this->Element('cta'); ?>
+        <?php echo $this->Element('logo'); ?>
         <div class="span9 pull-right">
             <h1>Kontakt</h1>
             <hr>
@@ -23,14 +23,14 @@
             <form class="well span8" method="post" action="contact">
                 <div class="row">
                     <div class="span3">
-                        <label>Ime</label> <input class="span3"  type="text">
-                        <label>Prezime</label><input class="span3"  type="text">
-                        <label>Email Adresa</label> <input class="span3"  type="text"> 
+                        <label>Ime</label> <input class="span3" name="ime" required="required" type="text">
+                        <label>Prezime</label><input class="span3" name="prezime" required="required" type="text">
+                        <label>Email Adresa</label> <input class="span3" name="email" required="required" type="email"> 
                     </div>
 
                     <div class="span5">
                         <label>Poruka</label> 
-                        <textarea class="input-xlarge span5" id="message" name="message"
+                        <textarea class="input-xlarge span5" id="message" name="message" required="required" type="text"
                                   rows="10">
                         </textarea>
                     </div>

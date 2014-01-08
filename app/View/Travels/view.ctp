@@ -1,7 +1,48 @@
 <div class='travelview'>
     <div class="row">
-        <?php echo $this->Element('cta'); ?>
-        <h1> <?php echo $travel['Travel']['name_hr']; ?></h1>
+        <?php echo $this->Element('logo'); ?>
+        <h1><p><?php echo $travel['Travel']['name_hr']; ?>  <a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Rezerviraj putovanje</a></p> </h1>
+
+
+
+        <!-- Modal -->
+        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Rezervacija</h3>
+            </div>
+
+            <h1><?php echo $travel['Travel']['name_hr']; ?></h1>
+            <hr>
+            <div span8>
+
+                <div class="modal-gallery">
+                    <?php foreach ($travel['Image'] as $image): ?>
+                        <a href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="roadtrip"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment']); ?></a>
+                    <?php endforeach; ?>
+                </div>
+                <form class="well" method="post" action="/contacts/reservation">
+
+                    <label>Termin</label><select>
+                        <?php foreach ($travel['Term'] as $term): ?>
+                            <option><?php echo $term['startdate']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <label>Ime</label> <input class="span3" name="ime" type="text">
+                    <label>Prezime</label><input class="span3" name="prezime" type="text">
+                    <label>Email Adresa</label> <input class="span3" name="email" type="text"> 
+                    <label>Broj osoba (broj djece do 12 godina)</label> <input class="span3" name="Broj Osoba" placeholder="Npr. Pet (jedno)" type="text"> 
+                    <label>Dodatne informacije</label> 
+                    <textarea class="input-large span5" id="message" name="message"
+                              rows="3">
+                    </textarea>
+
+                    <button class="btn btn-primary" type="submit" >Rezerviraj</button>
+                </form>
+
+
+            </div>
+        </div>
 
         <div class="gallery span9 pull-right">
             <?php foreach ($travel['Image'] as $image): ?>
@@ -24,13 +65,11 @@
                         <td><img src="/img/icons/<?php echo $travel['Travel']['accomodation']; ?>.png"></td>
                         <td><?php echo $travel['Travel']['transport_hr']; ?></td>
                         <td><?php echo $travel['Travel']['service_hr']; ?></td>
-
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
     <div class="row">
         <div class="span3 category-list">
             <div class="well" style="padding: 8px 0;">
@@ -50,6 +89,7 @@
                 </ul>
             </div>
         </div>
+
         <div class="page-content span9 pull-right">
             <h2> Termini</h2>
             <table class="table table-hover">

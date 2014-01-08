@@ -1,7 +1,6 @@
 <?php
 
 App::uses('AppController', 'Controller');
-	App::uses('CakeEmail', 'Network/Email');
 
 /**
  * Travels Controller
@@ -177,12 +176,4 @@ class TravelsController extends AppController {
 			$this->Session->setFlash('Neuspješno brisanje slike', 'alert');
 		}
 	}
-	
-	public function sendMail() {
-		$Email = new CakeEmail('default');
-		$Email->to('rezervacije@chilitours.hr')
-				->subject('test')
-				->send('test');
-	}
-
 }

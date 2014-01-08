@@ -11,12 +11,6 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 
 	public $components = array('Paginator');
-
-	public function beforeFilter() {
-		parent::beforeFilter();
-		$this->Auth->allow('add');
-	}
-
 	//login method
 	public function login() {
 		if ($this->request->is('post')) {
