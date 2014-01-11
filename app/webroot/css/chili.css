@@ -85,7 +85,13 @@ images-edit{
 
 /*Modal*/
 
+#myModal form{
+    overflow-y:auto;
+    max-height: 600px;
+
+}
 #myModal{
+    top:5% !important;
     padding:15px;
 }
 #myModal img{
@@ -143,10 +149,10 @@ images-edit{
 }
 
 /* Side navs */
-.category-list li a:hover{
+.left-content li a:hover{
     color:black;	
 }
-.category-list{
+.left-content{
     margin-left:0px !important;
 }
 .span3 .nav li{

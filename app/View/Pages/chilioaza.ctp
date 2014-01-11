@@ -1,9 +1,11 @@
 <div class = "pageview">
-	<div class="row">
-		<?php echo $this->Element('logo'); ?>
-		<div class="span9 pull-right">
-			<h1>Chili Oaza</h1>			
-		</div>
-	</div>
+    <div class="row">
+        <div class="span3 left-content">
+            <?php echo $this->Element('logo'); ?>
+        </div>
+        <div class="span9 pull-right">
+            <h2>Chili Oaza</h2>			
+        </div>
+    </div>
 
 </div>

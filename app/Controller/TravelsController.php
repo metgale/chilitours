@@ -37,14 +37,13 @@ class TravelsController extends AppController {
 		if (!empty($id)) {
 			$this->paginate = array(
 				'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
-				'limit' => 9,
 				'conditions' => array('Travel.published' => 1, 'Travel.category_id' => $id),
 				'order' => 'Travel.created DESC',
 			);
 		} else {
 			$this->paginate = array(
 				'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
-				'limit' => 9,
+
 				'conditions' => array('Travel.published' => 1),
 				'order' => 'Travel.created DESC');
 		}

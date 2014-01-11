@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
     <head>
         <?php echo $this->Html->charset(); ?>
@@ -72,7 +72,7 @@
                             <li><a href="/contacts/contact">Kontakt</a></li>
                         </ul>
                         <ul class="nav pull-right">
-                            <li><a href="/pages/contact" style="font-size:20px;">Tel: 01 333 555</a></li>
+                            <li><a href="/pages/contact" style="font-size:20px;">Tel: 01 483 98 54</a></li>
                         </ul>
                     </div>
                 </div>
@@ -93,9 +93,9 @@
                             <div class="contact">
                                 <h4>Kontaktirajte nas</h4>
                                 <hr>
-                                <h5> <i class="icon-home"></i> Ulica Petra Preradovića 4</h5>
+                                <h5> <i class="icon-home"></i> Augusta Šenoe 8</h5>
                                 <hr>
-                                <h5><i class="icon-bell"></i> +385 01 333 555</h5>
+                                <h5><i class="icon-bell"></i> +385 01 483 98 54</h5>
                                 <hr>
                                 <i class="icon-envelope"></i> <a href="#">  info@chilitours.hr</a>
                                 <hr>
@@ -106,7 +106,7 @@
                         <div class="contact">
                             <h4>Radno vrijeme</h4>
                             <hr>
-                            <h5>Pon-Pet 8.00 - 19.00</h5>
+                            <h5>Pon-Pet 9.00 - 17.00</h5>
                             <hr>
                             <h5>Subota 9.00 - 13.00</h5>
                         </div>
@@ -115,12 +115,12 @@
                         <div class="categories">
                             <h4>Site map</h4>
                             <hr>
-                            <a href="#">Početna</a><br>
-                            <a href="#">O nama</a><br>
-                            <a href="#">B2B</a><br>
-                            <a href="#">Chili Oaza</a><br>
-                            <a href="#">Blog</a><br>
-                            <a href="#">Kontakt</a><br>
+                            <a href="/">Početna</a><br>
+                            <a href="/pages/aboutus">O nama</a><br>
+                            <a href="/pages/b2b">B2B</a><br>
+                            <a href="/pages/chilioaza">Chili Oaza</a><br>
+                            <a href="/blogs/home">Blog</a><br>
+                            <a href="/contacts/contact">Kontakt</a><br>
                         </div>
                     </div>
                     <div class="span3">

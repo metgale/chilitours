@@ -1,15 +1,18 @@
 <div class = "pageview">
     <div class="row">
-        <?php echo $this->Element('logo'); ?>
+        <div class="span3 left-content"> 
+            <?php echo $this->Element('logo'); ?>
+        </div>
         <div class="span9 pull-right">
-            <h1>Kreiraj Putovanje</h1>
+            <h2>Kreiraj Putovanje</h2>
             <hr>
             <div class="container">
                 <form class="well span8" method="post" action="travelcreate">
                     <label>Ime i prezime</label> <input class="span3" required="required" name="Ime i Prezime" type="text"> 
                     <label>Email Adresa</label> <input class="span3"  required="required" name="Email Adresa" type="email"> 
                     <label>Destinacija</label> <input class="span3"   required="required" name="Destinacija"  type="text"> 
-                    <label>Broj osoba (broj djece do 12 godina)</label> <input class="span3" name="Broj Osoba" placeholder="Npr. Pet (jedno)" type="text"> 
+                    <label>Broj odraslih osoba</label> <input class="span3" name="Broj Osoba"  type="text"> 
+                    <label>Broj djece (do 12 godina)</label> <input class="span3" name="Broj Osoba"  type="text">
                     <label>Budžet</label> <input class="span3" name="budžet" placeholder="Npr. Do 1000 KN" type="text"> 
                     <label>Datum polaska</label>
                     <input type="date" name="Datum polaska">
