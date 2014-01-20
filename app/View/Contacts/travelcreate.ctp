@@ -1,3 +1,10 @@
+<?php
+$this->set('title_for_layout', 'Kreiraj svoje putovanje | Chilitours.hr');
+echo $this->Html->meta(
+        'description',
+        'Kreirajte vlastito putovanje. Destinacija i datum polaska po Vašem izboru. Chili tours turistička agencija omogućava Vam kreiranje avanture po svom ukusu.'
+);
+?>
 <div class = "pageview">
     <div class="row">
         <div class="span3 left-content"> 

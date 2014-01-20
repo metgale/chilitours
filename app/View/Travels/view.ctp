@@ -1,45 +1,46 @@
-<div class='travelview'>
+<?php $this->set('title_for_layout', $travel['Travel']['name_hr'] . ' | Chilitours.hr'); ?>
 
+<div class='travelview'>
     <div class="row">
         <div class="span3 left-content">
             <?php echo $this->Element('logo'); ?>
         </div>
-        <h2><p><?php echo $travel['Travel']['name_hr']; ?>  <a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Rezerviraj putovanje</a></p> </h2>
-
-
-
+        <div class="span9">
+        </div>
         <!-- Modal -->
         <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>  
             <h2><?php echo $travel['Travel']['name_hr']; ?></h2>
-  
-                <div class="modal-gallery">
-                    <?php foreach ($travel['Image'] as $image): ?>
-                        <a href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="roadtrip"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment']); ?></a>
-                    <?php endforeach; ?>
-                </div>
-                <form class="well" method="post" action="/contacts/reservation">
-                    <label>Termin</label><select>
-                        <?php foreach ($travel['Term'] as $term): ?>
-                            <option><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                    <label>Ime</label> <input class="span3" name="ime" type="text">
-                    <label>Prezime</label><input class="span3" name="prezime" type="text">
-                    <label>Email Adresa</label> <input class="span3" name="email" type="text"> 
-                    <label>Broj odraslih osoba</label> <input class="span3" name="Broj Osoba"  type="text"> 
-                    <label>Broj djece (do 12 godina)</label> <input class="span3" name="Broj Osoba"  type="text">
-                    <label>Dodatne informacije</label> 
-                    <textarea class="input-large span5" id="message" name="message"
-                              rows="3">
-                    </textarea>
 
-                    <button class="btn btn-primary" type="submit" >Rezerviraj</button>
-                </form>
+            <div class="modal-gallery">
+                <?php foreach ($travel['Image'] as $image): ?>
+                    <a href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="roadtrip"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment']); ?></a>
+                <?php endforeach; ?>
+            </div>
+            <form class="well" method="post" action="/contacts/reservation">
+                <label>Termin</label><select>
+                    <?php foreach ($travel['Term'] as $term): ?>
+                        <option><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <label>Ime</label> <input class="span3" name="ime" type="text">
+                <label>Prezime</label><input class="span3" name="prezime" type="text">
+                <label>Email Adresa</label> <input class="span3" name="email" type="text"> 
+                <label>Broj odraslih osoba</label> <input class="span3" name="Broj Osoba"  type="text"> 
+                <label>Broj djece (do 12 godina)</label> <input class="span3" name="Broj Osoba"  type="text">
+                <label>Dodatne informacije</label> 
+                <textarea class="input-large span5" id="message" name="message"
+                          rows="3">
+                </textarea>
+
+                <button class="btn btn-primary" type="submit" >Rezerviraj</button>
+            </form>
 
         </div>
 
         <div class="gallery span9 pull-right">
+                        <h2><p><?php echo $travel['Travel']['name_hr']; ?><a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Rezerviraj putovanje</a></p> </h2>
+                        <hr>
             <?php foreach ($travel['Image'] as $image): ?>
                 <a href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="roadtrip"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment']); ?></a>
             <?php endforeach; ?>

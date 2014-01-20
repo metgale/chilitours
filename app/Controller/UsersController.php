@@ -10,6 +10,7 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
+
 	public $components = array('Paginator');
 	//login method
 	public function login() {
@@ -21,7 +22,7 @@ class UsersController extends AppController {
 							'action' => 'index'
 				));
 			} else {
-				$this->Session->setFlash('Neuspješna prijava u sustav', 'alert');
+				$this->Session->setFlash('Neuspješna prijava u sustav', 'error');
 			}
 		}
 	}
@@ -121,12 +122,13 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->User->delete()) {
-				$this->Session->setFlash('Korisnik uklonjen', 'info');
+			$this->Session->setFlash('Korisnik uklonjen', 'info');
 		} else {
-				$this->Session->setFlash('Neuspješno brisanje korisnika', 'alert');
+			$this->Session->setFlash('Neuspješno brisanje korisnika', 'alert');
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
 
 	public function admin_home() {
 		$this->layout = "admin";

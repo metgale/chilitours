@@ -9,6 +9,9 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class TravelsController extends AppController {
+    public function beforeFilter() {
+        $this->Auth->allow('view', 'home'); 
+    }
 
 	/**
 	 * Components
@@ -160,7 +163,7 @@ class TravelsController extends AppController {
 		} else {
 			$this->Session->setFlash('Neuspješno brisanje putovanja', 'alert');
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index')); 
 	}
 
 	public function imageDelete($id) {

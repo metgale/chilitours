@@ -20,7 +20,7 @@
 	</div>
 	<div class="entry-delete">
 		<legend>Brisanje korisnika <small>(PAŽNJA. Klikom na tipku korisnik će se nepovratno izbrisati iz sustava)</small></legend>
-		<?php echo $this->Html->link('Izbriši korisnika', array('controller' => 'users', 'action' => 'delete', $id), array('class' => 'btn btn-danger')); ?>
+		<?php echo $this->Form->postLink(__('Izbriši korisnika'), array('action' => 'delete', $this->Form->value('User.id')), null, __('Da li ste sigurni da želite izbrisati korisnika', $this->Form->value('User.id'))); ?>
 	</div>
 
 </div>

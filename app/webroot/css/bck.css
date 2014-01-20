@@ -1,5 +1,5 @@
-body{
-	
-	background:url("/img/brushed.png");
-	background-repeat: repeat;
+body{  
+    background:url("/img/brushed.png");
+    background-repeat: no-repeat;
+    background-color: #EEE;
 }

@@ -20,6 +20,6 @@
 	</div>
 	<div class="entry-delete">
 		<legend>Brisanje kategorije <small>(PAŽNJA. Klikom na tipku kategorija će se nepovratno izbrisati iz sustava)</small></legend>
-		<?php echo $this->Html->link('Izbriši kategoriju', array('controller' => 'categories', 'action' => 'delete', $id), array('class' => 'btn btn-danger')); ?>
+		<?php echo $this->Form->postLink(__('Izbriši kategoriju'), array('action' => 'delete', $this->Form->value('Category.id')), null, __('Da li ste sigurni da želite izbrisati kategoriju', $this->Form->value('Category.id'))); ?>
 	</div>
 </div>

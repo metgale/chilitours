@@ -10,8 +10,12 @@
 					)
 			);
 			echo $this->BootstrapForm->input('content', array(
-				'required' => 'required',
+				
 				'label' => 'Sadržaj'
+					)
+			);
+                        echo $this->BootstrapForm->input('published', array(
+				'label' => 'Objavi'
 					)
 			);
 			echo $this->BootstrapForm->hidden('id');
@@ -22,6 +26,6 @@
 	</div>
 	<div class="entry-delete">
 		<legend>Brisanje blog posta <small>(PAŽNJA. Klikom na tipku blog post će se nepovratno izbrisati iz sustava)</small></legend>
-		<?php echo $this->Html->link('Izbriši blog post', array('controller' => 'blogs', 'action' => 'delete', $id), array('class' => 'btn btn-danger')); ?>
+        <?php echo $this->Form->postLink(__('Izbriši blog post'), array('action' => 'delete', $this->Form->value('Blog.id')), null, __('Da li ste sigurni da želite izbrisati blog post', $this->Form->value('Blog.id'))); ?>
 	</div>
 </div>

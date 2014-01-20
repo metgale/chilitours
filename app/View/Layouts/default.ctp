@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <?php echo $this->Html->charset(); ?>
@@ -72,7 +72,7 @@
                             <li><a href="/contacts/contact">Kontakt</a></li>
                         </ul>
                         <ul class="nav pull-right">
-                            <li><a href="/pages/contact" style="font-size:20px;">Tel: 01 483 98 54</a></li>
+                            <li><a href="/contacts/contact" style="font-size:20px;">Tel: 01 483 98 54</a></li>
                         </ul>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
 
         <div class="container">
             <div class="content">
-<?php echo $this->fetch('content'); ?>
+                <?php echo $this->fetch('content'); ?>
             </div>
         </div> <!-- /container -->
 
@@ -127,12 +127,11 @@
                         <div class="categories">
                             <h4>Info</h4>
                             <hr>
-                            <a href="#">Opći uvjeti poslovanja</a><br>
-                            <a href="#">Načini plaćanja</a><br>
+                            <a href="/pages/terms">Opći uvjeti poslovanja</a><br>
+                            <a href="/pages/paymenttypes">Načini plaćanja</a><br>
                             <a href="/travels/index">Admin login</a><br>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

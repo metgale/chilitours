@@ -1,16 +1,27 @@
-<div class='wrapper'>
+<?php
+$this->set('title_for_layout', 'Chilitours.hr | Aktualne ponude');
+echo $this->Html->meta(
+        'description', 'Pregledajte ponudu ChiliTours turističke agencije u Zagrebu. Velika ponuda povoljnih putovanja. Ljetovanja, zimovanja, vikend ili avanturistički izleti.'
+);
+?>
+
+<div class='wrapper pageview'>
     <div class='row'>
         <div class="span3 left-content">
-              <?php echo $this->Element('logo'); ?>
+            <?php echo $this->Element('logo'); ?>
         </div>
         <div class="box_skitter box_skitter_large pull-right span9">
             <ul>
                 <?php foreach ($featuredtravels as $travel): ?>
-                   <?php if(!empty($travel['Image'][0]['attachment'])): ?>
-                    <li>
-                        <a href="/travels/view/<?php echo $travel['Travel']['id']; ?>"><?php echo $this->Html->image('/img/travelphotos/' . $travel['Image'][0]['id'] . '/' . $travel['Image'][0]['attachment']); ?></a>
-                        <div class="label_text pull-right"><p><?php echo $this->Html->link($travel['Travel']['name_hr'], array('action' => 'view', $travel['Travel']['id'])); ?></p></div>
-                    </li>
+                    <?php if (!empty($travel['Image'][0]['attachment'])): ?>
+                        <li>
+                            <a href="/travels/view/<?php echo $travel['Travel']['id']; ?>"><?php echo $this->Html->image('/img/travelphotos/' . $travel['Image'][0]['id'] . '/' . $travel['Image'][0]['attachment']); ?></a>
+                            <div class="label_text pull-right">
+                                <p><?php echo $this->Html->link($travel['Travel']['name_hr'], array('action' => 'view', $travel['Travel']['id'])); ?><br>
+                                    <small><?php echo $travel['Travel']['short_hr']; ?></small>
+                                </p>
+                            </div>
+                        </li>
                     <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
@@ -33,7 +44,6 @@
             <hr>
             <ul class="thumbnails">
                 <?php foreach ($travels as $travel):; ?>
-
                     <li class="span3">
                         <a href="/travels/view/<?php echo $travel['Travel']['id']; ?>">
                             <div class="thumbnail">
@@ -42,15 +52,15 @@
                                         echo $term['price'];
                                     }
                                     ?></span>
-
                                 <?php foreach ($travel['Image'] as $image): ?>
                                     <?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/' . $image['attachment'], array('class' => 'homephotos')); ?>
                                 <?php endforeach; ?>
                                 <div class='caption'>
-                                    <h3><?php echo $this->Html->link($travel['Travel']['name_hr'], array('action' => 'view', $travel['Travel']['id'])); ?></h3>
+                                    <h4><?php echo $this->Html->link($travel['Travel']['name_hr'], array('action' => 'view', $travel['Travel']['id'])); ?></h4>
                                     <p><?php echo $this->Text->excerpt($travel['Travel']['short_hr'], 'method', 95, '...'); ?></p>
                                 </div>
                             </div>
+                        </a>    
                     </li>
 
                 <?php endforeach; ?>

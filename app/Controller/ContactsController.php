@@ -5,6 +5,10 @@ App::uses('CakeEmail', 'Network/Email');
 
 class ContactsController extends AppController {
 
+    public function beforeFilter() {
+        $this->Auth->allow();
+    }
+
     public function contact() {
         if ($this->request->is('post')) {
             $subject = 'Kontakt Forma';
@@ -38,10 +42,9 @@ class ContactsController extends AppController {
         $Email->template('email')
                 ->viewVars(array('data' => $this->request->data))
                 ->emailFormat('html')
-                ->to('chilitou@chilitours.hr')
+                ->to('info@chilitours.hr')
                 ->subject($subject)
                 ->send();
-                
     }
 
 }

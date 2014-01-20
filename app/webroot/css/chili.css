@@ -3,6 +3,7 @@ root {
 }
 body{
     padding-top:55px;
+    font-family: Tahoma, Vedrana, sans-serif;
 }
 .navbar-vertical{
     margin-top:20px;
@@ -16,8 +17,6 @@ body{
 .navbar-vertical h4{
     margin-left:15px;
 }
-
-
 .nav-items1{
     display:none;
     padding-left:25px;
@@ -69,11 +68,26 @@ images-edit{
 
 /*Front*/
 
+
+.navbar-inner{
+    background:#DB0707;
+}
+
+/*Page Views */
+
+.pageview .imageforpage{
+    width:865px;
+    height:315px;
+}
 .pageview .span9{
     background-color: white;
     border-radius: 5px;
     margin:5px;
     padding:15px;
+}
+.pageview .content{
+    font-size:14px;
+    line-height: 30px;
 }
 
 
@@ -130,7 +144,7 @@ images-edit{
 .thumbnail span {
     border-radius: 5px;
     display: block;
-    background: #E32020;
+    background: #DB0707;
     position: absolute;
     min-width: 20px;
     padding: 8px;
@@ -154,13 +168,24 @@ images-edit{
 }
 .left-content{
     margin-left:0px !important;
+    border-radius:5px;
+}
+.left-content .well{
+    background-color:#DB0707;
 }
 .span3 .nav li{
     font-size: 18px;
+    color:white;
     padding-bottom:2px;
     margin-bottom:6px;
-    border-bottom:1px solid #EEE;
 }
+.nav .nav-header{
+       border-bottom:1px solid #EEE;
+}
+.span3 .nav li a{
+    color:white;
+}
+
 
 
 .dropdown-menu li > a:hover,
@@ -209,7 +234,7 @@ images-edit{
 }
 
 .travelview h1, h2{
-    color:#E32020;
+    color:#DB0707;
 }
 .info span{
     font-size:22px;
@@ -276,13 +301,13 @@ images-edit{
 
 .footer  h4{
     color:#DDD;
-    font-size:19px;
+    font-size:17px;
     font-weight:bold;
 
 }
 
 .footer .contact p{
-    font-size:13px;
+    font-size:11px;
     color:#fff;
     line-height:20px;
 }

@@ -10,6 +10,10 @@ App::uses('AppController', 'Controller');
  */
 class BlogsController extends AppController {
 
+    public function beforeFilter() {
+        $this->Auth->allow('home', 'view'); 
+    }
+
     /**
      * Components
      *
@@ -23,6 +27,7 @@ class BlogsController extends AppController {
      * @return void
      */
     public function home() {
+
         $this->paginate = array(
             'limit' => 10,
             'order' => 'Blog.created DESC'
