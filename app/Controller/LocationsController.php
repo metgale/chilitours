@@ -59,7 +59,6 @@ class LocationsController extends AppController {
             }
         }
     }
-
     /**
      * edit method
      *
@@ -67,30 +66,22 @@ class LocationsController extends AppController {
      * @return void
      */
     public function edit($id = null) {
-        $this->Location->id = $id;
-        if (!$this->Location->exists()) {
-            throw new NotFoundException(__('Invalid %s', __('location')));
+        $this->layout = 'admin';
+        if (!$this->Location->exists($id)) {
+            throw new NotFoundException(__('Invalid location'));
         }
-        if ($this->request->is('post') || $this->request->is('put')) {
+        if ($this->request->is(array('post', 'put'))) {
             if ($this->Location->save($this->request->data)) {
-                $this->Session->setFlash(
-                        __('The %s has been saved', __('location')), 'alert', array(
-                    'plugin' => 'TwitterBootstrap',
-                    'class' => 'alert-success'
-                        )
-                );
-                $this->redirect(array('action' => 'index'));
+                $this->Session->setFlash('Lokacija izmijenjena', 'success');
+                return $this->redirect(array('action' => 'index'));
             } else {
-                $this->Session->setFlash(
-                        __('The %s could not be saved. Please, try again.', __('location')), 'alert', array(
-                    'plugin' => 'TwitterBootstrap',
-                    'class' => 'alert-error'
-                        )
-                );
+                $this->Session->setFlash('Neuspješno uređivanje lokacije', 'alert');
             }
         } else {
-            $this->request->data = $this->Location->read(null, $id);
+            $options = array('conditions' => array('Location.' . $this->Location->primaryKey => $id));
+            $this->request->data = $this->Location->find('first', $options);
         }
+        $this->set('id', $id);
     }
 
     /**
@@ -100,29 +91,16 @@ class LocationsController extends AppController {
      * @return void
      */
     public function delete($id = null) {
-        if (!$this->request->is('post')) {
-            throw new MethodNotAllowedException();
-        }
         $this->Location->id = $id;
         if (!$this->Location->exists()) {
-            throw new NotFoundException(__('Invalid %s', __('location')));
+            throw new NotFoundException(__('Invalid user'));
         }
         if ($this->Location->delete()) {
-            $this->Session->setFlash(
-                    __('The %s deleted', __('location')), 'alert', array(
-                'plugin' => 'TwitterBootstrap',
-                'class' => 'alert-success'
-                    )
-            );
-            $this->redirect(array('action' => 'index'));
+            $this->Session->setFlash('Lokacija uklonjena', 'info');
+        } else {
+            $this->Session->setFlash('Neuspješno brisanje lokacije', 'alert');
         }
-        $this->Session->setFlash(
-                __('The %s was not deleted', __('location')), 'alert', array(
-            'plugin' => 'TwitterBootstrap',
-            'class' => 'alert-error'
-                )
-        );
-        $this->redirect(array('action' => 'index'));
+        return $this->redirect(array('action' => 'index'));
     }
 
 }

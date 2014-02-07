@@ -5,27 +5,24 @@
         <title>
             <?php echo $title_for_layout; ?>
         </title>
-        <script src="/js/jquery.js"></script>
-        <script src="/js/chili.js"></script>
         <link type="text/css" href="/css/skitter.styles.css" media="all" rel="stylesheet" />
 
-        <script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="/js/jquery.animate-colors-min.js"></script>
-        <script type="text/javascript" src="/js/jquery.skitter.js"></script>
-        <script type="text/javascript" src="/js/lightbox-2.6.min.js"></script>
-        <script type="text/javascript" src="/js/jquery.collapse.js"></script>
-
-
         <?php
-        echo $this->Html->meta('icon');
-
+        echo $this->Html->meta('/img/icon.png');
         echo $this->Html->css(array('bootstrap.min', 'bootstrap-responsive.min', 'chili', 'bck', 'lightbox'));
-        echo $this->Html->script('bootstrap.min');
 
         echo $this->fetch('meta');
         echo $this->fetch('css');
         echo $this->fetch('script');
         ?>
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript" src="/js/chili.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.skitter.js"></script>
+        <script type="text/javascript" src="/js/jquery.animate-colors-min.js"></script>
+        <script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="/js/lightbox-2.6.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.collapse.js"></script>
         <meta charset="utf-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,12 +30,6 @@
         <meta name="author" content="">
 
 
-
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-        <link rel="shortcut icon" href="../assets/ico/favicon.png">
     </head>
 
     <body>
@@ -50,7 +41,7 @@
                     return;
                 js = d.createElement(s);
                 js.id = id;
-                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=504254712997776";
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
         <div class="navbar navbar-fixed-top">
@@ -61,12 +52,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="/travels/home">Chili Tours</a>
+                    <a class="brand" href="/travels/home">Chili tours</a>
 
                     <div class="nav-collapse collapse" id="main-menu">
-                        <ul class="nav" id="main-menu">
+                        <ul class="nav">
                             <li><a href="/pages/aboutus">O nama</a></li>
-                            <li><a href="/pages/b2b">B2B</a></li>
+                            <li><a href="/accomodations/home">Smještaj</a></li>
                             <li><a href="/pages/chilioaza">Chili Oaza</a></li>
                             <li><a href="/blogs/home">Blog</a></li>
                             <li><a href="/contacts/contact">Kontakt</a></li>
@@ -84,7 +75,6 @@
                 <?php echo $this->fetch('content'); ?>
             </div>
         </div> <!-- /container -->
-
         <div class="footer">
             <div class="container">
                 <div class="row">
@@ -93,11 +83,15 @@
                             <div class="contact">
                                 <h4>Kontaktirajte nas</h4>
                                 <hr>
-                                <h5> <i class="icon-home"></i> Augusta Šenoe 8</h5>
+                                <h5> <i class="icon-home"></i> Augusta Šenoe 8/II</h5>
                                 <hr>
                                 <h5><i class="icon-bell"></i> +385 01 483 98 54</h5>
                                 <hr>
                                 <i class="icon-envelope"></i> <a href="#">  info@chilitours.hr</a>
+                                <hr>
+                                <h5>OIB: 77148788978</h5>
+                                <hr>
+                                <h5>Id kod: HR-AB-01-080880298</h5>
                                 <hr>
                             </div>
                         </div>
@@ -109,6 +103,7 @@
                             <h5>Pon-Pet 9.00 - 17.00</h5>
                             <hr>
                             <h5>Subota 9.00 - 13.00</h5>
+
                         </div>
                     </div>					
                     <div class="span3">
@@ -117,24 +112,29 @@
                             <hr>
                             <a href="/">Početna</a><br>
                             <a href="/pages/aboutus">O nama</a><br>
-                            <a href="/pages/b2b">B2B</a><br>
+                            <a href="/accomodations/home">Smještaj</a><br>
                             <a href="/pages/chilioaza">Chili Oaza</a><br>
                             <a href="/blogs/home">Blog</a><br>
                             <a href="/contacts/contact">Kontakt</a><br>
+                            <a href="/contacts/travelcreate">Kreiraj putovanje</a><br>
+
                         </div>
                     </div>
                     <div class="span3">
                         <div class="categories">
                             <h4>Info</h4>
                             <hr>
-                            <a href="/pages/terms">Opći uvjeti poslovanja</a><br>
-                            <a href="/pages/paymenttypes">Načini plaćanja</a><br>
-                            <a href="/travels/index">Admin login</a><br>
+                            <a href="/travels/index">Admin Login</a><br>
+                            <a href="/pages/terms">Opći uvjeti putovanja</a><br>
+                            <a href="/pages/paymenttypes">Naćini plaćanja</a><br>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+
+
     </body>
 </html>
 

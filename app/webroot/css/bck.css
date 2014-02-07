@@ -1,5 +1,11 @@
 body{  
     background:url("/img/brushed.png");
+    background-color: #fff;
     background-repeat: no-repeat;
-    background-color: #EEE;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

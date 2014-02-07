@@ -1,6 +1,6 @@
 <?php
-$this->set('title_for_layout', 'Chili Tours Kontakt');
-echo $this->Html->meta(
+$this->set('title_for_layout', 'Kontakt Chili Tours Turistička Agencija');
+$this->Html->meta(
         'description', 
         'Chili Tours turistička agencija nalazi se na adresi Augusta Šenoe 8 u Zagrebu. Email adresa - info@chilitours.hr. Stojimo na raspolaganju za sva Vaša pitanja.'
 );
@@ -11,12 +11,12 @@ echo $this->Html->meta(
             <?php echo $this->Element('logo'); ?>
         </div>
         <div class="span9 pull-right">
-            <h2>Kontakt</h2>
+            <h1>Kontakt</h1>
             <hr>
             <div class="span2">
                 <address>
                     <strong>Adresa:</strong>
-                    <p>Chili Tours d.o.o. <br>Augusta Šenoe 8<br> 10 000 Zagreb</p>
+                    <p>Chili Tours d.o.o. <br>Augusta Šenoe 8/II<br> 10 000 Zagreb</p>
                     <strong>Kontakt telefon:</strong>
                     <p>01 483 98 54</p>
                     <strong>E-mail:</strong>

@@ -1,10 +1,9 @@
 <?php
-$this->set('title_for_layout', 'Chilitours.hr | Aktualne ponude');
-echo $this->Html->meta(
-        'description', 'Pregledajte ponudu ChiliTours turističke agencije u Zagrebu. Velika ponuda povoljnih putovanja. Ljetovanja, zimovanja, vikend ili avanturistički izleti.'
+$this->set('title_for_layout', 'Chili Tours - turistička agencija');
+$this->Html->meta(
+        'description', 'Pregledajte ponudu Chili Tours turističke agencije u Zagrebu. Velika ponuda povoljnih putovanja. Ljetovanja, zimovanja, vikend ili avanturistički izleti.'
 );
 ?>
-
 <div class='wrapper pageview'>
     <div class='row'>
         <div class="span3 left-content">
@@ -17,7 +16,7 @@ echo $this->Html->meta(
                         <li>
                             <a href="/travels/view/<?php echo $travel['Travel']['id']; ?>"><?php echo $this->Html->image('/img/travelphotos/' . $travel['Image'][0]['id'] . '/' . $travel['Image'][0]['attachment']); ?></a>
                             <div class="label_text pull-right">
-                                <p><?php echo $this->Html->link($travel['Travel']['name_hr'], array('action' => 'view', $travel['Travel']['id'])); ?><br>
+                                <p><?php echo $travel['Travel']['name_hr'] ?><br>
                                     <small><?php echo $travel['Travel']['short_hr']; ?></small>
                                 </p>
                             </div>
@@ -29,25 +28,35 @@ echo $this->Html->meta(
     </div>
     <div class="row home">
         <div class="span3 left-content">
-            <div class="well" style="padding: 8px 0;">
+            <a class="btn btn-primary btn-large btn-block" style="margin-top:20px; margin-bottom:10px;" href="/contacts/travelcreate">Kreiraj Putovanje</a>
+            <div class="well" style="padding: 8px 0; margin-top:10px;">
                 <ul class="nav nav-list">
-                    <li class="nav-header">Kategorije</li>
-                    <li><?php echo $this->Html->link('Sve kategorije', array('controller' => 'travels', 'action' => 'home'), array('class' => 'filterCategory')); ?></li>
+                    <?php if (!$check): ?>
+                        <li class="nav-header"><?php echo $this->Html->link('Sve kategorije', array('controller' => 'travels', 'action' => 'home'), array('class' => 'filterCategory kuki')); ?></li>
+                    <?php else: ?>
+                        <li class="nav-header"><?php echo $this->Html->link('Sve kategorije', array('controller' => 'travels', 'action' => 'home'), array('class' => 'filterCategory')); ?></li>    
+                    <?php endif; ?>
                     <?php foreach ($categories as $category): ?>
-                        <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory')); ?></li>
+                        <?php if ($check['Category']['id'] == $category['Category']['id']): ?>
+                            <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory kuki')); ?></li>
+                        <?php else: ?>
+                            <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory')); ?></li>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </ul>
             </div>
+            <?php echo $this->Element('share'); ?>
+            <?php echo $this->Element('likebox'); ?>
         </div>
         <div class="span9 pull-right">
-            <h2>Aktualne ponude</h2>
+            <h1>Aktualne ponude</h1>
             <hr>
             <ul class="thumbnails">
                 <?php foreach ($travels as $travel):; ?>
                     <li class="span3">
                         <a href="/travels/view/<?php echo $travel['Travel']['id']; ?>">
                             <div class="thumbnail">
-                                <span>Od <?php
+                                <span><?php
                                     foreach ($travel['Term'] as $term) {
                                         echo $term['price'];
                                     }
@@ -56,7 +65,7 @@ echo $this->Html->meta(
                                     <?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/' . $image['attachment'], array('class' => 'homephotos')); ?>
                                 <?php endforeach; ?>
                                 <div class='caption'>
-                                    <h4><?php echo $this->Html->link($travel['Travel']['name_hr'], array('action' => 'view', $travel['Travel']['id'])); ?></h4>
+                                    <h4><?php echo$travel['Travel']['name_hr'] ?></h4>
                                     <p><?php echo $this->Text->excerpt($travel['Travel']['short_hr'], 'method', 95, '...'); ?></p>
                                 </div>
                             </div>

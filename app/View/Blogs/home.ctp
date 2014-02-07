@@ -1,6 +1,6 @@
 <?php
 $this->set('title_for_layout', 'Chili Blog');
-echo $this->Html->meta(
+$this->Html->meta(
         'description', 'Posljednji postovi na našem blogu. Zanimljive informacije i priče sa putovanja, te korisni savjeti. Chili Tours turistička agencija.'
 );
 ?>
@@ -19,7 +19,7 @@ echo $this->Html->meta(
 
     </div>
     <div class="span9 pull-right">
-        <h2>Chili Blog</h2>
+        <h1>Chili Blog</h1>
         <hr>
         <?php foreach ($blogs as $blog): ?>
             <h4><?php echo $this->Html->link($blog['Blog']['title'], array('controller' => 'blogs', 'action' => 'view', $blog['Blog']['id'])); ?></h4>

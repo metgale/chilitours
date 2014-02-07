@@ -5,6 +5,17 @@ body{
     padding-top:55px;
     font-family: Tahoma, Vedrana, sans-serif;
 }
+body h1{
+    color:#DB0707;
+    font-size:25px;
+}
+body h3{
+    color:#DB0707;
+    font-size:25px;
+}
+.kuki   {
+    color:black;
+}
 .navbar-vertical{
     margin-top:20px;
     border-top: 1px solid #EEE;
@@ -52,9 +63,7 @@ body{
 images-edit{
     padding-bottom:20px
 }
-.imageDelete{
-    padding-left:5px;
-}
+
 .entry-delete{
     margin-bottom:200px;
 }
@@ -75,7 +84,7 @@ images-edit{
 
 /*Page Views */
 
-.pageview .imageforpage{
+.imageforpage{
     width:865px;
     height:315px;
 }
@@ -101,9 +110,9 @@ images-edit{
 
 #myModal form{
     overflow-y:auto;
-    max-height: 600px;
-
+    max-height: 700px;
 }
+
 #myModal{
     top:5% !important;
     padding:15px;
@@ -115,10 +124,7 @@ images-edit{
 #myModal h1{
     margin-left:15px;
 }
-#myModal form{
-    margin:13px;
-    border-radius:5px;
-}
+
 #myModal .modal-gallery{
     margin:13px;
     border-radius:5px;
@@ -128,9 +134,15 @@ images-edit{
 
 .thumbnail{
     background-color:white;
-    min-height: 300px;
+    height:300px;
 
 }
+
+.thumbnail h4{
+    color:#DB0707;
+}
+
+
 .thumbnail img{
     width:250px;
     height:150px;
@@ -158,6 +170,9 @@ images-edit{
 .thumbnail:hover{
     background-color:#EEE;
 }
+.thumbnails a:hover{
+    text-decoration: none;
+}
 .thumbnail ul li a:hover{
     color:red;
 }
@@ -166,24 +181,24 @@ images-edit{
 .left-content li a:hover{
     color:black;	
 }
+.left-content .well{
+    background-color:white;
+    border-radius:8px;
+
+}
 .left-content{
     margin-left:0px !important;
     border-radius:5px;
+
 }
-.left-content .well{
-    background-color:#DB0707;
-}
+
 .span3 .nav li{
     font-size: 18px;
-    color:white;
     padding-bottom:2px;
     margin-bottom:6px;
 }
 .nav .nav-header{
-       border-bottom:1px solid #EEE;
-}
-.span3 .nav li a{
-    color:white;
+    border-bottom:1px solid #EEE;
 }
 
 
@@ -232,6 +247,13 @@ images-edit{
     margin-left:5px;
     margin-top:5px;
 }
+.headimage{
+    max-width:none !important;
+}
+#lightbox .lb-outerContainer .lb-container .lb-image{
+    max-width: none;
+}    
+
 
 .travelview h1, h2{
     color:#DB0707;
@@ -247,8 +269,8 @@ images-edit{
 .gallery, .coverphoto, .details, .page-content{
     background-color:white;
     border-radius:5px;
-    margin:5px;
-    padding:15px;
+    margin:3px;
+    padding:7px;
 }
 .coverphoto img{
     width:860px;
@@ -278,10 +300,12 @@ images-edit{
 /* Footer */
 
 .footer{
-    margin-bottom:0px;
-    padding:20px;
+    padding-bottom:50px;
+    left:0px;
+    bottom:0px;
     background:#222;
-    margin-top:30px;
+    width:100%;
+
 }
 
 .footer hr{
@@ -341,3 +365,20 @@ images-edit{
 .icon-ast {float:left; padding: 3px 0px;
            color: black;}
 
+.plugin li .pluginSkinLight .mhs pluginBoxDivider{
+    border-top:none;
+}
+
+#myModal { position: absolute; } 
+
+.social-icons img{
+    padding-right:3px;
+    padding-top: 10px;
+    border-radius: 5px;  
+}
+
+
+.termstravels p{
+    line-height:170%;
+    
+}

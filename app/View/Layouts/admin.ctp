@@ -91,7 +91,7 @@
                                         </div>           
                                     </div>
                                     <div class="nav1">
-                                        <h4><?php echo $this->Html->link('Odjava', array('controller' => 'travels', 'action' => 'home'), array('class'=> 'btn btn-primary')); ?> </h4>      
+                                        <h4><?php echo $this->Html->link('Odjava', array('controller' => 'users', 'action' => 'logout'), array('class'=> 'btn btn-primary')); ?> </h4>      
                                     </div>
                                 </ul>					
                             </div>

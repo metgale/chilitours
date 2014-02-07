@@ -1,5 +1,5 @@
 <?php
-$this->set('title_for_layout', 'Kreiraj svoje putovanje | Chilitours.hr');
+$this->set('title_for_layout', 'Kreiraj svoje putovanje | Chili tours turistčka agencija');
 echo $this->Html->meta(
         'description',
         'Kreirajte vlastito putovanje. Destinacija i datum polaska po Vašem izboru. Chili tours turistička agencija omogućava Vam kreiranje avanture po svom ukusu.'
@@ -11,7 +11,7 @@ echo $this->Html->meta(
             <?php echo $this->Element('logo'); ?>
         </div>
         <div class="span9 pull-right">
-            <h2>Kreiraj Putovanje</h2>
+            <h1>Kreiraj Putovanje</h1>
             <hr>
             <div class="container">
                 <form class="well span8" method="post" action="travelcreate">

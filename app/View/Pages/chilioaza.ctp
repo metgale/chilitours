@@ -1,7 +1,7 @@
 <?php
-$this->set('title_for_layout', 'Zavirite u Chili Oazu | Chilitours.hr');
+$this->set('title_for_layout', 'Zavirite u Chili Oazu | Chili tours turistička agencija');
 echo $this->Html->meta(
-        'description', ''
+        'description', 'Chili oaza je dio poslovnice koja začinjava svakodnevno poslovanje Chili Tours turističke agencije'
 );
 ?>
 <div class = "pageview">
@@ -18,7 +18,7 @@ echo $this->Html->meta(
 
     </div>
     <div class="span9 pull-right content">
-        <h2>Chili Oaza</h2>	
+        <h1>Chili Oaza</h1>	
         <hr>
         <h5>Dobrodošli u Chili oazu!</h5>
         <p>

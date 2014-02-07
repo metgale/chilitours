@@ -43,10 +43,12 @@ class TravelsController extends AppController {
 				'conditions' => array('Travel.published' => 1, 'Travel.category_id' => $id),
 				'order' => 'Travel.created DESC',
 			);
+                       $category = $this->Travel->Category->findById($id);
+                       $this->set('check', $category);
+                        
 		} else {
 			$this->paginate = array(
 				'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
-
 				'conditions' => array('Travel.published' => 1),
 				'order' => 'Travel.created DESC');
 		}

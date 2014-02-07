@@ -1,4 +1,8 @@
-<?php $this->set('title_for_layout', $blog['Blog']['title'] . ' | Chilitours.hr');?>
+<?php $this->set('title_for_layout', 'Zanimljivosti s putovanja i savjeti | Chili tours turistička agencija');
+$this->Html->meta(
+        'description', $blog['Blog']['title']
+);
+?>
 
 <div class="pageview">
     <div class="row">
@@ -8,7 +12,7 @@
        
 
         <div class="span9 pull-right content">
-            <h2><?php echo $blog['Blog']['title'];?></h2>
+            <h1><?php echo $blog['Blog']['title'];?></h1>
             <hr>
             <p><?php echo $blog['Blog']['content']; ?></p>
         </div>
