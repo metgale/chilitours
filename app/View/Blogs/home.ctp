@@ -1,9 +1,7 @@
-<?php
-$this->set('title_for_layout', 'Chili Blog');
-$this->Html->meta(
-        'description', 'Posljednji postovi na našem blogu. Zanimljive informacije i priče sa putovanja, te korisni savjeti. Chili Tours turistička agencija.'
-);
-?>
+<?php $this->assign('title', 'Chili Blog - Chili Tours'); ?>
+<?php $this->append('meta'); ?>
+<meta name="description" content="Zanimljivosti s putovanja i korisne savjete za Vas pišu zaposlenici Chili Tours turističke agencije">
+<?php $this->end(); ?>
 
 <div class = "pageview">
     <div class="row">

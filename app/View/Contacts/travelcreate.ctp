@@ -1,10 +1,8 @@
-<?php
-$this->set('title_for_layout', 'Kreiraj svoje putovanje | Chili tours turistčka agencija');
-echo $this->Html->meta(
-        'description',
-        'Kreirajte vlastito putovanje. Destinacija i datum polaska po Vašem izboru. Chili tours turistička agencija omogućava Vam kreiranje avanture po svom ukusu.'
-);
-?>
+<?php $this->assign('title', 'Kreiraj svoje putovanje - Chili Tours'); ?>
+<?php $this->append('meta'); ?>
+<meta name="description" content="Kreirajte vlastito putovanje. Destinacija i datum polaska po Vašem izboru. Chili tours turistička agencija omogućava Vam kreiranje avanture po svom ukusu.">
+<?php $this->end(); ?>
+
 <div class = "pageview">
     <div class="row">
         <div class="span3 left-content"> 
@@ -23,8 +21,8 @@ echo $this->Html->meta(
                     <label>Budžet</label> <input class="span3" name="budžet" placeholder="Npr. Do 1000 KN" type="text"> 
                     <label>Datum polaska</label>
                     <input type="date" name="Datum polaska">
-                    <label>Broj dana</label>
-                    <input type="text" class="input-mini" name="Broj dana">
+                    <label>Datum povratka</label>
+                    <input type="date" name="Datum povratka">
                     <label>Dodatne informacije</label> 
                     <textarea class="input-xlarge span5" id="message" name="message"
                               rows="3">

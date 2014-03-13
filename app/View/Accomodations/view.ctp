@@ -1,10 +1,9 @@
-<?php $this->set('title_for_layout', $accomodation['Accomodation']['title_hr'] . ' | Chili tours turistička agencija'); ?>
+<?php $this->assign('title', $accomodation['Accomodation']['title_hr']. 'Chili Tours'); ?>
 
-<?php
-$this->Html->meta(
-        'description', $accomodation['Accomodation']['description_hr']);
-?>
-
+<?php $this->append('meta'); ?>
+	<meta name="description" content="<?php $accomodation['Accomodation']['description_hr'];?>">
+<?php $this->end(); ?>
+      
 <div class='travelview'>
 
     <div class="row">
@@ -82,7 +81,7 @@ $this->Html->meta(
 
 <?php foreach ($accomodation['Image'] as $image): ?>
 
-                <a href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="accomodation"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment'], array('class' => 'headimage')); ?></a>
+                <a href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="accomodation"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment']); ?></a>
 
 <?php endforeach; ?>
 
@@ -112,7 +111,7 @@ $this->Html->meta(
 
             <div class="span3">
 
-                <p><?php if (!$accomodation['Accomodation']['parking']): echo $this->Html->Image('icons/green.png'); ?>
+                <p><?php if ($accomodation['Accomodation']['parking']): echo $this->Html->Image('icons/green.png'); ?>
 
 <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
@@ -120,7 +119,7 @@ $this->Html->meta(
 
                 </p>
 
-                <p><?php if (!$accomodation['Accomodation']['bbq']): echo $this->Html->Image('icons/green.png'); ?>
+                <p><?php if ($accomodation['Accomodation']['bbq']): echo $this->Html->Image('icons/green.png'); ?>
 
 <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
@@ -128,7 +127,7 @@ $this->Html->meta(
 
                 </p>
 
-                <p><?php if (!$accomodation['Accomodation']['tv']): echo $this->Html->Image('icons/green.png'); ?>
+                <p><?php if ($accomodation['Accomodation']['tv']): echo $this->Html->Image('icons/green.png'); ?>
 
 <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
@@ -136,7 +135,7 @@ $this->Html->meta(
 
                 </p>
 
-                <p><?php if (!$accomodation['Accomodation']['conditioned']): echo $this->Html->Image('icons/green.png'); ?>
+                <p><?php if ($accomodation['Accomodation']['conditioned']): echo $this->Html->Image('icons/green.png'); ?>
 
 <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
@@ -148,7 +147,7 @@ $this->Html->meta(
 
             <div class="span2">
 
-                <p><?php if (!$accomodation['Accomodation']['dishwash']): echo $this->Html->Image('icons/green.png'); ?>
+                <p><?php if ($accomodation['Accomodation']['dishwash']): echo $this->Html->Image('icons/green.png'); ?>
 
 <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
@@ -156,7 +155,7 @@ $this->Html->meta(
 
                 </p>
 
-                <p><?php if (!$accomodation['Accomodation']['clotheswash']): echo $this->Html->Image('icons/green.png'); ?>
+                <p><?php if ($accomodation['Accomodation']['clotheswash']): echo $this->Html->Image('icons/green.png'); ?>
 
 <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
@@ -164,11 +163,18 @@ $this->Html->meta(
 
                 </p>
 
-                <p><?php if (!$accomodation['Accomodation']['internet']): echo $this->Html->Image('icons/green.png'); ?>
+                <p><?php if ($accomodation['Accomodation']['internet']): echo $this->Html->Image('icons/green.png'); ?>
 
 <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
                     <?php endif; ?> Internet
+
+                </p>
+                <p><?php if ($accomodation['Accomodation']['pet']): echo $this->Html->Image('icons/green.png'); ?>
+
+<?php else: echo $this->Html->Image('icons/red.png'); ?>
+
+                    <?php endif; ?> Kucni ljubimci
 
                 </p>
 

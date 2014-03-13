@@ -1,9 +1,9 @@
-<?php
-$this->set('title_for_layout', 'Uvjeti putovanja Chili Tours');
-$this->Html->meta(
-        'description', 'Chili Tours - turistička agencija u Zagrebu. Vrhunski doživljaj, iskustvo za pamćenje i najbolji programi putovanja.'
-);
-?>
+<?php $this->assign('title', 'Chili Tours - Uvjeti putovanja'); ?>
+<?php $this->append('meta'); ?>
+<meta name="description" content="Chili Tours - turistička agencija u Zagrebu. Vrhunski doživljaj, iskustvo za pamćenje i najbolji programi putovanja.">
+<?php $this->end(); ?>
+
+
 <div class = "pageview">
     <div class="row">
         <div class="span3 left-content">

@@ -1,9 +1,8 @@
-<?php
-$this->set('title_for_layout', 'Naši partneri | Chilitours.hr');
-echo $this->Html->meta(
-        'description', ''
-);
-?>
+<?php $this->assign('title', 'B2B - Chili Tours turistička agencija'); ?>
+<?php $this->append('meta'); ?>
+<meta name="description" content="">
+<?php $this->end(); ?>
+
 <div class = "pageview">
     <div class="row">
         <div class="span3 left-content">

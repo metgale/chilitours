@@ -1,9 +1,9 @@
-<?php
-$this->set('title_for_layout', 'Nađi smještaj | Chili tours');
-$this->Html->meta(
-        'description', 'Apartmani, sobe, kuće za odmor i ostali privatni smještaj u Hrvatskoj. Chili tours turistička agencija.'
-);
-?>
+<?php $this->assign('title', 'Chili Smještaj - Chili Tours'); ?>
+
+<?php $this->append('meta'); ?>
+	<meta name="description" content="Apartmani, sobe, kuće za odmor i ostali privatni smještaj u Hrvatskoj. Chili tours turistička agencija.">
+<?php $this->end(); ?>
+        
 <div class = "pageview">
     <div class="row">
         <div class="span3 left-content">

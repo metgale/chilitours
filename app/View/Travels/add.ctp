@@ -9,6 +9,14 @@
                 'label' => 'Kategorija',
                 'required' => 'required'
             ));
+            echo $this->BootstrapForm->input('othercategory', array(
+                'label' => 'Sekundarna Kategorija',
+                'empty' => true,
+                'options' => $categories
+            ));
+            echo $this->BootstrapForm->input('priority', array(
+                'label' => 'Prioritet'
+            ));
 
             echo $this->BootstrapForm->input('name_hr', array(
                 'required' => 'required',

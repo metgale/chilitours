@@ -1,9 +1,10 @@
-<?php
-$this->set('title_for_layout', 'Načini plaćanja Chili Tours');
-echo $this->Html->meta(
-        'description', 'Chili Tours'
-);
-?>
+<?php $this->assign('title', 'Chili Tours Nacini placanja'); ?>
+
+<?php $this->append('meta'); ?>
+	<meta name="description" content="Pregledajte ponudu Chili Tours turističke agencije u Zagrebu. Velika ponuda povoljnih putovanja. Ljetovanja, zimovanja, vikend ili avanturistički izleti">
+<?php $this->end(); ?>
+        
+
 <div class = "pageview">
     <div class="row">
         <div class="span3 left-content">

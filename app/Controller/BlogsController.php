@@ -30,7 +30,10 @@ class BlogsController extends AppController {
 
         $this->paginate = array(
             'limit' => 10,
-            'order' => 'Blog.created DESC'
+            'order' => 'Blog.created DESC',
+            'conditions' => array(
+                'Blog.published' => 1
+            )
         );
         $this->set('blogs', $this->paginate());
     }

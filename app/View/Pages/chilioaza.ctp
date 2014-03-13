@@ -1,9 +1,9 @@
-<?php
-$this->set('title_for_layout', 'Zavirite u Chili Oazu | Chili tours turistička agencija');
-echo $this->Html->meta(
-        'description', 'Chili oaza je dio poslovnice koja začinjava svakodnevno poslovanje Chili Tours turističke agencije'
-);
-?>
+<?php $this->assign('title', 'Chili Oaza | Chili tours turistička agencija'); ?>
+<?php $this->append('meta'); ?>
+	<meta name="description" content="Chili oaza je dio poslovnice koja začinjava svakodnevno poslovanje Chili Tours turističke agencije">
+<?php $this->end(); ?>
+        
+        
 <div class = "pageview">
     <div class="row">
         <div class="span3 left-content">

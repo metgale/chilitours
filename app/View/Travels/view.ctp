@@ -1,9 +1,18 @@
-<?php $this->set('title_for_layout', $travel['Travel']['name_hr'] . ' | Chili Tours turisticka agencija'); ?>
-<?php
-$this->Html->meta(
-        'description', $travel['Travel']['short_hr']
-);
-?>
+<?php $this->assign('title', 'Chili Tours - turistička agencija'); ?>
+
+<?php $this->append('meta'); ?>
+<meta name="description" content="Pregledajte ponudu Chili Tours turističke agencije u Zagrebu. Raznovrsna ponuda povoljnih putovanja. Ljetovanja, zimovanja, vikend ili avanturistički izleti.">
+<meta property="og:description" content="<?php echo $travel['Travel']['short_hr']; ?>">
+<meta property="og:url" content="http://chilitours.hr/travels/view/<?php echo $travel['Travel']['id']; ?>"/>
+<meta property="og:title" content="<?php echo $travel['Travel']['name_hr']; ?>">
+<?php foreach ($travel['Image'] as $image): ?>
+    <?php if ($image['headphoto'] == 1): ?>
+        <meta property="og:image" content="http://chilitours.hr/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment'] ?>">
+    <?php endif ?>
+<?php endforeach; ?>
+
+<?php $this->end(); ?>
+
 <div class='travelview'>
     <div class="row">
         <div class="span3 left-content">
@@ -37,24 +46,43 @@ $this->Html->meta(
                 <textarea class="input-large span5" id="message" name="Poruka"
                           rows="3">
                 </textarea>
-
                 <button class="btn btn-primary" type="submit" >Rezerviraj</button>
             </form>
-
         </div>
 
         <div class="gallery span9 pull-right">
             <?php foreach ($travel['Image'] as $image): ?>
                 <?php if ($image['headphoto'] == 1): ?>
-                        <img class="imageforpage" src="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment'] ?>">
+                    <img class="imageforpage" src="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment'] ?>">
                 <?php endif ?>
             <?php endforeach; ?>
-
             <h3><p><?php echo $travel['Travel']['name_hr']; ?><a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Rezerviraj putovanje</a></p> </h3>
+            <div class="fb-share-button" data-href="<?php echo Router::url($this->here, true); ?>" data-type="button"></div>
+
             <hr>
-            <?php foreach ($travel['Image'] as $image): ?>
-                <a href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="roadtrip"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment'], array('class' => 'headimage')); ?></a>
-            <?php endforeach; ?>
+            <h3> Termini</h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Datum polaska</th>
+                        <th>Datum povratka</th>
+                        <th>Cijena</th>
+                        <th>Mjesto polaska</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php foreach ($travel['Term'] as $term): ?>
+                        <tr>
+
+                            <td><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></td>
+                            <td><?php echo $this->Time->format($term['enddate'], '%d-%m-%Y'); ?></td>
+                            <td><?= $term['price']; ?></td>
+                            <td><?= $term['town']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -62,7 +90,7 @@ $this->Html->meta(
         <div class="span3 left-content">
             <div class="well" style="padding: 8px 0;">
                 <ul class="nav nav-list">
-                    <?php if (count($related) <= 1): ?>
+                    <?php if (count($related) == null): ?>
                         <p>Trenutno nema drugih putovanja u ovoj kategoriji</p>
                     <?php else: ?>
                         <li class="nav-header">Povezana Putovanja</li>
@@ -111,31 +139,12 @@ $this->Html->meta(
                 </table>
             </div>
         </div>
-        <div class="page-content span9 pull-right">
-            <h3> Termini</h3>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Datum polaska</th>
-                        <th>Datum povratka</th>
-                        <th>Cijena</th>
-                        <th>Mjesto polaska</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($travel['Term'] as $term): ?>
-                        <tr>
+        <div class="gallery page-content span9 pull-right">
+            <h3>Galerija slika</h3>
+            <?php foreach ($travel['Image'] as $image): ?>
+                <a href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="roadtrip"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment']); ?></a>
+            <?php endforeach; ?>
 
-                            <td><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></td>
-                            <td><?php echo $this->Time->format($term['enddate'], '%d-%m-%Y'); ?></td>
-                            <td><?= $term['price']; ?></td>
-                            <td><?= $term['town']; ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-            <a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Rezerviraj putovanje</a> 
-            <div class="fb-share-button" data-href="<?php echo Router::url($this->here, true); ?>" data-type="button"></div>
         </div>
 
     </div>

@@ -10,6 +10,15 @@
                 'required' => 'required'
                     )
             );
+            echo $this->BootstrapForm->input('othercategory', array(
+                'label' => 'Sekundarna Kategorija',
+                'options' => $categories,
+                'empty' => true
+            ));
+            echo $this->BootstrapForm->input('priority', array(
+                'label' => 'Prioritet'
+            ));
+
             echo $this->BootstrapForm->input('name_hr', array(
                 'required' => 'required',
                 'label' => 'Naziv (hr)'
@@ -114,11 +123,11 @@
         <?php if (!empty($images)): ?> 
             <?php foreach ($images as $image): ?>
                 <div class="span2">
-                        <?php echo $this->Html->image('/img/travelphotos/' . $image['Image']['id'] . '/thumb_' . $image['Image']['attachment']); ?>
-                        <?php echo $this->Html->link('Izbriši sliku', array('controller' => 'travels', 'action' => 'imageDelete', $image['Image']['id']), array('class' => 'imageDelete')); ?>
-                        <?php if ($image['Image']['headphoto']): ?>
-                            <small>(Naslovna slika)</small>
-                        <?php endif; ?>
+                    <?php echo $this->Html->image('/img/travelphotos/' . $image['Image']['id'] . '/thumb_' . $image['Image']['attachment']); ?>
+                    <?php echo $this->Html->link('Izbriši sliku', array('controller' => 'travels', 'action' => 'imageDelete', $image['Image']['id']), array('class' => 'imageDelete')); ?>
+                    <?php if ($image['Image']['headphoto']): ?>
+                        <small>(Naslovna slika)</small>
+                    <?php endif; ?>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>

@@ -1,10 +1,8 @@
-<?php
-$this->set('title_for_layout', 'Kontakt Chili Tours Turistička Agencija');
-$this->Html->meta(
-        'description', 
-        'Chili Tours turistička agencija nalazi se na adresi Augusta Šenoe 8 u Zagrebu. Email adresa - info@chilitours.hr. Stojimo na raspolaganju za sva Vaša pitanja.'
-);
-?>
+<?php $this->assign('title', 'Kontakt - Chili Tours'); ?>
+<?php $this->append('meta'); ?>
+<meta name="description" content="Kontaktirajte nas preko email adrese, direktne kontakt forme, telefonskog poziva, ili nas pronađite na adresi -  Augusta Šenoe 8/II, Zagreb.">
+<?php $this->end(); ?>
+
 <div class = "pageview">
     <div class="row">
         <div class="span3 left-content">
