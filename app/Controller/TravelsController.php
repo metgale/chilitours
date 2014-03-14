@@ -37,6 +37,7 @@ class TravelsController extends AppController {
     }
 
     public function home($id = null) {
+       
         if (!empty($id)) {
             $options = array(
                 'order' => array('Travel.priority DESC', 'Travel.created DESC'),
