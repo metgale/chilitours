@@ -93,7 +93,7 @@
                     <h2>ChiliTours Newsletter</h2>
                     <hr>
                     <div class="mc-field-group">
-                        <label for="mce-EMAIL">Email Address </label>
+                        <label for="mce-EMAIL">Vaša Email adresa</label>
                         <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
                     </div>
                     <div id="mce-responses" class="clear">
@@ -247,7 +247,7 @@
                     $('#mce-error-response').hide();
                     if (resp.result == "success") {
                         $('#mce-' + resp.result + '-response').show();
-                        $('#mce-' + resp.result + '-response').html(resp.msg);
+                        $('#mce-' + resp.result + '-response').html('Molimo potvrdite svoju prijavu u mail-u koji smo Vam poslali. Vaš Chili Tours.');
                         $('#mc-embedded-subscribe-form').each(function() {
                             this.reset();
                         });
