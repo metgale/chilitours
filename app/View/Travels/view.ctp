@@ -25,9 +25,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>  
             <h1><?php echo $travel['Travel']['name_hr']; ?></h1>
             <div class="modal-gallery">
-                <?php foreach ($travel['Image'] as $image): ?>
-                    <a style="width:100%; height: 100%;" href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="modal"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment']); ?></a>
-                <?php endforeach; ?>
+             
             </div>
             <form class="well" method="post" action="/contacts/reservation">
                 <label>Termin</label>

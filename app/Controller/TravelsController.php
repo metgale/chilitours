@@ -110,9 +110,7 @@ class TravelsController extends AppController {
         }
 
         $related = $this->Travel->find('all', $options);
-        debug($related);
-        debug($travel['Travel']['category_id']);
-        debug($travel['Travel']['othercategory']);
+       
         $this->set('related', $related);
         $this->loadModel('Blog');
         $this->set('blogs', $this->Blog->find('list'));

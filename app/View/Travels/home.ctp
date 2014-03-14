@@ -9,7 +9,10 @@
 
     <div class='row'>
         <div class="span3 left-content">
-            <?php echo $this->Element('logo'); ?>
+            <div class="corner">
+                <?php echo $this->Element('logo'); ?>
+            </div>
+
         </div>
 
         <div class="box_skitter box_skitter_large pull-right span9">
@@ -80,7 +83,6 @@
             </ul>
         </div>
         <div class="span3 left-content">
-            <?php echo $this->Element('share'); ?>
             <!-- Begin MailChimp Signup Form -->
             <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
             <style type="text/css">
