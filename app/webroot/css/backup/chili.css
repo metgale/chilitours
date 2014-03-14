@@ -7,14 +7,7 @@ body{
 }
 body h1{
     color:#DB0707;
-    font-size:25px;
-}
-body h3{
-    color:#DB0707;
-    font-size:25px;
-}
-.kuki   {
-    color:black;
+    font-size:32px;
 }
 .navbar-vertical{
     margin-top:20px;
@@ -246,8 +239,6 @@ images-edit{
 .gallery img{
     margin-left:5px;
     margin-top:5px;
-}
-.headimage{
     max-width:none !important;
 }
 #lightbox .lb-outerContainer .lb-container .lb-image{
@@ -269,8 +260,8 @@ images-edit{
 .gallery, .coverphoto, .details, .page-content{
     background-color:white;
     border-radius:5px;
-    margin:3px;
-    padding:7px;
+    margin:5px;
+    padding:15px;
 }
 .coverphoto img{
     width:860px;
@@ -374,11 +365,5 @@ images-edit{
 .social-icons img{
     padding-right:3px;
     padding-top: 10px;
-    border-radius: 5px;  
-}
-
-
-.termstravels p{
-    line-height:170%;
-    
+    border-radius: 5px;
 }
