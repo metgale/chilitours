@@ -310,8 +310,11 @@
                 }
 
             </script>
+            <?php echo $this->Element('share'); ?>
+
             <!--End mc_embed_signup-->
             <?php echo $this->Element('likebox'); ?>
+
             <a href="http://crosportvez.hr/" target="_blank"><img src="/img/csv.png"></a>
         </div>
 

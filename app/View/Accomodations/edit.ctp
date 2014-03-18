@@ -8,24 +8,30 @@
                 'label' => 'Naziv (hrv)',
                 'required' => 'required'
             ));
+             /* 
             echo $this->BootstrapForm->input('title_eng', array(
                 'label' => 'Naziv (eng)',
                 'required' => 'required'
-            ));
+            )); 
+              */
              echo $this->BootstrapForm->input('short_hr', array(
                 'label' => 'Kratki opis (hr)',
                 'required' => 'required'
             ));
+              /* 
               echo $this->BootstrapForm->input('short_eng', array(
                 'label' => 'Kratki opis (eng)',
                 'required' => 'required'
             ));
+               */
             echo $this->BootstrapForm->input('description_hr', array(
                 'label' => 'Opis smještaja (hr)',
             ));
+           /*  
             echo $this->BootstrapForm->input('description_eng', array(
                 'label' => 'Opis smještaja (eng)',
             ));
+            */
             echo $this->BootstrapForm->input('category', array(
                 'options' => array('', '1', '2', '3', '4', '5'),
                 'required' => 'required',

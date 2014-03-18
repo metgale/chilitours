@@ -24,41 +24,49 @@
                 'label' => 'Naziv (hr)'
                     )
             );
+            /*
             echo $this->BootstrapForm->input('name_eng', array(
                 'required' => 'required',
                 'label' => 'Naziv (eng)'
                     )
             );
+             */
             echo $this->BootstrapForm->input('short_hr', array(
                 'required' => 'required',
                 'label' => 'Kratki opis (hr)',
                 'class' => 'input-xxlarge'
             ));
+            /*
             echo $this->BootstrapForm->input('short_eng', array(
                 'required' => 'required',
                 'label' => 'Kratki opis (eng)',
                 'class' => 'input-xxlarge'
             ));
+             */
             echo $this->BootstrapForm->input('service_hr', array(
                 'required' => 'required',
                 'label' => 'Vrsta usluge (hr)'
                     )
             );
+            /*
             echo $this->BootstrapForm->input('service_eng', array(
                 'required' => 'required',
                 'label' => 'Vrsta usluge (eng)'
                     )
             );
+             */
             echo $this->BootstrapForm->input('transport_hr', array(
                 'required' => 'required',
                 'label' => 'Prijevoz (hr)'
                     )
             );
+            /*
             echo $this->BootstrapForm->input('transport_eng', array(
                 'required' => 'required',
                 'label' => 'Prijevoz (eng)'
                     )
             );
+             */
             echo $this->BootstrapForm->input('accomodation', array(
                 'options' => array('', '1', '2', '3', '4', '5'),
                 'required' => 'required',
@@ -69,10 +77,12 @@
                 'label' => 'Program putovanja (hr)'
                     )
             );
+            /*
             echo $this->BootstrapForm->input('program_eng', array(
                 'label' => 'Program putovanja (eng)'
                     )
             );
+             */
             echo $this->BootstrapForm->input('featured', array(
                 'label' => 'Istaknuto putovanje'
                     )
