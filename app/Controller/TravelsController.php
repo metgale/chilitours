@@ -11,7 +11,7 @@ App::uses('AppController', 'Controller');
 class TravelsController extends AppController {
 
     public function beforeFilter() {
-        $this->Auth->allow('view', 'home');
+        $this->Auth->allow('view', 'home', 'foreigners');
     }
 
     /**
@@ -37,12 +37,12 @@ class TravelsController extends AppController {
     }
 
     public function home($id = null) {
-       
+
         if (!empty($id)) {
             $options = array(
                 'order' => array('Travel.priority DESC', 'Travel.created DESC'),
                 'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
-                'conditions' => array('Travel.published' => 1, 'OR' => array('Travel.othercategory' => $id, 'Travel.category_id' => $id))
+                'conditions' => array('Travel.english !=' => 1, 'Travel.published' => 1, 'OR' => array('Travel.othercategory' => $id, 'Travel.category_id' => $id))
             );
 
             $category = $this->Travel->Category->findById($id);
@@ -50,7 +50,7 @@ class TravelsController extends AppController {
         } else {
             $options = array(
                 'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
-                'conditions' => array('Travel.published' => 1),
+                'conditions' => array('Travel.english !=' => 1, 'Travel.published' => 1),
                 'order' => array('Travel.priority DESC', 'Travel.created DESC'));
         }
         $travels = $this->Travel->find('all', $options);
@@ -63,6 +63,22 @@ class TravelsController extends AppController {
 
         $featured = $this->Travel->find('all', array(
             'conditions' => array('Travel.featured' => 1, 'Travel.published' => 1),
+            'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1))),
+            'order' => 'Travel.created DESC'));
+        $this->set('featuredtravels', $featured);
+    }
+
+    public function foreigners() {
+        $options = array(
+            'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
+            'conditions' => array('Travel.english' => 1, 'Travel.published' => 1),
+            'order' => array('Travel.priority DESC', 'Travel.created DESC'));
+
+        $travels = $this->Travel->find('all', $options);
+        $this->set('travels', $travels);
+
+        $featured = $this->Travel->find('all', array(
+            'conditions' => array('Travel.featured' => 1, 'Travel.published' => 1, 'Travel.english' => 1),
             'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1))),
             'order' => 'Travel.created DESC'));
         $this->set('featuredtravels', $featured);
@@ -110,7 +126,7 @@ class TravelsController extends AppController {
         }
 
         $related = $this->Travel->find('all', $options);
-       
+
         $this->set('related', $related);
         $this->loadModel('Blog');
         $this->set('blogs', $this->Blog->find('list'));

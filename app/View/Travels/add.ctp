@@ -23,10 +23,10 @@
                 'label' => 'Naziv (hr)'
             ));
             /*
-            echo $this->BootstrapForm->input('name_eng', array(
-                'required' => 'required',
-                'label' => 'Naziv (eng)'
-            ));
+              echo $this->BootstrapForm->input('name_eng', array(
+              'required' => 'required',
+              'label' => 'Naziv (eng)'
+              ));
              */
             echo $this->BootstrapForm->input('short_hr', array(
                 'required' => 'required',
@@ -34,21 +34,21 @@
                 'class' => 'input-xxlarge'
             ));
             /*
-            echo $this->BootstrapForm->input('short_eng', array(
-                'required' => 'required',
-                'label' => 'Kratki opis (eng)',
-                'class' => 'input-xxlarge'
-            ));
-            */
+              echo $this->BootstrapForm->input('short_eng', array(
+              'required' => 'required',
+              'label' => 'Kratki opis (eng)',
+              'class' => 'input-xxlarge'
+              ));
+             */
             echo $this->BootstrapForm->input('service_hr', array(
                 'required' => 'required',
                 'label' => 'Vrsta usluge (hr)'
             ));
             /*
-            echo $this->BootstrapForm->input('service_eng', array(
-                'required' => 'required',
-                'label' => 'Vrsta usluge (eng)'
-            ));
+              echo $this->BootstrapForm->input('service_eng', array(
+              'required' => 'required',
+              'label' => 'Vrsta usluge (eng)'
+              ));
              */
 
             echo $this->BootstrapForm->input('transport_hr', array(
@@ -56,10 +56,10 @@
                 'label' => 'Prijevoz (hr)'
             ));
             /*
-             echo $this->BootstrapForm->input('transport_eng', array(
-                'required' => 'required',
-                'label' => 'Prijevoz (eng)'
-            ));
+              echo $this->BootstrapForm->input('transport_eng', array(
+              'required' => 'required',
+              'label' => 'Prijevoz (eng)'
+              ));
              */
 
             echo $this->BootstrapForm->input('accomodation', array(
@@ -72,10 +72,14 @@
                 'label' => 'Program putovanja (hr)'
             ));
             /*
-            echo $this->BootstrapForm->input('program_eng', array(
-                'label' => 'Program putovanja (eng)'
-            ));
-            */
+              echo $this->BootstrapForm->input('program_eng', array(
+              'label' => 'Program putovanja (eng)'
+              ));
+             */
+            echo $this->BootstrapForm->input('english', array(
+                'label' => 'Putovanje za strance'
+                    )
+            );
             echo $this->BootstrapForm->input('featured', array(
                 'label' => 'Istaknuto putovanje'
             ));
