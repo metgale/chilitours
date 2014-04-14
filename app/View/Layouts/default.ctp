@@ -70,7 +70,7 @@
                             <li><a href="/accomodations/home">Smještaj</a></li>
                             <li><a href="/contacts/aviotickets">Avio karte</a></li>
                             <li><a href="/pages/chilioaza">Chili Oaza</a></li>
-                            <li><a href="/blogs/home">Blog</a></li>
+                            <li><a href="http://putovanjasazacinom.blogspot.com/">Blog</a></li>
                             <li><a href="/contacts/contact">Kontakt</a></li>
                         </ul>
                         <ul class="nav pull-right">
@@ -125,7 +125,7 @@
                             <a href="/pages/aboutus">O nama</a><br>
                             <a href="/accomodations/home">Smještaj</a><br>
                             <a href="/pages/chilioaza">Chili Oaza</a><br>
-                            <a href="/blogs/home">Blog</a><br>
+                            <a href="http://putovanjasazacinom.blogspot.com/">Blog</a><br>
                             <a href="/contacts/contact">Kontakt</a><br>
                             <a href="/contacts/travelcreate">Kreiraj putovanje</a><br>
 

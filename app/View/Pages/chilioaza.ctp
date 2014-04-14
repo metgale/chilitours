@@ -10,7 +10,7 @@
             <?php echo $this->Element('logo'); ?>
         </div>
         <div class="span9 pull-right content">
-            <?php echo $this->Html->Image('imagesforpages/3.jpg', array('class' => 'imageforpage')); ?>
+            <?php echo $this->Html->Image('imagesforpages/oaza.jpg', array('class' => 'imageforpage')); ?>
         </div>
     </div>
     <div class="row"></div>

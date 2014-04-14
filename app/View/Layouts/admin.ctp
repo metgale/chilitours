@@ -12,6 +12,7 @@
                     "insertdatetime media nonbreaking save table contextmenu directionality",
                     "template paste"
                 ],
+                valid_elements: "a[href|target=_blank],strong/b,br,p,ul,ol,li,u,i,em,h3,h4,h5,h6,hr,style,span[style],img[*],iframe[*]",
                 toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
                 toolbar2: "print preview media | forecolor backcolor",
                 templates: [
@@ -62,14 +63,14 @@
                                             <li><?php echo $this->Html->image('icons/list-icon.png', array('alt' => 'CakePHP')); ?><?php echo $this->Html->link(__('Sve kategorije'), array('controller' => 'categories', 'action' => 'index')); ?></li>
                                         </div>
                                     </div>
-                                      <div class="nav1">
+                                    <div class="nav1">
                                         <h4><?php echo $this->Html->image('icons/accomodations-icon.png', array('class' => 'admin-icon')); ?><a href="#">Smještaj</a></h4>
                                         <div class="nav-items1">
                                             <li><?php echo $this->Html->image('icons/add-icon.png'); ?><?php echo $this->Html->link(__('Dodaj smještaj'), array('controller' => 'accomodations', 'action' => 'add')); ?></li>
                                             <li><?php echo $this->Html->image('icons/list-icon.png'); ?><?php echo $this->Html->link(__('Pregled smještaja'), array('controller' => 'accomodations', 'action' => 'index')); ?></li>
                                         </div>
                                     </div>
-                                     <div class="nav1">
+                                    <div class="nav1">
                                         <h4><?php echo $this->Html->image('icons/locations-icon.png', array('class' => 'admin-icon')); ?><a href="#">Lokacije</a></h4>
                                         <div class="nav-items1">
                                             <li><?php echo $this->Html->image('icons/add-icon.png'); ?><?php echo $this->Html->link(__('Dodaj lokaciju'), array('controller' => 'locations', 'action' => 'add')); ?></li>
@@ -91,7 +92,7 @@
                                         </div>           
                                     </div>
                                     <div class="nav1">
-                                        <h4><?php echo $this->Html->link('Odjava', array('controller' => 'users', 'action' => 'logout'), array('class'=> 'btn btn-primary')); ?> </h4>      
+                                        <h4><?php echo $this->Html->link('Odjava', array('controller' => 'users', 'action' => 'logout'), array('class' => 'btn btn-primary')); ?> </h4>      
                                     </div>
                                 </ul>					
                             </div>

@@ -20,7 +20,7 @@
         <h1>Chili Blog</h1>
         <hr>
         <?php foreach ($blogs as $blog): ?>
-            <h4><?php echo $this->Html->link($blog['Blog']['title'], array('controller' => 'blogs', 'action' => 'view', $blog['Blog']['id'])); ?></h4>
+            <h4><a href="<?php echo $blog['Blog']['content'];?>"><?php echo $blog['Blog']['title'] ?></a></h4>
             <div class="metadata" style="color:#888">
                 <p>Objavljeno: <?php echo $blog['Blog']['created']; ?></p>
             </div>

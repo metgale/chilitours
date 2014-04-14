@@ -11,6 +11,8 @@
         <div class="span3 left-content">
             <div class="corner">
                 <?php echo $this->Element('logo'); ?>
+                <a class="btn btn-primary btn-large btn-block" style="margin-top:5px; margin-bottom:5px;" href="/travels/en">Visit Croatia</a>
+                <a href="http://chilitours.hr/travels/view/95"><img style="border-radius:5px" src="/img/nyker.jpg"></a>
             </div>
 
         </div>
@@ -56,9 +58,8 @@
                 </ul>
             </div>
         </div>
-        <div class="span9 pull-right">
+        <div class="span9 pull-right travels">
             <h1>Aktualne ponude</h1>
-            <hr>
             <ul class="thumbnails">
                 <?php foreach ($travels as $travel):; ?>
                     <li class="span3">
@@ -316,6 +317,7 @@
             <?php echo $this->Element('likebox'); ?>
 
             <a href="http://crosportvez.hr/" target="_blank"><img src="/img/csv.png"></a>
+            <a href="http://www.zagrebapartments.eu/" target="_blank"><img src="/img/zg-apartments.png"></a>
         </div>
 
     </div>

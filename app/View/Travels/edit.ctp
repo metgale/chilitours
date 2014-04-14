@@ -60,6 +60,10 @@
                 'label' => 'Prijevoz (hr)'
                     )
             );
+
+            echo $this->BootstrapForm->input('video', array(
+                'label' => 'Video',
+            ));
             /*
               echo $this->BootstrapForm->input('transport_eng', array(
               'required' => 'required',

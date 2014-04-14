@@ -22,7 +22,7 @@
             </tr>
             <?php foreach ($blogs as $blog): ?>
                 <tr>	
-                    <td><?php echo $this->Html->link($blog['Blog']['title'], array('action' => 'view', $blog['Blog']['id'])); ?>&nbsp;
+                    <td><a href="<?php echo $blog['Blog']['content'];?>"><?php echo $blog['Blog']['title'] ?></a>&nbsp;
                         <?php if ($blog['Blog']['published'] != 1): ?> 
                             (Neobjavljeno)
                         <?php endif; ?>

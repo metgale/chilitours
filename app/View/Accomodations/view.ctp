@@ -1,16 +1,16 @@
-<?php $this->assign('title', $accomodation['Accomodation']['title_hr']. 'Chili Tours'); ?>
+<?php $this->assign('title', $accomodation['Accomodation']['title_hr'] . 'Chili Tours'); ?>
 
 <?php $this->append('meta'); ?>
-	<meta name="description" content="<?php $accomodation['Accomodation']['description_hr'];?>">
+<meta name="description" content="<?php $accomodation['Accomodation']['description_hr']; ?>">
 <?php $this->end(); ?>
-      
+
 <div class='travelview'>
 
     <div class="row">
 
         <div class="span3 left-content">
 
-<?php echo $this->Element('logo'); ?>
+            <?php echo $this->Element('logo'); ?>
 
         </div>
 
@@ -25,17 +25,12 @@
             <h1><?php echo $accomodation['Accomodation']['title_hr']; ?></h1>
             <form class="well" method="post" action="/contacts/reservationAcc">     
                 <input class="span3" name="SmjeĹˇtaj" value="<?php echo $accomodation['Accomodation']['title_hr'] ?> (<?php echo $accomodation['Location']['title']; ?>)" type="hidden">
-
                 <label>Od</label> <input class="span3" name="Od" type="date">
-
                 <label>Do</label> <input class="span3" name="Do" type="date">                
-
                 <label>Ime</label> <input class="span3" name="ime" type="text">
-
                 <label>Prezime</label><input class="span3" name="prezime" type="text">
-
                 <label>Email Adresa</label> <input class="span3" name="email" type="text"> 
-
+                <label>Kontakt Telefon</label> <input class="span3" name="Kontakt Telefon" type="text"> 
                 <label>Broj odraslih osoba</label> <input class="span3" name="Broj Osoba"  type="text"> 
 
                 <label>Broj djece (do 12 godina)</label> <input class="span3" name="Broj Djece"  type="text">
@@ -60,13 +55,13 @@
 
         <div class="gallery span9 pull-right">
 
-<?php foreach ($accomodation['Image'] as $image): ?>
+            <?php foreach ($accomodation['Image'] as $image): ?>
 
                 <?php if ($image['headphoto'] == 1): ?>
 
                     <img class="imageforpage" src="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment'] ?>">
 
-    <?php endif ?>
+                <?php endif ?>
 
             <?php endforeach; ?>
 
@@ -79,11 +74,11 @@
 
             <hr>
 
-<?php foreach ($accomodation['Image'] as $image): ?>
+            <?php foreach ($accomodation['Image'] as $image): ?>
 
                 <a href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="accomodation"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment']); ?></a>
 
-<?php endforeach; ?>
+            <?php endforeach; ?>
 
         </div>
 
@@ -113,7 +108,7 @@
 
                 <p><?php if ($accomodation['Accomodation']['parking']): echo $this->Html->Image('icons/green.png'); ?>
 
-<?php else: echo $this->Html->Image('icons/red.png'); ?>
+                    <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
                     <?php endif; ?> Parking
 
@@ -121,7 +116,7 @@
 
                 <p><?php if ($accomodation['Accomodation']['bbq']): echo $this->Html->Image('icons/green.png'); ?>
 
-<?php else: echo $this->Html->Image('icons/red.png'); ?>
+                    <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
                     <?php endif; ?> Roštilj
 
@@ -129,7 +124,7 @@
 
                 <p><?php if ($accomodation['Accomodation']['tv']): echo $this->Html->Image('icons/green.png'); ?>
 
-<?php else: echo $this->Html->Image('icons/red.png'); ?>
+                    <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
                     <?php endif; ?> TV
 
@@ -137,7 +132,7 @@
 
                 <p><?php if ($accomodation['Accomodation']['conditioned']): echo $this->Html->Image('icons/green.png'); ?>
 
-<?php else: echo $this->Html->Image('icons/red.png'); ?>
+                    <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
                     <?php endif; ?> Klima
 
@@ -149,7 +144,7 @@
 
                 <p><?php if ($accomodation['Accomodation']['dishwash']): echo $this->Html->Image('icons/green.png'); ?>
 
-<?php else: echo $this->Html->Image('icons/red.png'); ?>
+                    <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
                     <?php endif; ?> Perilica suđa
 
@@ -157,7 +152,7 @@
 
                 <p><?php if ($accomodation['Accomodation']['clotheswash']): echo $this->Html->Image('icons/green.png'); ?>
 
-<?php else: echo $this->Html->Image('icons/red.png'); ?>
+                    <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
                     <?php endif; ?> Perilica rublja
 
@@ -165,14 +160,14 @@
 
                 <p><?php if ($accomodation['Accomodation']['internet']): echo $this->Html->Image('icons/green.png'); ?>
 
-<?php else: echo $this->Html->Image('icons/red.png'); ?>
+                    <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
                     <?php endif; ?> Internet
 
                 </p>
                 <p><?php if ($accomodation['Accomodation']['pet']): echo $this->Html->Image('icons/green.png'); ?>
 
-<?php else: echo $this->Html->Image('icons/red.png'); ?>
+                    <?php else: echo $this->Html->Image('icons/red.png'); ?>
 
                     <?php endif; ?> Kucni ljubimci
 
@@ -200,7 +195,7 @@
 
             <hr>
 
-<?php echo $accomodation['Accomodation']['description_hr']; ?>
+            <?php echo $accomodation['Accomodation']['description_hr']; ?>
 
             <a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Rezerviraj smještaj</a> 
 
@@ -216,11 +211,11 @@
 
                     <li class="nav-header">Povezani smještaj</li>
 
-<?php if (count($related) <= 1): ?>
+                    <?php if (count($related) <= 1): ?>
 
                         <p>Trenutno nema drugih smještaja na ovoj lokaciji</p>
 
-<?php else: ?>
+                    <?php else: ?>
 
                         <?php foreach ($related as $relacc): ?>
 
@@ -228,7 +223,7 @@
 
                                 <li><?php echo $this->Html->link($relacc['Accomodation']['title_hr'], array('controller' => 'accomodations', 'action' => 'view', $relacc['Accomodation']['id'])); ?></li>
 
-        <?php endif; ?>
+                            <?php endif; ?>
 
                         <?php endforeach; ?>
 

@@ -10,8 +10,7 @@
 					)
 			);
 			echo $this->BootstrapForm->input('content', array(
-				
-				'label' => 'Sadržaj'
+				'label' => 'Link'
 					)
 			);
                         echo $this->BootstrapForm->input('published', array(

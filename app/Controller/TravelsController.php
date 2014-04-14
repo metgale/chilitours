@@ -11,7 +11,7 @@ App::uses('AppController', 'Controller');
 class TravelsController extends AppController {
 
     public function beforeFilter() {
-        $this->Auth->allow('view', 'home', 'foreigners');
+        $this->Auth->allow('view', 'home', 'en');
     }
 
     /**
@@ -62,13 +62,13 @@ class TravelsController extends AppController {
 
 
         $featured = $this->Travel->find('all', array(
-            'conditions' => array('Travel.featured' => 1, 'Travel.published' => 1),
+            'conditions' => array('Travel.featured' => 1, 'Travel.published' => 1, 'Travel.english !=' => 1),
             'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1))),
             'order' => 'Travel.created DESC'));
         $this->set('featuredtravels', $featured);
     }
 
-    public function foreigners() {
+    public function en() {
         $options = array(
             'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
             'conditions' => array('Travel.english' => 1, 'Travel.published' => 1),
@@ -129,7 +129,7 @@ class TravelsController extends AppController {
 
         $this->set('related', $related);
         $this->loadModel('Blog');
-        $this->set('blogs', $this->Blog->find('list'));
+        $this->set('blogs', $this->Blog->find('all'));
     }
 
     /**

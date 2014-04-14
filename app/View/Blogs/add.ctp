@@ -9,7 +9,7 @@
 					)
 				);
 				echo $this->BootstrapForm->input('content', array(
-					'label' => 'Sadržaj'
+					'label' => 'Link'
 					)
 				);
 				?>

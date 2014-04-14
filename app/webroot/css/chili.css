@@ -132,6 +132,10 @@ images-edit{
 
 /* Homepage Thumbs */
 
+.travels{
+    min-height:  600px;
+}
+
 .thumbnail{
     background-color:white;
     height:300px;

@@ -61,6 +61,9 @@
               'label' => 'Prijevoz (eng)'
               ));
              */
+            echo $this->BootstrapForm->input('video', array(
+                'label' => 'Video',
+            ));
 
             echo $this->BootstrapForm->input('accomodation', array(
                 'options' => array('', '1', '2', '3', '4', '5'),
