@@ -13,7 +13,6 @@
                     "insertdatetime media nonbreaking save table contextmenu directionality",
                     "template paste"
                 ],
-                valid_elements: "a[href|target=_blank],strong/b,br,p,ul,ol,li,u,i,em,h3,h4,h5,h6,hr,style,span[style],img[*],iframe[*]",
                 toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
                 toolbar2: "print preview media | forecolor backcolor",
                 templates: [

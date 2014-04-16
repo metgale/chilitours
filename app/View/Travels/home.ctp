@@ -93,7 +93,10 @@
             </style>
             <div id="mc_embed_signup">
                 <form action="http://chilitours.us3.list-manage.com/subscribe/post?u=c2dbaca2d6083b991502de0b2&amp;id=008d1efff5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                    <h2>ChiliTours Newsletter</h2>
+                    <h4>ChiliTours Newsletter</h4>
+                    <small>
+                        Prijavite se za primanje obavijesti o putovanjima i novim ljutim ponudama
+                    </small>
                     <hr>
                     <div class="mc-field-group">
                         <label for="mce-EMAIL">Vaša Email adresa</label>
@@ -104,8 +107,7 @@
                         <div class="response" id="mce-success-response" style="display:none"></div>
                     </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                     <div style="position: absolute; left: -5000px;"><input type="text" name="b_c2dbaca2d6083b991502de0b2_008d1efff5" value=""></div>
-                    <hr>
-                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                    <div class="clear"><input type="submit" value="Prijavi se" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
                 </form>
             </div>
             <script type="text/javascript">
