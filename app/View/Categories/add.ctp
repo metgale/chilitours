@@ -10,8 +10,11 @@
 				)
 			);
 			echo $this->BootstrapForm->input('name_eng', array(
-				'label' => 'Naziv (eng)',
-				'required' => 'required',
+				'label' => 'Naziv (eng)'
+				)
+			);
+                        echo $this->BootstrapForm->input('priority', array(
+				'label' => 'Prioritet'
 				)
 			);
 			?>

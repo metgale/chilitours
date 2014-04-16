@@ -12,6 +12,11 @@
 				'required' => 'required',
 					)
 			);
+                        echo $this->BootstrapForm->input('priority', array(
+				'label' => 'Prioritet',
+				'required' => 'required',
+				)
+			);
 			echo $this->BootstrapForm->hidden('id');
 			?>
 			<?php echo $this->BootstrapForm->submit(__('Uredi'), array('class' => 'btn btn-primary')); ?>
