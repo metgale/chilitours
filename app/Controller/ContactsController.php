@@ -46,6 +46,15 @@ class ContactsController extends AppController {
             return $this->redirect(array('controller' => 'travels', 'action' => 'home'));
         }
     }
+    
+    public function travelcreate_en() {
+        if ($this->request->is('post')) {
+            $subject = 'Kreirano Putovanje (Strano)';
+            $this->sendMail($subject);
+            $this->Session->setFlash('Your request has been sent.', 'success');
+            return $this->redirect(array('controller' => 'travels', 'action' => 'en'));
+        }
+    }
 
     public function aviotickets() {
         if ($this->request->is('post')) {

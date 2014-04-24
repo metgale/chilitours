@@ -9,6 +9,8 @@
         <div class="span3 left-content">
             <div class="corner">
                 <?php echo $this->Element('logo'); ?>
+                <a class="btn btn-primary btn-large btn-block" style="margin-top:5px; margin-bottom:5px; padding:14px;" href="/travels/en">Create your trip</a>
+
             </div>
 
         </div>
