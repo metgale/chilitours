@@ -37,14 +37,12 @@ class TravelsController extends AppController {
     }
 
     public function home($id = null) {
-
         if (!empty($id)) {
             $options = array(
                 'order' => array('Travel.priority DESC', 'Travel.created DESC'),
                 'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
                 'conditions' => array('Travel.english !=' => 1, 'Travel.published' => 1, 'OR' => array('Travel.othercategory' => $id, 'Travel.category_id' => $id))
             );
-
             $category = $this->Travel->Category->findById($id);
             $this->set('check', $category);
         } else {
@@ -56,21 +54,30 @@ class TravelsController extends AppController {
         $travels = $this->Travel->find('all', $options);
         $this->set('travels', $travels);
 
-
         $options = array(
             'order' => 'Category.priority DESC',
             'contain' => array(
-                'Travel' => 
+                'Travel' =>
                 array('id', 'conditions' => array('Travel.published' => 1))));
         $categories = $this->Travel->Category->find('all', $options);
         $this->set('categories', $categories);
-
 
         $featured = $this->Travel->find('all', array(
             'conditions' => array('Travel.featured' => 1, 'Travel.published' => 1, 'Travel.english !=' => 1),
             'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1))),
             'order' => 'Travel.created DESC'));
         $this->set('featuredtravels', $featured);
+
+        $upcoming = $this->Travel->Term->find('all', array(
+            'contain' =>
+            array('Travel' => array(
+                    'fields' => array('id', 'name_hr', 'published'),
+                    'conditions' => array('Travel.published' => 1),
+                )),
+            'order' => 'Term.startdate ASC',
+            'group' => 'travel_id'
+        ));
+        $this->set('upcoming', $upcoming);
     }
 
     public function en() {
