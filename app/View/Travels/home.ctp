@@ -47,10 +47,12 @@
                         <li class="nav-header"><?php echo $this->Html->link('Sve kategorije', array('controller' => 'travels', 'action' => 'home'), array('class' => 'filterCategory')); ?></li>    
                     <?php endif; ?>
                     <?php foreach ($categories as $category): ?>
-                        <?php if (isset($check) && $check['Category']['id'] == $category['Category']['id']): ?>
-                            <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory kuki')); ?></li>
-                        <?php else: ?>
-                            <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory')); ?></li>
+                        <?php if (!empty($category['Travel'])): ?>
+                            <?php if (isset($check) && $check['Category']['id'] == $category['Category']['id']): ?>
+                                <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory kuki')); ?></li>
+                            <?php else: ?>
+                                <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory')); ?></li>
+                            <?php endif; ?>
                         <?php endif; ?>
 
                     <?php endforeach; ?>
