@@ -75,7 +75,7 @@
                         </ul>
                         <ul class="nav pull-right">
                             <li><a href="/contacts/contact" style="font-size:20px;">Tel: 01 483 98 54</a></li>
-                            <li><a href="/travels/en"><img style="max-height:25px" src="/img/UnitedKingsom.png"</a></li>
+                            <li><a href="/travels/en"><img style="max-height:25px" src="/img/UnitedKingsom.png"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -136,7 +136,6 @@
                         <div class="categories">
                             <h4>Info</h4>
                             <hr>
-                            <a href="/travels/index">Admin Login</a><br>
                             <a href="/pages/terms">Opći uvjeti putovanja</a><br>
                             <a href="/pages/paymenttypes">Naćini plaćanja</a><br>
                         </div>

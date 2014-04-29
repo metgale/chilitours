@@ -41,13 +41,13 @@
             <div class="well" style="padding: 8px 0; margin-top:10px;">
                 <ul class="nav nav-list">
 
-                    <?php if (!$check): ?>
+                    <?php if (empty($check)): ?>
                         <li class="nav-header"><?php echo $this->Html->link('Sve kategorije', array('controller' => 'travels', 'action' => 'home'), array('class' => 'filterCategory kuki')); ?></li>
                     <?php else: ?>
                         <li class="nav-header"><?php echo $this->Html->link('Sve kategorije', array('controller' => 'travels', 'action' => 'home'), array('class' => 'filterCategory')); ?></li>    
                     <?php endif; ?>
                     <?php foreach ($categories as $category): ?>
-                        <?php if ($check['Category']['id'] == $category['Category']['id']): ?>
+                        <?php if (isset($check) && $check['Category']['id'] == $category['Category']['id']): ?>
                             <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory kuki')); ?></li>
                         <?php else: ?>
                             <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory')); ?></li>
