@@ -63,7 +63,6 @@ class TravelsController extends AppController {
                 'Travel' => 
                 array('id', 'conditions' => array('Travel.published' => 1))));
         $categories = $this->Travel->Category->find('all', $options);
-        debug($categories);
         $this->set('categories', $categories);
 
 

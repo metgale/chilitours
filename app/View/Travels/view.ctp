@@ -18,8 +18,6 @@
         </div>
         <div class="span9">
         </div>
-
-
         <div class="gallery span9 pull-right">
             <?php foreach ($travel['Image'] as $image): ?>
                 <?php if ($image['headphoto'] == 1): ?>
@@ -83,10 +81,23 @@
                     </tbody>
                 </table>
             <?php endif; ?>
-
         </div>
     </div>
     <div class="row">
+        <div class="span9 page-content pull-right">
+            <?php if ($travel['Travel']['english'] == 1): ?>
+                <h3>Travel Description</h3>
+            <?php else: ?>
+                <h3>O putovanju</h3>
+            <?php endif; ?>
+            <hr>
+            <?php echo $travel['Travel']['program_hr']; ?>
+            <?php if (!empty($travel['Travel']['video'])): ?>
+                <div class="text-center">
+                    <iframe width="560" height="315" src="<?php echo $travel['Travel']['video']; ?>" frameborder="0" allowfullscreen></iframe>
+                </div>
+            <?php endif; ?>
+        </div>
         <div class="span3 left-content">
             <?php if ($travel['Travel']['english'] == 1): ?>
                 <div class="well" style="padding: 8px 0;">
@@ -102,7 +113,6 @@
                                     <?php endif; ?>
                                 <?php endif; ?>
                             <?php endforeach; ?>
-
                         <?php endif; ?>
                     </ul>
                 </div>
@@ -118,7 +128,6 @@
                                     <li><?php echo $this->Html->link($reltrav['Travel']['name_hr'], array('controller' => 'travels', 'action' => 'view', $reltrav['Travel']['id'])); ?></li>
                                 <?php endif; ?>
                             <?php endforeach; ?>
-
                         <?php endif; ?>
                     </ul>
                 </div>
@@ -131,24 +140,6 @@
                     </ul>
                 </div>            
             <?php endif; ?> 
-
-
-        </div>
-
-        <div class="span9 page-content pull-right">
-            <?php if ($travel['Travel']['english'] == 1): ?>
-                <h3>Travel Description</h3>
-            <?php else: ?>
-                <h3>O putovanju</h3>
-            <?php endif; ?>
-            <hr>
-            <?php echo $travel['Travel']['program_hr']; ?>
-            <?php if (!empty($travel['Travel']['video'])): ?>
-                <div class="text-center">
-                    <iframe width="560" height="315" src="<?php echo $travel['Travel']['video']; ?>" frameborder="0" allowfullscreen></iframe>
-                </div>
-            <?php endif; ?>
-
         </div>
         <div class="row">
             <div class="details span9 pull-right">
@@ -185,7 +176,6 @@
                             </tr>
                         </tbody>
                     </table>                <?php endif; ?>
-
             </div>
         </div>
         <div class="gallery page-content span9 pull-right">
@@ -197,9 +187,7 @@
             <?php foreach ($travel['Image'] as $image): ?>
                 <a href="/img/travelphotos/<?php echo $image['id'] ?>/<?php echo $image['attachment']; ?>" data-lightbox="roadtrip"><?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/thumb_' . $image['attachment']); ?></a>
             <?php endforeach; ?>
-
         </div>
-
     </div>
 </div>
 
