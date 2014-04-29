@@ -6,6 +6,5 @@ class EmailConfig {
 		'port' => 25, 'from' =>
 		array('webcontact@chilitours.hr' => 'Rezervacije'),
 		'username' => 'webcontact@chilitours.hr',
-		'password' => 'chili423', 'transport' => 'Smtp', 'log' => true);
 }
 ?>
