@@ -95,7 +95,7 @@
                     <small>
                         Prijavite se za primanje obavijesti o putovanjima i novim ljutim ponudama
                     </small>
-                    <hr>
+                    <hr id="news">
                     <div class="mc-field-group">
                         <label for="mce-EMAIL">Vaša Email adresa</label>
                         <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
