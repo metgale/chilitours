@@ -32,24 +32,30 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-	public $components = array(
-		'DebugKit.Toolbar',
-		'Session',
-		'RequestHandler',
-		'Auth' => array(
-			'loginAction' => array('controller' => 'users', 'action' => 'login'),
-			'authError' => 'Did you really think you are allowed to see that?',
-			'authenticate' => 'Form',
-			'logoutRedirect' => 'users/login',
-		),
-	);
-	public $helpers = array(
-		'Session',
-		'Html' => array('className' => 'TwitterBootstrap.BootstrapHtml'),
-		'Form' => array('className' => 'TwitterBootstrap.BootstrapForm'),
-		'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator'),
-	);
+    public $components = array(
+        'DebugKit.Toolbar',
+        'Session',
+        'RequestHandler',
+        'Auth' => array(
+            'loginAction' => array('controller' => 'users', 'action' => 'login'),
+            'authError' => 'Did you really think you are allowed to see that?',
+            'authenticate' => 'Form',
+            'logoutRedirect' => 'users/login',
+        ),
+    );
+    public $helpers = array(
+        'Session',
+        'Html' => array('className' => 'TwitterBootstrap.BootstrapHtml'),
+        'Form' => array('className' => 'TwitterBootstrap.BootstrapForm'),
+        'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator'),
+    );
 
-	
+    public function beforeFilter() {
+        if ($this->request->is('post') && !empty($this->request->data['email'])) {
+            throw new NotFOundException();
+        } else {
+            unset($this->request->data['email']);
+        }
+    }
 
 }

@@ -32,7 +32,8 @@
                     <div class="span3">
                         <label>Ime</label> <input class="span3" name="ime" required="required" type="text">
                         <label>Prezime</label><input class="span3" name="prezime" required="required" type="text">
-                        <label>Email Adresa</label> <input class="span3" name="email" required="required" type="email"> 
+                        <label>Email Adresa</label> <input class="span3" name="email adresa" required="required" type="email"> 
+                        <input id="hide" name="email" type="email">
                         <label>Kontakt Telefon</label> <input class="span3"  required="required" name="Kontakt Telefon" type="text">
                     </div>
 

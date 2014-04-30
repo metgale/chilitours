@@ -7,7 +7,7 @@ App::uses('CakeEmail', 'Network/Email');
 class ContactsController extends AppController {
 
     public function beforeFilter() {
-
+        parent::beforeFilter();
         $this->Auth->allow();
     }
 
@@ -46,7 +46,7 @@ class ContactsController extends AppController {
             return $this->redirect(array('controller' => 'travels', 'action' => 'home'));
         }
     }
-    
+
     public function travelcreate_en() {
         if ($this->request->is('post')) {
             $subject = 'Kreirano Putovanje (Strano)';
@@ -71,7 +71,7 @@ class ContactsController extends AppController {
         $Email->template('email')
                 ->viewVars(array('data' => $this->request->data))
                 ->emailFormat('html')
-                ->to('info@chilitours.hr')
+                ->to('kfranin@gmail.com')
                 ->subject($subject)
                 ->send();
     }

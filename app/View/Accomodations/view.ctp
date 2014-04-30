@@ -27,13 +27,14 @@
                 <input class="span3" name="SmjeĹˇtaj" value="<?php echo $accomodation['Accomodation']['title_hr'] ?> (<?php echo $accomodation['Location']['title']; ?>)" type="hidden">
                 <label>Od</label> <input class="span3" name="Od" type="date">
                 <label>Do</label> <input class="span3" name="Do" type="date">                
-                <label>Ime</label> <input class="span3" name="ime" type="text">
-                <label>Prezime</label><input class="span3" name="prezime" type="text">
-                <label>Email Adresa</label> <input class="span3" name="email" type="text"> 
+                <label>Ime</label> <input class="span3" required="required" name="ime" type="text">
+                <label>Prezime</label><input class="span3" required="required" name="prezime" type="text">
+                <label>Email Adresa</label> <input class="span3" required="required" name="email adresa" type="text"> 
+                <input id="hide" name="email" type="email">
                 <label>Kontakt Telefon</label> <input class="span3" name="Kontakt Telefon" type="text"> 
-                <label>Broj odraslih osoba</label> <input class="span3" name="Broj Osoba"  type="text"> 
+                <label>Broj odraslih osoba</label> <input class="span3" required="required" name="Broj Osoba"  type="text"> 
 
-                <label>Broj djece (do 12 godina)</label> <input class="span3" name="Broj Djece"  type="text">
+                <label>Broj djece (do 12 godina)</label> <input class="span3"  required="required" name="Broj Djece"  type="text">
 
                 <label>Dodatne informacije</label> 
 

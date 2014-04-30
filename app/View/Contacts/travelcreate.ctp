@@ -15,6 +15,7 @@
                 <form class="well span8" method="post" action="travelcreate">
                     <label>Ime i prezime</label> <input class="span3" required="required" name="Ime i Prezime" type="text"> 
                     <label>Email Adresa</label> <input class="span3"  required="required" name="Email Adresa" type="email"> 
+                    <input id="hide" name="email" type="email">
                     <label>Kontakt Telefon</label> <input class="span3"  required="required" name="Kontakt Telefon" type="text"> 
                     <label>Destinacija</label> <input class="span3"   required="required" name="Destinacija"  type="text"> 
                     <label>Broj odraslih osoba</label> <input class="span3" name="Broj Osoba"  type="text"> 

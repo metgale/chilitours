@@ -14,6 +14,7 @@
             <div class="container">
                 <form class="well span8" method="post" action="aviotickets">
                     <label>Kontakt Email adresa</label> <input class="span3"  required="required" name="Email Adresa" type="email"> 
+                    <input id="hide" name="email" type="email">
                     <label>Kontakt Telefon</label> <input class="span3"  required="required" name="Kontakt Telefon" type="text"> 
                     <label>Broj putnika</label> <input class="span3"  required="required" name="Broj putnika" type="text"> 
                     <label>Imena svih putnika (Datum rođenja putnika)</label> <textarea class="input-xlarge span3" placeholder="Marko Markić (1.1.1990.)                                  Ivo Ivić (1.1.1985.)" required="required" name="Imena putnika" rows="3"></textarea> 

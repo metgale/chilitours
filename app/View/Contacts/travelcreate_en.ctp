@@ -16,6 +16,7 @@
                     <label>First and last name</label> <input class="span3" required="required" name="Ime i Prezime" type="text"> 
                     <label>Where are you from?</label> <input class="span3"  required="required" name="Country origin" type="text"> 
                     <label>Email Address</label> <input class="span3"  required="required" name="Email Adresa" type="email"> 
+                    <input id="hide" name="email" type="email">
                     <label>Phone Number</label> <input class="span3"  required="required" name="Kontakt Telefon" type="text"> 
                     <label>Destination</label> <input class="span3"   required="required" name="Destinacija"  type="text"> 
                     <label>Adults</label> <input class="span3" name="Broj Osoba"  type="text"> 

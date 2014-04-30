@@ -46,24 +46,12 @@
                         <li class="nav-header"><?php echo $this->Html->link('Sve kategorije', array('controller' => 'travels', 'action' => 'home'), array('class' => 'filterCategory')); ?></li>    
                     <?php endif; ?>
                     <?php foreach ($categories as $category): ?>
-                        <?php if (!empty($category['Travel'])): ?>
-                            <?php if (isset($check) && $check['Category']['id'] == $category['Category']['id']): ?>
-                                <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory kuki')); ?></li>
-                            <?php else: ?>
-                                <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory')); ?></li>
-                            <?php endif; ?>
+                        <?php if (isset($check) && $check['Category']['id'] == $category['Category']['id']): ?>
+                            <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory kuki')); ?></li>
+                        <?php else: ?>
+                            <li><?php echo $this->Html->link($category['Category']['name_hr'], array('controller' => 'travels', 'action' => 'home', $category['Category']['id']), array('class' => 'filterCategory')); ?></li>
                         <?php endif; ?>
                     <?php endforeach; ?>
-                </ul>
-            </div>
-            <div class="well" style="padding: 8px 0; margin-top:10px;">
-                <ul class="nav nav-list">
-                    <li class="nav-header upcomingtitle">Nadolazeća putovanja</li>
-                    <?php foreach ($upcoming as $upcoming): ?> 
-                        <?php if (!empty($upcoming['Travel']['id']) && time() < strtotime($upcoming['Term']['startdate'])): ?>
-                            <li class="upcominglist"><a href="/travels/view/<?php echo $upcoming['Travel']['id']; ?>"><?php echo $upcoming['Travel']['name_hr'] . ", " . $this->Time->format($upcoming['Term']['startdate'], '%d. %m.'); ?></a></li>
-                        <?php endif; ?>
-                    <?php endforeach; ?> 
                 </ul>
             </div>
         </div>
@@ -93,6 +81,7 @@
             </ul>
         </div>
         <div class="span3 left-content">
+
             <!-- Begin MailChimp Signup Form -->
             <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
             <style type="text/css">
@@ -233,11 +222,10 @@
                                         function() {
                                             var fields = new Array();
                                             var i = 0;
-                                            $(':text', this).each(
-                                                    function() {
-                                                        fields[i] = this;
-                                                        i++;
-                                                    });
+                                            $(':text', this).each(function() {
+                                                fields[i] = this;
+                                                i++;
+                                            });
                                             $(':hidden', this).each(
                                                     function() {
                                                         if (fields[0].value.length != 3 || fields[1].value.length != 3 || fields[2].value.length != 4) {
@@ -329,6 +317,16 @@
 
             <a href="http://crosportvez.hr/" target="_blank"><img src="/img/csv.png"></a>
             <a href="http://www.zagrebapartments.eu/" target="_blank"><img src="/img/zg-apartments.png"></a>
+            <div class="well" style="padding: 8px 0; margin-top:10px;">
+                <ul class="nav nav-list">
+                    <li class="nav-header upcomingtitle">Nadolazeća putovanja</li>
+                    <?php foreach ($upcoming as $upcoming): ?> 
+                        <?php if (!empty($upcoming['Travel']['id']) && time() < strtotime($upcoming['Term']['startdate'])): ?>
+                            <li class="upcominglist"><a href="/travels/view/<?php echo $upcoming['Travel']['id']; ?>"><?php echo $this->Time->format($upcoming['Term']['startdate'], '%d. %m.' . " - " . $upcoming['Travel']['name_hr']); ?></a></li>
+                            <?php endif; ?>
+                        <?php endforeach; ?> 
+                </ul>
+            </div>
         </div>
 
     </div>

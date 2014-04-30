@@ -46,10 +46,8 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <?php foreach ($travel['Term'] as $term): ?>
                             <tr>
-
                                 <td><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></td>
                                 <td><?php echo $this->Time->format($term['enddate'], '%d-%m-%Y'); ?></td>
                                 <td><?= $term['price']; ?></td>
@@ -207,12 +205,13 @@
             </select>
 
             <input class="span3" name="Putovanje" type="hidden" value="<?php echo $travel['Travel']['name_hr']; ?>"</input>
-            <label>First Name</label> <input class="span3" name="ime" type="text">
-            <label>Last name</label><input class="span3" name="prezime" type="text">
-            <label>Email Adress</label> <input class="span3" name="email" type="text"> 
+            <label>First Name</label> <input class="span3" required="required" name="ime" type="text">
+            <label>Last name</label><input class="span3" required="required" name="prezime" type="text">
+            <label>Email Adress</label> <input class="span3" required="required" name="email adresa" type="email"> 
+            <input id="hide" name="email" type="email">
             <label>Phone Number</label> <input class="span3" name="Kontakt Telefon" type="text"> 
-            <label>Adults</label> <input class="span3" name="Broj Osoba"  type="text"> 
-            <label>Minors (less than 12 years age)</label> <input class="span3" name="Broj Djece"  type="text"> 
+            <label>Adults</label> <input class="span3" required="required" name="Broj Osoba"  type="text"> 
+            <label>Minors (less than 12 years age)</label> <input  required="required" class="span3" name="Broj Djece"  type="text"> 
             <label>Additional information</label> 
             <textarea class="input-large span5" id="message" name="Poruka"
                       rows="3">
@@ -232,14 +231,14 @@
                     <option name="Termin"><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></option>
                 <?php endforeach; ?>
             </select>
-
             <input class="span3" name="Putovanje" type="hidden" value="<?php echo $travel['Travel']['name_hr']; ?>"</input>
-            <label>Ime</label> <input class="span3" name="ime" type="text">
-            <label>Prezime</label><input class="span3" name="prezime" type="text">
-            <label>Email Adresa</label> <input class="span3" name="email" type="text">
-            <label>Kontakt Telefon</label> <input class="span3"  required="required" name="Kontakt Telefon" type="text"> 
-            <label>Broj odraslih osoba</label> <input class="span3" name="Broj Osoba"  type="text"> 
-            <label>Broj djece (do 12 godina)</label> <input class="span3" name="Broj Djece"  type="text"> 
+            <label>Ime</label> <input class="span3" required="required" name="ime" type="text">
+            <label>Prezime</label><input class="span3" required="required" name="prezime" type="text">
+            <input id="hide" name="email" type="email">
+            <label>Email Adresa</label> <input class="span3" required="required" name="email adresa" type="email">
+            <label>Kontakt Telefon</label> <input class="span3" name="Kontakt Telefon" type="text"> 
+            <label>Broj odraslih osoba</label> <input class="span3" required="required" name="Broj Osoba"  type="text"> 
+            <label>Broj djece (do 12 godina)</label> <input class="span3" required="required"  name="Broj Djece"  type="text"> 
             <label>Dodatne informacije</label> 
             <textarea class="input-large span5" id="message" name="Poruka"
                       rows="3">

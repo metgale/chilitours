@@ -389,10 +389,12 @@ images-edit{
     border-radius: 5px;  
 }
 
-
 .termstravels p{
     line-height:170%;
 }
 #mc_embed_signup{
     border-radius:5px;
+}
+#hide{
+    display:none;
 }

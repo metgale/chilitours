@@ -232,5 +232,4 @@ class Travel extends AppModel {
         // Throw an exception for the controller
         throw new Exception(__("This travel  could not be saved. Please try again"));
     }
-
 }
