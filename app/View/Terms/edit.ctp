@@ -8,16 +8,12 @@
                 'required' => 'required',
             ));
             echo $this->BootstrapForm->input('startdate', array(
-                'required' => 'required',
             ));
             echo $this->BootstrapForm->input('enddate', array(
-                'required' => 'required',
             ));
             echo $this->BootstrapForm->input('price', array(
-                'required' => 'required',
             ));
             echo $this->BootstrapForm->input('town', array(
-                'required' => 'required',
             ));
             echo $this->BootstrapForm->hidden('id');
             ?>
