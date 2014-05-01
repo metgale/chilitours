@@ -24,7 +24,7 @@
                     <div class="span2">
                         <h5><?php echo $accomodation['Location']['title']; ?></h5>
                         <?php foreach ($accomodation['Accomodation'] as $list): ?>
-                            <p><?php echo $this->Html->link($list['title_hr'], array('controller' => 'accomodations', 'action' => 'view', $list['id'])); ?></p>
+                            <p><?php echo $this->Html->link($list['title_hr'], array('controller' => 'accomodations', 'action' => 'view', $list['slug'])); ?></p>
                         <?php endforeach; ?>
                         <hr>
                     </div>

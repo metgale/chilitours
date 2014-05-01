@@ -20,7 +20,7 @@
             </tr>
             <?php foreach ($accomodations as $accomodation): ?>
                 <tr>	
-                    <td><?php echo $this->Html->link($accomodation['Accomodation']['title_hr'], array('action' => 'view', $accomodation['Accomodation']['id'])); ?>&nbsp;
+                    <td><?php echo $this->Html->link($accomodation['Accomodation']['title_hr'], array('action' => 'view', $accomodation['Accomodation']['slug'])); ?>&nbsp;
                         <?php if ($accomodation['Accomodation']['published'] != 1): ?> 
                             (Neobjavljeno)
                         <?php endif; ?>

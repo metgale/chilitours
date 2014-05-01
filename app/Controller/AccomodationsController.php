@@ -46,13 +46,13 @@ class AccomodationsController extends AppController {
      * @param string $id
      * @return void
      */
-    public function view($id = null) {
-        if (!$this->Accomodation->exists($id)) {
-            throw new NotFoundException(__('Invalid travel'));
+    public function view($slug = null) {
+        if (!$this->Accomodation->find('first', array('options' => array('conditions' => array('Accomodation.slug' => $slug))))) {
+            throw new NotFoundException(__('Invalid Accomodation'));
         }
         $options = array(
             'contain' => array('Location', 'Image' => array('order' => 'Image.headphoto DESC')),
-            'conditions' => array('Accomodation.' . $this->Accomodation->primaryKey => $id));
+            'conditions' => array('Accomodation.slug' => $slug));
         $this->set('accomodation', $this->Accomodation->find('first', $options));
         $accomodation = $this->Accomodation->find('first', $options);
 
