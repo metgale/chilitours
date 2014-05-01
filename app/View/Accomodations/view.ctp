@@ -222,7 +222,7 @@
 
                             <?php if ($relacc['Accomodation']['id'] != $accomodation['Accomodation']['id']): ?>
 
-                                <li><?php echo $this->Html->link($relacc['Accomodation']['title_hr'], array('controller' => 'accomodations', 'action' => 'view', $relacc['Accomodation']['id'])); ?></li>
+                                <li><?php echo $this->Html->link($relacc['Accomodation']['title_hr'], array('controller' => 'accomodations', 'action' => 'view', $relacc['Accomodation']['slug'])); ?></li>
 
                             <?php endif; ?>
 

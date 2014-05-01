@@ -74,8 +74,8 @@
                             <li><a href="/contacts/contact">Kontakt</a></li>
                         </ul>
                         <ul class="nav pull-right">
-                            <li><a href="/contacts/contact" style="font-size:20px;">Tel: 01 483 98 54</a></li>
-                            <li><a href="/travels/en"><img style="max-height:25px" src="/img/UnitedKingsom.png"></a></li>
+                            <li><a href="/contacts/contact" style="font-size:17px;">Tel: 01 483 98 54</a></li>
+                            <li><a id="flag" href="/travels/en"><img style="max-height:22px" src="/img/UnitedKingsom.png"></a></li>
                         </ul>
                     </div>
                 </div>
