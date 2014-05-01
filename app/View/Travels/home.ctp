@@ -22,7 +22,7 @@
                 <?php foreach ($featuredtravels as $travel): ?>
                     <?php if (!empty($travel['Image'][0]['attachment'])): ?>
                         <li>
-                            <a href="/travels/view/<?php echo $travel['Travel']['id']; ?>"><?php echo $this->Html->image('/img/travelphotos/' . $travel['Image'][0]['id'] . '/' . $travel['Image'][0]['attachment']); ?></a>
+                            <a href="/travels/view/<?php echo $travel['Travel']['slug']; ?>"><?php echo $this->Html->image('/img/travelphotos/' . $travel['Image'][0]['id'] . '/' . $travel['Image'][0]['attachment']); ?></a>
                             <div class="label_text pull-right">
                                 <p><?php echo $travel['Travel']['name_hr'] ?><br>
                                     <small><?php echo $travel['Travel']['short_hr']; ?></small>
@@ -60,7 +60,7 @@
             <ul class="thumbnails">
                 <?php foreach ($travels as $travel):; ?>
                     <li class="span3">
-                        <a href="/travels/view/<?php echo $travel['Travel']['id']; ?>">
+                        <a href="/travels/view/<?php echo $travel['Travel']['slug']; ?>">
                             <div class="thumbnail">
                                 <span><?php
                                     foreach ($travel['Term'] as $term) {
@@ -322,7 +322,7 @@
                     <li class="nav-header upcomingtitle">Popis putovanja</li>
                     <?php foreach ($upcoming as $upcoming): ?> 
                         <?php if (!empty($upcoming['Travel']['id']) && time() < strtotime($upcoming['Term']['startdate'])): ?>
-                            <li class="upcominglist"><a href="/travels/view/<?php echo $upcoming['Travel']['id']; ?>"><?php echo $this->Time->format($upcoming['Term']['startdate'], '%d. %m.' . " - " . $upcoming['Travel']['name_hr']); ?></a></li>
+                            <li class="upcominglist"><a href="/travels/view/<?php echo $upcoming['Travel']['slug']; ?>"><?php echo $this->Time->format($upcoming['Term']['startdate'], '%d. %m.' . " - " . $upcoming['Travel']['name_hr']); ?></a></li>
                             <?php endif; ?>
                         <?php endforeach; ?> 
                 </ul>

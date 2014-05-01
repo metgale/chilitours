@@ -72,7 +72,7 @@ class TravelsController extends AppController {
         $upcoming = $this->Travel->Term->find('all', array(
             'contain' =>
             array('Travel' => array(
-                    'fields' => array('id', 'name_hr', 'published'),
+                    'fields' => array('id', 'name_hr', 'published', 'slug'),
                     'conditions' => array('Travel.published' => 1),
                 )),
             'order' => 'Term.startdate ASC',
@@ -104,13 +104,13 @@ class TravelsController extends AppController {
      * @param string $id
      * @return void
      */
-    public function view($id = null) {
-        if (!$this->Travel->exists($id)) {
+    public function view($slug = null) {
+        if (!$this->Travel->find('first', array('options' => array('conditions' => array('Travel.slug' => $slug))))) {
             throw new NotFoundException(__('Invalid travel'));
         }
         $options = array(
             'contain' => array('Category', 'Term', 'Image' => array('order' => 'Image.headphoto DESC')),
-            'conditions' => array('Travel.' . $this->Travel->primaryKey => $id));
+            'conditions' => array('Travel.slug' => $slug));
         $this->set('travel', $this->Travel->find('first', $options));
         $travel = $this->Travel->find('first', $options);
 
@@ -119,7 +119,7 @@ class TravelsController extends AppController {
 
         $options = array(
             'conditions' => array(
-                'Travel.id !=' => $id,
+                'Travel.slug !=' => $slug,
                 'Travel.published' => 1,
                 'or' => array(
                     array('Travel.othercategory' => $category),
@@ -128,7 +128,7 @@ class TravelsController extends AppController {
         if ($othercategory != null) {
             $options = array(
                 'conditions' => array(
-                    'Travel.id !=' => $id,
+                    'Travel.slug !=' => $slug,
                     'Travel.published' => 1,
                     'or' => array(
                         array('Travel.othercategory' => $category),
