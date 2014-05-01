@@ -319,7 +319,7 @@
             <a href="http://www.zagrebapartments.eu/" target="_blank"><img src="/img/zg-apartments.png"></a>
             <div class="well" style="padding: 8px 0; margin-top:10px;">
                 <ul class="nav nav-list">
-                    <li class="nav-header upcomingtitle">Nadolazeća putovanja</li>
+                    <li class="nav-header upcomingtitle">Popis putovanja</li>
                     <?php foreach ($upcoming as $upcoming): ?> 
                         <?php if (!empty($upcoming['Travel']['id']) && time() < strtotime($upcoming['Term']['startdate'])): ?>
                             <li class="upcominglist"><a href="/travels/view/<?php echo $upcoming['Travel']['id']; ?>"><?php echo $this->Time->format($upcoming['Term']['startdate'], '%d. %m.' . " - " . $upcoming['Travel']['name_hr']); ?></a></li>

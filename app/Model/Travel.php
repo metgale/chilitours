@@ -11,6 +11,14 @@ App::uses('AppModel', 'Model');
 class Travel extends AppModel {
 
     public $displayField = 'name_hr';
+    
+    public $actsAs = array(
+        'Sluggable' => array(
+            'update' => true,
+            'label' => 'name_hr',
+            'slug' => 'slug',
+        )
+    );
 
     /**
      * Validation rules
@@ -232,4 +240,5 @@ class Travel extends AppModel {
         // Throw an exception for the controller
         throw new Exception(__("This travel  could not be saved. Please try again"));
     }
+
 }
