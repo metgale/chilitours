@@ -71,7 +71,7 @@ class ContactsController extends AppController {
         $Email->template('email')
                 ->viewVars(array('data' => $this->request->data))
                 ->emailFormat('html')
-                ->to('kfranin@gmail.com')
+                ->to('info@chilitours.hr')
                 ->subject($subject)
                 ->send();
     }

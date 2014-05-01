@@ -12,7 +12,7 @@
             <div class="corner">
                 <?php echo $this->Element('logo'); ?>
                 <a class="btn btn-success btn-large btn-block" style="margin-top:5px; margin-bottom:5px; padding:14px;" href="/travels/en">Visit Croatia</a>
-                <a href="http://chilitours.hr/travels/view/95"><img style="border-radius:5px;" src="/img/nyker.jpg"></a>
+                <a href="http://chilitours.hr/travels/view/fresh-island-festival"><img style="border-radius:5px;" src="/img/nyker.jpg"></a>
             </div>
 
         </div>

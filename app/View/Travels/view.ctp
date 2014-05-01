@@ -107,7 +107,7 @@
                             <?php foreach ($related as $reltrav): ?>
                                 <?php if ($reltrav['Travel']['id'] != $travel['Travel']['id']): ?>
                                     <?php if ($reltrav['Travel']['english'] == 1): ?> 
-                                        <li><?php echo $this->Html->link($reltrav['Travel']['name_hr'], array('controller' => 'travels', 'action' => 'view', $reltrav['Travel']['id'])); ?></li>
+                                        <li><?php echo $this->Html->link($reltrav['Travel']['name_hr'], array('controller' => 'travels', 'action' => 'view', $reltrav['Travel']['slug'])); ?></li>
                                     <?php endif; ?>
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -123,7 +123,7 @@
                             <li class="nav-header">Povezana Putovanja</li>
                             <?php foreach ($related as $reltrav): ?>
                                 <?php if ($reltrav['Travel']['id'] != $travel['Travel']['id']): ?>
-                                    <li><?php echo $this->Html->link($reltrav['Travel']['name_hr'], array('controller' => 'travels', 'action' => 'view', $reltrav['Travel']['id'])); ?></li>
+                                    <li><?php echo $this->Html->link($reltrav['Travel']['name_hr'], array('controller' => 'travels', 'action' => 'view', $reltrav['Travel']['slug'])); ?></li>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         <?php endif; ?>
