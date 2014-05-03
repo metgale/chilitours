@@ -105,6 +105,14 @@ class TravelsController extends AppController {
      * @return void
      */
     public function view($slug = null) {
+        
+        if (is_numeric($slug)) {
+            $travel = $this->Travel->findById($slug);
+            if (!empty($travel)) {
+                $this->redirect(array('action' => 'view', $travel['Travel']['slug']), 301);
+            }
+        }
+
         if (!$this->Travel->find('first', array('options' => array('conditions' => array('Travel.slug' => $slug))))) {
             throw new NotFoundException(__('Invalid travel'));
         }

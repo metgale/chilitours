@@ -70,8 +70,16 @@
                     <tbody>
                         <?php foreach ($travel['Term'] as $term): ?>
                             <tr>
-                                <td><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></td>
-                                <td><?php echo $this->Time->format($term['enddate'], '%d-%m-%Y'); ?></td>
+                                <?php if (!strtotime($term['startdate']) == 0): ?>
+                                    <td><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></td>
+                                <?php else: ?>
+                                    <td>/</td>
+                                <?php endif; ?>
+                                <?php if (!strtotime($term['enddate']) == 0): ?>
+                                    <td><?php echo $this->Time->format($term['enddate'], '%d-%m-%Y'); ?></td>
+                                <?php else: ?>
+                                    <td>/</td>
+                                <?php endif; ?>
                                 <td><?= $term['price']; ?></td>
                                 <td><?= $term['town']; ?></td>
                             </tr>
@@ -145,7 +153,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Accomodation Category</th>
+                                <th>Accommodation Category</th>
                                 <th>Travel by</th>
                                 <th>Service</th>
                             </tr>
@@ -197,13 +205,17 @@
         <div class="modal-gallery">
         </div>
         <form class="well" method="post" action="/contacts/reservation">
-            <label>Term</label>
-            <select name="Termin">
-                <?php foreach ($travel['Term'] as $term): ?>
-                    <option name="Termin"><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></option>
-                <?php endforeach; ?>
-            </select>
+            <?php if (!strtotime($term['startdate']) == 0): ?>
+                <label>Term</label>
 
+                <select name="Termin">
+                    <?php foreach ($travel['Term'] as $term): ?>
+                        <option name="Termin"><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></option>
+                    <?php endforeach; ?>
+                </select>
+            <?php else: ?>
+                <label>Wanted Term</label> <input class="span3" required="required" name="ime" type="text" placeholder="(Eg 1.7.2014. to 15.7.2014)">
+            <?php endif; ?>
             <input class="span3" name="Putovanje" type="hidden" value="<?php echo $travel['Travel']['name_hr']; ?>"</input>
             <label>First Name</label> <input class="span3" required="required" name="ime" type="text">
             <label>Last name</label><input class="span3" required="required" name="prezime" type="text">
@@ -225,12 +237,17 @@
 
         </div>
         <form class="well" method="post" action="/contacts/reservation">
-            <label>Termin</label>
-            <select name="Termin">
-                <?php foreach ($travel['Term'] as $term): ?>
-                    <option name="Termin"><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></option>
-                <?php endforeach; ?>
-            </select>
+            <?php if (!strtotime($term['startdate']) == 0): ?>
+                <label>Termin</label>
+
+                <select name="Termin">
+                    <?php foreach ($travel['Term'] as $term): ?>
+                        <option name="Termin"><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></option>
+                    <?php endforeach; ?>
+                </select>
+            <?php else: ?>
+                <label>Termin</label> <input class="span3" required="required" name="ime" type="text" placeholder="(Npr 1.7.2014. do 15.7.2014)">
+            <?php endif; ?>
             <input class="span3" name="Putovanje" type="hidden" value="<?php echo $travel['Travel']['name_hr']; ?>"</input>
             <label>Ime</label> <input class="span3" required="required" name="ime" type="text">
             <label>Prezime</label><input class="span3" required="required" name="prezime" type="text">
