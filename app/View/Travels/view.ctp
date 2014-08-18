@@ -28,11 +28,8 @@
                 <h3><p><?php echo $travel['Travel']['name_hr']; ?><a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Book This Travel</a></p> </h3>
 
             <?php else: ?>
-                <h3><p><?php echo $travel['Travel']['name_hr']; ?><a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Rezerviraj putovanje</a></p> </h3>
-
+                <h3><p><?php echo $travel['Travel']['name_hr']; ?><a href="#myModal" role="button" class="btn btn-success btn-large pull-right" data-toggle="modal">Rezerviraj putovanje</a></p> </h3>
             <?php endif; ?>
-            <div class="fb-share-button" data-href="<?php echo Router::url($this->here, true); ?>" data-type="button"></div>
-
             <hr>
             <?php if ($travel['Travel']['english'] == 1): ?>
                 <h3> Terms</h3>
@@ -48,8 +45,16 @@
                     <tbody>
                         <?php foreach ($travel['Term'] as $term): ?>
                             <tr>
-                                <td><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></td>
-                                <td><?php echo $this->Time->format($term['enddate'], '%d-%m-%Y'); ?></td>
+                                <?php if (!strtotime($term['startdate']) == 0): ?>
+                                    <td><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></td>
+                                <?php else: ?>
+                                    <td>/</td>
+                                <?php endif; ?>
+                                <?php if (!strtotime($term['enddate']) == 0): ?>
+                                    <td><?php echo $this->Time->format($term['enddate'], '%d-%m-%Y'); ?></td>
+                                <?php else: ?>
+                                    <td>/</td>
+                                <?php endif; ?>
                                 <td><?= $term['price']; ?></td>
                                 <td><?= $term['town']; ?></td>
                             </tr>
@@ -87,6 +92,7 @@
                     </tbody>
                 </table>
             <?php endif; ?>
+
         </div>
     </div>
     <div class="row">
@@ -102,6 +108,11 @@
                 <div class="text-center">
                     <iframe width="560" height="315" src="<?php echo $travel['Travel']['video']; ?>" frameborder="0" allowfullscreen></iframe>
                 </div>
+            <?php endif; ?>
+            <?php if ($travel['Travel']['english'] == 1): ?>
+                <a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Book This Travel</a>
+            <?php else: ?>
+                <a href="#myModal" role="button" class="btn btn-success pull-right" data-toggle="modal">Rezerviraj putovanje</a>
             <?php endif; ?>
         </div>
         <div class="span3 left-content">
@@ -214,16 +225,16 @@
                     <?php endforeach; ?>
                 </select>
             <?php else: ?>
-                <label>Wanted Term</label> <input class="span3" required="required" name="ime" type="text" placeholder="(Eg 1.7.2014. to 15.7.2014)">
+                <label>Required dates of travel</label> <input class="span3" required="required" name="ime" type="text" placeholder="(Eg 1.7.2014. to 15.7.2014)">
             <?php endif; ?>
             <input class="span3" name="Putovanje" type="hidden" value="<?php echo $travel['Travel']['name_hr']; ?>"</input>
             <label>First Name</label> <input class="span3" required="required" name="ime" type="text">
             <label>Last name</label><input class="span3" required="required" name="prezime" type="text">
-            <label>Email Adress</label> <input class="span3" required="required" name="email adresa" type="email"> 
+            <label>Email Address</label> <input class="span3" required="required" name="email adresa" type="email"> 
             <input id="hide" name="email" type="email">
             <label>Phone Number</label> <input class="span3" name="Kontakt Telefon" type="text"> 
             <label>Adults</label> <input class="span3" required="required" name="Broj Osoba"  type="text"> 
-            <label>Minors (less than 12 years age)</label> <input  required="required" class="span3" name="Broj Djece"  type="text"> 
+            <label>Minors (less than 12 years old)</label> <input  required="required" class="span3" name="Broj Djece"  type="text"> 
             <label>Additional information</label> 
             <textarea class="input-large span5" id="message" name="Poruka"
                       rows="3">
@@ -239,7 +250,6 @@
         <form class="well" method="post" action="/contacts/reservation">
             <?php if (!strtotime($term['startdate']) == 0): ?>
                 <label>Termin</label>
-
                 <select name="Termin">
                     <?php foreach ($travel['Term'] as $term): ?>
                         <option name="Termin"><?php echo $this->Time->format($term['startdate'], '%d-%m-%Y'); ?></option>

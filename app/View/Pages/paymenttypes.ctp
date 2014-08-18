@@ -49,7 +49,7 @@
                 <li>Cirrus/Maestro, MasterCard i Visa (isključivo izdanja Raiffeisen banke) do 3 rate beskamatno </li>
                 <li>Diners Card do 12 rata beskamatno (uvećanje cijene 5%)</li>
             </ul>
-            <p>Napomena: Za avio karte i ulaznice vrijedi isključivo plaćanje gotovinom.</p>
+            <p>Napomena: Za avio karte i ulaznice vrijedi isključivo plaćanje gotovinom u cijelosti prilikom rezervacije.</p>
             <p>Uplate je moguće izvršiti na sljedeće načine:</p>
             <ul>
                 <li>30% akontacije odmah po potvrdi rezervacije, a ostalih 70% najkasnije 21 dan prije putovanja</li>

@@ -89,7 +89,7 @@
             ?>
             <hr>
             <?php
-            echo $this->Form->input('Image.0.attachment', array('type' => 'file', 'label' => 'Slika 1 (Ne zaboravi checkbox - Naslovna)'));
+            echo $this->Form->input('Image.0.attachment', array('type' => 'file', 'multiple', 'label' => 'Slika 1 (Ne zaboravi checkbox - Naslovna)'));
             echo $this->Form->input('Image.0.model', array('type' => 'hidden', 'value' => 'Travel'));
             echo $this->Form->input('Image.0.headphoto', array('label' => 'Naslovna', 'type' => 'checkbox'));
             ?>

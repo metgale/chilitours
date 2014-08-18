@@ -46,9 +46,10 @@
                         <a href="/travels/view/<?php echo $travel['Travel']['slug']; ?>">
                             <div class="thumbnail">
                                 <span><?php
-                                    foreach ($travel['Term'] as $term) {
+                                    foreach ($travel['Term'] as $term) 
+                                        {
                                         echo $term['price'];
-                                    }
+                                        }
                                     ?></span>
                                 <?php foreach ($travel['Image'] as $image): ?>
                                     <?php echo $this->Html->image('/img/travelphotos/' . $image['id'] . '/' . $image['attachment'], array('class' => 'homephotos')); ?>

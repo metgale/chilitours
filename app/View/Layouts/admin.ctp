@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <script src="/js/jquery.js"></script>
+        <script src="/js/chili.js"></script>
         <script type="text/javascript" src="/js/tinymce/tinymce.min.js"></script>
         <script type="text/javascript">
             tinymce.init({
+                relative_urls: 0,
+                remove_script_host: 0,
                 selector: "textarea",
                 theme: "modern",
                 plugins: [
                     "advlist autolink lists link image charmap print preview hr anchor pagebreak",
                     "searchreplace wordcount visualblocks visualchars code fullscreen",
                     "insertdatetime media nonbreaking save table contextmenu directionality",
-                    "template paste textcolor" 
+                    "template paste textcolor"
                 ],
                 toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
                 toolbar2: "print preview media | forecolor backcolor",
@@ -21,8 +24,7 @@
                 ],
             });
         </script>
-        <script src="/js/jquery.js"></script>
-        <script src="/js/chili.js"></script>
+
         <?php echo $this->Html->charset(); ?>
         <title>
             <?php echo $title_for_layout; ?>

@@ -105,7 +105,7 @@ class TravelsController extends AppController {
      * @return void
      */
     public function view($slug = null) {
-        
+
         if (is_numeric($slug)) {
             $travel = $this->Travel->findById($slug);
             if (!empty($travel)) {

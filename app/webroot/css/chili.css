@@ -1,4 +1,4 @@
-root { 
+ root { 
     display: block;
 }
 body{
@@ -402,6 +402,7 @@ images-edit{
 }
 #mc_embed_signup{
     border-radius:5px;
+    padding:5px;
 }
 #hide{
     display:none;

@@ -19,6 +19,9 @@
                     <p>01 483 98 54</p>
                     <strong>E-mail:</strong>
                     <p> info@chilitours.hr</p>
+                    <strong>Skype:</strong>
+                    <p>chili.tours</p>
+
                 </address>
             </div>
             <iframe width="640" height="355" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.hr/maps?f=q&amp;source=s_q&amp;hl=hr&amp;geocode=&amp;q=Ulica+Augusta+%C5%A0enoe+8,+Zagreb&amp;aq=1&amp;oq=augusta+%C5%A1enoe+8+zagreb&amp;sll=44.467612,16.406476&amp;sspn=6.78988,14.27124&amp;ie=UTF8&amp;hq=&amp;hnear=Ulica+Augusta+%C5%A0enoe+8,+10000,+Zagreb&amp;t=m&amp;z=14&amp;ll=45.806331,15.9805&amp;output=embed"></iframe><br /><small><a class="pull-right" href="https://maps.google.hr/maps?f=q&amp;source=embed&amp;hl=hr&amp;geocode=&amp;q=Ulica+Augusta+%C5%A0enoe+8,+Zagreb&amp;aq=1&amp;oq=augusta+%C5%A1enoe+8+zagreb&amp;sll=44.467612,16.406476&amp;sspn=6.78988,14.27124&amp;ie=UTF8&amp;hq=&amp;hnear=Ulica+Augusta+%C5%A0enoe+8,+10000,+Zagreb&amp;t=m&amp;z=14&amp;ll=45.806331,15.9805" style="color:#0000FF;text-align:left;margin-right:30px;">Prikaz veće karte</a></small>
