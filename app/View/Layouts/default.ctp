@@ -74,6 +74,7 @@
                             <li><a href="/contacts/contact">Kontakt</a></li>
                         </ul>
                         <ul class="nav pull-right">
+                            <li><a href=""><img style="width:22px; height:22px;" src="/img/skype.png"> Skype:  chili.tours</a></li>
                             <li><a href="/contacts/contact" style="font-size:17px;">Tel: 01 483 98 54</a></li>
                             <li><a id="flag" href="/travels/en"><img style="max-height:22px" src="/img/UnitedKingsom.png"></a></li>
                         </ul>
@@ -105,6 +106,7 @@
                                 <hr>
                                 <h5>Id kod: HR-AB-01-080880298</h5>
                                 <hr>
+                                <h5><img style="width:30px; height:30px;" src="/img/skype.png"> Skype name: chili.tours</h5>
                             </div>
                         </div>
                     </div>
@@ -137,7 +139,7 @@
                             <h4>Info</h4>
                             <hr>
                             <a href="/pages/terms">Opći uvjeti putovanja</a><br>
-                            <a href="/pages/paymenttypes">Naćini plaćanja</a><br>
+                            <a href="/pages/paymenttypes">Načini plaćanja</a><br>
                         </div>
                     </div>
                 </div>
