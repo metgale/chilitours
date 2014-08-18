@@ -79,6 +79,10 @@ class TravelsController extends AppController {
             'group' => 'travel_id'
         ));
         $this->set('upcoming', $upcoming);
+        if ($this->request->is('ajax')) {
+            $this->viewPath = 'Elements';
+            $this->render('home');
+        }
     }
 
     public function en() {
@@ -102,7 +106,11 @@ class TravelsController extends AppController {
         $this->paginate = array(
             'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
             'conditions' => array(
-                'Travel.name_hr LIKE' => '%' . $keyword . '%'
+                'Travel.published' => 1,
+                'or' => array(
+                    array('Travel.name_hr LIKE' => '%' . $keyword . '%'),
+                    array('Travel.program_hr LIKE' => '%' . $keyword . '%')
+                )
             )
         );
         $this->set('travels', $this->paginate());
