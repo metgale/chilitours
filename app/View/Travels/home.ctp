@@ -11,12 +11,15 @@
         <div class="span3 left-content">
             <div class="corner">
                 <?php echo $this->Element('logo'); ?>
+                <form action="/travels/search" class="form-search" method="GET" accept-charset="utf-8">			
+                    <div class="input-append">
+                        <input name="keyword" placeholder="Pretraži putovanja" class="search-query" type="text" id="LotSearch">
+                        <button type="submit" class="btn btn-success"><i class="icon-search"></i></button>
+                    </div>
+                </form>	
                 <a class="btn btn-success btn-large btn-block" style="margin-top:5px; margin-bottom:5px; padding:14px;" href="/travels/en">Visit Croatia</a>
-                <a href="http://chilitours.hr/travels/view/fresh-island-festival"><img style="border-radius:5px;" src="/img/nyker.jpg"></a>
             </div>
-
         </div>
-
         <div class="box_skitter box_skitter_large pull-right span9">
             <ul>
                 <?php foreach ($featuredtravels as $travel): ?>

@@ -12,7 +12,7 @@ class TravelsController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('view', 'home', 'en');
+        $this->Auth->allow('view', 'home', 'en', 'search');
     }
 
     /**
@@ -95,6 +95,17 @@ class TravelsController extends AppController {
             'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1))),
             'order' => 'Travel.created DESC'));
         $this->set('featuredtravels', $featured);
+    }
+
+    public function search() {
+        $keyword = trim($this->request->query('keyword'));
+        $this->paginate = array(
+            'contain' => array('Image' => array('conditions' => array('Image.headphoto' => 1)), 'Term' => array('limit' => 1, 'order' => 'Term.price ASC')),
+            'conditions' => array(
+                'Travel.name_hr LIKE' => '%' . $keyword . '%'
+            )
+        );
+        $this->set('travels', $this->paginate());
     }
 
     /**
