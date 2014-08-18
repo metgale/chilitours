@@ -1,4 +1,4 @@
-<?php $this->assign('title', 'Chili Tours - turistička agencija'); ?>
+<?php $this->assign('title', $travel['Travel']['name_hr']); ?>
 
 <?php $this->append('meta'); ?>
 <meta name="description" content="Pregledajte ponudu Chili Tours turističke agencije u Zagrebu. Raznovrsna ponuda povoljnih putovanja. Ljetovanja, zimovanja, vikend ili avanturistički izleti.">
@@ -30,6 +30,8 @@
             <?php else: ?>
                 <h3><p><?php echo $travel['Travel']['name_hr']; ?><a href="#myModal" role="button" class="btn btn-success btn-large pull-right" data-toggle="modal">Rezerviraj putovanje</a></p> </h3>
             <?php endif; ?>
+                            <script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 1;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if('https:' == document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="http://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;-webkit-box-shadow:none;box-shadow:none;" src="http://cdn.printfriendly.com/button-print-grnw20.png" alt="Print Friendly and PDF"/></a>
+
             <hr>
             <?php if ($travel['Travel']['english'] == 1): ?>
                 <h3> Terms</h3>
@@ -245,7 +247,6 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>  
         <h1><?php echo $travel['Travel']['name_hr']; ?></h1>
         <div class="modal-gallery">
-
         </div>
         <form class="well" method="post" action="/contacts/reservation">
             <?php if (!strtotime($term['startdate']) == 0): ?>
@@ -271,7 +272,8 @@
                       rows="3">
             </textarea>
             <button class="btn btn-primary" type="submit" >Rezerviraj</button>
-        </form>    <?php endif; ?>       
-
+            <script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 1;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = '';var pfBtVersion='1';(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';if('https:' == document.location.protocol){js='https://pf-cdn.printfriendly.com/ssl/main.js'}else{js='http://cdn.printfriendly.com/printfriendly.js'}pf.src=js;document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="http://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;-webkit-box-shadow:none;box-shadow:none;" src="http://cdn.printfriendly.com/button-print-grnw20.png" alt="Print Friendly and PDF"/></a>
+        </form>    <?php endif; ?>  
+    
 
 </div>
